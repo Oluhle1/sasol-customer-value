@@ -1,0 +1,51 @@
+# ==========================================
+# SASOL CUSTOMER VALUE CHALLENGE
+# Git ignore rules
+# ==========================================
+
+# Competition data - DO NOT COMMIT
+data/raw/*
+data/processed/*
+
+# Keep folder structure
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Model artefacts
+models/*
+!models/.gitkeep
+
+# Generated outputs
+outputs/*
+!outputs/.gitkeep
+
+# Competition submissions
+submissions/*
+!submissions/.gitkeep
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE/editor
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Secrets / environment variables
+.env
+*.env
+
+# Logs
+*.log

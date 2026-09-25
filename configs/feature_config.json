@@ -1,0 +1,21 @@
+{
+  "history_windows_months": {
+    "m1": 1,
+    "m3": 3,
+    "m6": 6,
+    "m12": 12
+  },
+  "include_lifetime_window": true,
+  "time_boundary_rule": "transaction_time_strictly_before_cutoff",
+  "basket_key": "TransactionId",
+  "customer_key": "ID",
+  "timestamp_key": "DateTimeZA",
+  "category_key": "ItemCategoryLevel2",
+  "design_notes": {
+    "m1": "Near-term customer state",
+    "m3": "Aligned with Sasol three-calendar-month comparison and prediction horizon",
+    "m6": "Supports recent-quarter versus previous-quarter behaviour",
+    "m12": "Longer-run behaviour and seasonal context",
+    "lifetime": "Customer maturity and complete historical category exposure"
+  }
+}

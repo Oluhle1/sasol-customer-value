@@ -77,3 +77,29 @@ No feature engineering has begun.
 
 Phase 1 documentation and reproducible transaction-data inspection.
 
+
+---
+
+## 2026-09-25 - Phase 01 Complete: Transaction Data Forensics
+
+Phase 01 has been completed and documented in:
+
+docs/PHASE_01_DATA_FORENSICS.md
+
+Key conclusions:
+
+- Training data contains 467,880 line-item records and 365,638 baskets.
+- Historical data contains 6,204 customers.
+- The 5,488 final test customers exactly match customers satisfying the minimum-three-transaction eligibility rule at the final cutoff.
+- Historical coverage runs from 19 March 2024 through 30 November 2025.
+- The final forecasting origin is 1 December 2025.
+- The modelling unit is defined as Customer x Forecasting Origin.
+- Historical eligibility will be recalculated independently at every cutoff.
+- Raw competition data will remain unchanged.
+- Temporal validation will be used instead of random customer splitting.
+- Feature engineering and modelling have deliberately not started yet.
+
+Next phase:
+
+Phase 02 - Label Reconstruction and Target Forensics.
+

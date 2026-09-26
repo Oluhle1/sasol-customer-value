@@ -1,0 +1,62 @@
+{
+  "strategy": "expanding_window_rolling_origin",
+
+  "folds": [
+    {
+      "fold_id": "F1",
+      "train_cutoffs": [
+        "2024-09-01"
+      ],
+      "validation_cutoff": "2024-12-01"
+    },
+    {
+      "fold_id": "F2",
+      "train_cutoffs": [
+        "2024-09-01",
+        "2024-12-01"
+      ],
+      "validation_cutoff": "2025-03-01"
+    },
+    {
+      "fold_id": "F3",
+      "train_cutoffs": [
+        "2024-09-01",
+        "2024-12-01",
+        "2025-03-01"
+      ],
+      "validation_cutoff": "2025-06-01"
+    },
+    {
+      "fold_id": "F4",
+      "train_cutoffs": [
+        "2024-09-01",
+        "2024-12-01",
+        "2025-03-01",
+        "2025-06-01"
+      ],
+      "validation_cutoff": "2025-09-01"
+    }
+  ],
+
+  "final_training_cutoffs": [
+    "2024-09-01",
+    "2024-12-01",
+    "2025-03-01",
+    "2025-06-01",
+    "2025-09-01"
+  ],
+
+  "final_prediction_cutoff": "2025-12-01",
+
+  "validation_principles": {
+    "random_cross_validation": false,
+    "future_cutoffs_in_training": false,
+    "target_windows_may_overlap_validation_origin": false,
+    "same_customer_may_appear_at_earlier_training_origins": true
+  },
+
+  "notes": {
+    "F4": "Nearest labelled forecasting origin to the competition environment and therefore an important production-proximity diagnostic.",
+    "same_customer": "Repeated customers across origins are intentional. Training contains only their earlier historical states; validation evaluates their later state."
+  }
+}

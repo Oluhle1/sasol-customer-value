@@ -944,3 +944,187 @@ Regression methodology will remain unchanged during this experiment.
 The separate zero-inflation regression hypothesis is retained for a
 later controlled experiment.
 
+
+---
+
+## 35. Phase 04D Results - Controlled Opportunity Class Weighting
+
+Phase 04D changed exactly one modelling assumption relative to the
+Phase 04B Opportunity baseline.
+
+Training observations were assigned square-root inverse-frequency class
+weights calculated independently from each fold's training population.
+
+All other components remained fixed:
+
+    276 predictors
+    LightGBM multiclass model
+    four temporal validation folds
+    tree parameters
+    random seed
+    weighted-F1 early stopping
+    argmax prediction rule
+
+No regression model was changed.
+
+---
+
+## 36. Temporal Weighted-F1 Comparison
+
+Observed results were:
+
+| Fold | Baseline weighted F1 | Weighted-model F1 | Change |
+|---|---:|---:|---:|
+| F1 | 0.446296 | 0.450449 | +0.004154 |
+| F2 | 0.474763 | 0.475097 | +0.000334 |
+| F3 | 0.490870 | 0.496634 | +0.005764 |
+| F4 | 0.503033 | 0.504765 | +0.001732 |
+
+The intervention improved weighted F1 at every temporal validation
+origin.
+
+The row-weighted temporal result improved from:
+
+    0.480414
+
+to:
+
+    0.483390
+
+for an absolute increase of:
+
+    +0.002976.
+
+The latest-origin F4 score improved from:
+
+    0.503033
+
+to:
+
+    0.504765.
+
+---
+
+## 37. Minority Growth-Class Effect
+
+The strongest F4 gains occurred among smaller Existing-category growth
+classes.
+
+Examples include:
+
+    Existing-category growth: Other
+        Baseline F1     approximately 0.262
+        Weighted F1     approximately 0.318
+
+    Existing-category growth: Beverages
+        Baseline F1     approximately 0.038
+        Weighted F1     approximately 0.143
+
+    Existing-category growth: Food & beverage
+        Baseline F1     approximately 0.068
+        Weighted F1     approximately 0.142
+
+The weighting intervention therefore allows the multiclass model to use
+more of the category-specific signal developed in Phase 03D.
+
+---
+
+## 38. Dominant-Class Trade-Off
+
+Improvement in minority classes is accompanied by some deterioration in
+large classes.
+
+At F4:
+
+    Inactivity
+        F1 remains approximately 0.748.
+
+    Existing-category growth: Fuel
+        F1 decreases from approximately 0.461
+        to approximately 0.448.
+
+    Stable
+        F1 decreases from approximately 0.577
+        to approximately 0.563.
+
+The official weighted-F1 metric nevertheless improves, indicating that
+the minority-class gains outweigh these losses under the competition
+evaluation structure.
+
+---
+
+## 39. Adoption Remains Unresolved
+
+Moderate class weighting does not solve the New-category adoption
+problem.
+
+At F4, only Beverages and Lubricants adoption achieve non-zero recall:
+
+    New category adoption: Beverages
+        recall approximately 0.016
+
+    New category adoption: Lubricants
+        recall approximately 0.019
+
+Most remaining adoption classes continue to record zero recall.
+
+The model therefore remains weak at distinguishing individual rare
+adoption outcomes even after majority-class suppression is reduced.
+
+This confirms the Phase 04C finding that some adoption classes contain
+usable but suppressed signal while others exhibit genuinely weak
+class-specific discrimination.
+
+---
+
+## 40. Prediction-Space Breadth
+
+The weighted F4 model predicts:
+
+    13 of the 17 official classes.
+
+This is broader than the highly concentrated baseline decision pattern
+and is consistent with improved macro-level class coverage.
+
+The F4 weighted-model macro F1 is:
+
+    0.142461.
+
+The corresponding baseline macro F1 is approximately:
+
+    0.127.
+
+Class weighting therefore produces a larger relative improvement in
+label-space coverage than in the official weighted-F1 metric.
+
+Weighted F1 remains the primary acceptance criterion.
+
+---
+
+## 41. Phase 04D Decision
+
+The square-root inverse-frequency weighting experiment is accepted.
+
+The reasons are:
+
+- weighted F1 improved at all four temporal validation origins;
+- row-weighted temporal F1 improved;
+- latest-origin F4 performance improved;
+- minority growth-class discrimination improved materially;
+- prediction coverage expanded across the label space;
+- and no change to features, algorithm family or validation methodology
+  was required.
+
+The gain is modest and does not resolve the rare Adoption classes.
+
+Therefore stronger class weighting is not introduced immediately.
+
+The accepted Opportunity training policy is now:
+
+    LightGBM multiclass
+    +
+    square-root inverse-frequency training weights.
+
+Further changes must continue to be evaluated as isolated temporal
+experiments.
+

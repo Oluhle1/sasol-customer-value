@@ -1395,3 +1395,134 @@ two-part occurrence component.
 No additional model architecture will be introduced until that
 diagnostic is complete.
 
+
+---
+
+## 51. Phase 04F Results - Non-Fuel Occurrence Calibration
+
+Phase 04F audited the probability calibration of the Phase 04E
+non-fuel occurrence classifier.
+
+No model was trained.
+
+Calibration improved substantially as forecasting origins advanced.
+
+| Fold | Validation prevalence | Mean probability | Bias | ECE |
+|---|---:|---:|---:|---:|
+| F1 | 0.3758 | 0.4477 | +0.0719 | 0.0733 |
+| F2 | 0.3500 | 0.3823 | +0.0324 | 0.0345 |
+| F3 | 0.3447 | 0.3491 | +0.0044 | 0.0212 |
+| F4 | 0.3494 | 0.3435 | -0.0058 | 0.0132 |
+
+The nearest competition-like validation origin therefore exhibits only
+minor global calibration bias.
+
+---
+
+## 52. F4 Reliability
+
+The F4 reliability table shows close correspondence between predicted
+probability and observed occurrence across most of the probability
+distribution.
+
+Examples include:
+
+    Decile 7
+        Mean predicted probability    0.366
+        Observed positive rate        0.371
+
+    Decile 8
+        Mean predicted probability    0.531
+        Observed positive rate        0.534
+
+    Decile 10
+        Mean predicted probability    0.925
+        Observed positive rate        0.939
+
+The largest local discrepancy occurs around the middle of the
+probability distribution and is not large enough to explain the
+Phase 04E F4 RMSE result.
+
+F4 occurrence diagnostics were:
+
+    ROC AUC             0.8405
+    Brier score         0.1469
+    Binary log loss     0.4537
+    ECE                 0.0132
+
+---
+
+## 53. Temporal Prevalence Drift
+
+Early-fold probability overprediction coincides with declining non-fuel
+positive prevalence.
+
+For F1:
+
+    Training prevalence      42.35%
+    Validation prevalence    37.58%
+    Mean prediction          44.77%
+
+For F2:
+
+    Training prevalence      39.78%
+    Validation prevalence    35.00%
+    Mean prediction          38.23%
+
+By F3 and F4, predicted prevalence closely tracks the later validation
+environment.
+
+The calibration behaviour therefore provides further evidence of
+temporal population evolution rather than a persistent probability
+calibration defect.
+
+---
+
+## 54. Pooled Calibration Interpretation
+
+Across all temporal validation observations:
+
+    Actual positive prevalence       0.3542
+    Mean predicted probability       0.3775
+    Probability bias                 +0.0234
+    Expected calibration error       0.0271
+
+This pooled result combines different historical regimes and is not used
+to derive a global probability correction.
+
+The latest forecasting-origin behaviour is considered more relevant to
+the final competition environment.
+
+---
+
+## 55. Phase 04F Decision
+
+Probability calibration is not identified as the principal limitation
+of the Phase 04E two-part model at the latest validation origin.
+
+At F4:
+
+- occurrence discrimination is strong;
+- occurrence probability calibration is good;
+- conditional positive-magnitude prediction is strong;
+- but the final two-part expected-value RMSE remains slightly worse than
+  direct regression.
+
+No probability recalibration method is therefore introduced.
+
+The two-part architecture remains a documented research candidate but is
+not promoted to the accepted model.
+
+The current accepted regression specifications remain:
+
+    Fuel:
+        direct LightGBM regression
+
+    Non-fuel:
+        direct LightGBM regression
+
+The accepted Opportunity specification remains:
+
+    LightGBM multiclass
+    with square-root inverse-frequency training weights.
+

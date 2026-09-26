@@ -644,3 +644,303 @@ The next stage is:
 Phase 04C will determine where the models fail before any modelling
 changes are made.
 
+
+---
+
+## 26. Phase 04C - Baseline Error Analysis
+
+Phase 04C does not tune or replace the baseline models.
+
+Its purpose is to identify where the fixed LightGBM baseline fails before
+any modelling intervention is introduced.
+
+The analysis focuses on three distinct questions.
+
+### Fuel regression
+
+Determine whether residual error is concentrated among:
+
+    future-zero customers
+    future-positive customers
+    high-value customers
+    dormant or reactivated customers
+    abrupt behavioural changes
+
+### Non-fuel regression
+
+Because future non-fuel value is strongly zero-inflated, distinguish:
+
+    zero-versus-positive discrimination
+
+from:
+
+    positive-value magnitude estimation.
+
+This is a diagnostic decomposition only.
+
+No two-stage model is introduced during Phase 04C.
+
+### Opportunity classification
+
+Determine:
+
+    predicted class distribution
+    full 17-class confusion structure
+    macro behaviour confusion
+    adoption-versus-growth behaviour
+    probability assigned to true rare classes
+    true-class rank
+    top-k recovery
+
+This analysis is particularly important because the initial F4 baseline
+has zero recall for all New-category adoption classes.
+
+---
+
+## 27. Initial F4 Opportunity Finding
+
+At the latest labelled forecasting origin the three highest-support
+classes dominate the validation population:
+
+    Inactivity                       1,436
+    Existing-category growth: Fuel  1,435
+    Stable                           1,404
+
+Together these classes account for approximately 81.6% of the F4
+population.
+
+Observed F4 F1 scores were approximately:
+
+    Inactivity                       0.748
+    Stable                           0.577
+    Existing-category growth: Fuel  0.461
+
+All eleven New-category adoption classes recorded zero recall.
+
+The baseline weighted F1 of approximately 0.503 therefore reflects
+substantial success on the dominant behavioural states but not yet
+successful prediction across the complete 17-class label space.
+
+---
+
+## 28. Initial Feature-Importance Finding
+
+Opportunity importance is led by:
+
+    purchase recency
+    recent Fuel momentum
+    Fuel monetary state
+    category-specific recency
+    purchase cadence
+    observed history depth
+
+Fuel regression is dominated by recent Fuel quantity and recency.
+
+Non-fuel regression is dominated by recent and medium-term non-fuel
+active days, suggesting that purchase occurrence and regularity are
+central to the target.
+
+Phase 04C will quantify these failure modes before any parameter or
+method change is accepted.
+
+
+---
+
+## 29. Phase 04C Results - Regression Error Decomposition
+
+The F4 regression models exhibit systematic regression toward intermediate
+values.
+
+### Fuel
+
+For future-zero customers:
+
+    Rows                1,532
+    True mean           0.000
+    Prediction mean     0.563
+    RMSE                0.743
+
+For future-positive customers:
+
+    Rows                3,706
+    True mean           2.114
+    Prediction mean     1.866
+    RMSE                0.533
+
+The model therefore overpredicts customers with zero future Fuel value
+while underpredicting positive customers.
+
+Despite this, the continuous Fuel prediction strongly ranks future
+positive activity:
+
+    ROC AUC = 0.921
+
+This indicates that substantial occurrence information exists in the
+Phase 03 representation.
+
+---
+
+## 30. Non-Fuel Error Decomposition
+
+The zero-versus-positive shrinkage pattern is stronger for non-fuel.
+
+For future-zero customers:
+
+    Rows                3,408
+    True mean           0.000
+    Prediction mean     0.412
+    RMSE                0.551
+
+For future-positive customers:
+
+    Rows                1,830
+    True mean           2.018
+    Prediction mean     1.220
+    RMSE                1.008
+
+The model therefore substantially underestimates future-positive
+non-fuel customer value.
+
+However, positive-outcome ranking remains informative:
+
+    ROC AUC = 0.841
+
+This motivates a later zero-inflation hypothesis based on decomposing
+expected value into occurrence probability and conditional positive
+magnitude.
+
+No such model is introduced during Phase 04C.
+
+---
+
+## 31. Opportunity Macro Behaviour
+
+F4 macro-level performance was:
+
+| Macro state | Support | Precision | Recall | F1 |
+|---|---:|---:|---:|---:|
+| Adoption | 368 | 0.250 | 0.005 | 0.011 |
+| Growth | 2,030 | 0.591 | 0.458 | 0.516 |
+| Inactivity | 1,436 | 0.716 | 0.783 | 0.748 |
+| Stable | 1,404 | 0.482 | 0.717 | 0.577 |
+
+The most severe baseline failure is Adoption recall.
+
+Only approximately 0.5% of actual adoption cases are recovered at
+top-1.
+
+---
+
+## 32. Opportunity Prediction Distribution
+
+The classifier strongly favours the dominant Opportunity classes.
+
+Observed F4 counts included:
+
+    True Stable               1,404
+    Predicted Stable          2,088
+
+    True Inactivity           1,436
+    Predicted Inactivity      1,569
+
+    True Fuel growth          1,435
+    Predicted Fuel growth     1,309
+
+The F4 validation population contained:
+
+    368 true Adoption observations.
+
+Across all eleven adoption classes, the classifier produced only:
+
+    8 Adoption predictions.
+
+Only two of these were correct.
+
+The resulting Adoption macro precision was therefore approximately:
+
+    0.25
+
+while recall remained approximately:
+
+    0.005.
+
+This identifies an extremely conservative rare-class decision pattern.
+
+---
+
+## 33. Opportunity Probability and Rank Diagnostics
+
+Top-k diagnostics show that some rare classes contain substantially more
+model signal than top-1 recall suggests.
+
+Examples include:
+
+    New category adoption: Beverages
+        Top-1 recall    0.0%
+        Top-3 recall   20.6%
+        Top-5 recall   76.2%
+
+    New category adoption: Food & beverage
+        Top-5 recall   52.0%
+
+    New category adoption: Lubricants
+        Top-5 recall   44.4%
+
+Similarly:
+
+    Existing-category growth: Beverages
+        Top-1 recall     2.1%
+        Top-5 recall    96.3%
+
+These cases indicate that the correct class frequently receives
+meaningful model probability but fails to defeat higher-prior dominant
+classes under the ordinary argmax decision.
+
+Other rare adoption classes display much weaker evidence.
+
+Examples include Snacking, Ice-cream, Groceries, Breads & rolls and
+Braai & Ice, where top-5 recovery is zero or nearly zero.
+
+Phase 04C therefore identifies both:
+
+    probability suppression caused by class imbalance
+
+and:
+
+    genuinely weak rare-class discrimination.
+
+These mechanisms should not be treated as equivalent.
+
+---
+
+## 34. Phase 04C Decision
+
+The first controlled modelling intervention will target Opportunity
+class imbalance.
+
+The baseline classifier used no class weighting.
+
+Phase 04D will retain:
+
+    the same 276 predictors
+    the same LightGBM algorithm
+    the same temporal folds
+    the same tree hyperparameters
+    the same early-stopping metric
+    the same argmax decision rule
+
+and change only:
+
+    training observation weights.
+
+A fixed square-root inverse-frequency weighting rule will be evaluated.
+
+This moderated weighting is preferred over full inverse-frequency
+weighting for the first experiment because the official metric is
+weighted F1 and the high-support classes remain important.
+
+Regression methodology will remain unchanged during this experiment.
+
+The separate zero-inflation regression hypothesis is retained for a
+later controlled experiment.
+

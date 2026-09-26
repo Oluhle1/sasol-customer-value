@@ -1,0 +1,46 @@
+{
+  "phase03_canonical_feature_count": 281,
+  "baseline_model_feature_count": 276,
+
+  "excluded_features": {
+    "cat__fuel__days_since_last_purchase": {
+      "reason": "Exact duplicate of days_since_last_fuel_purchase in historical and final snapshots.",
+      "retained_equivalent": "days_since_last_fuel_purchase"
+    },
+
+    "cat__fuel__ever_purchased": {
+      "reason": "Exact duplicate of has_ever_fuel in historical and final snapshots.",
+      "retained_equivalent": "has_ever_fuel"
+    },
+
+    "cat__fuel__prev3_basket_count": {
+      "reason": "Exact duplicate of prev3_fuel_basket_count in historical and final snapshots.",
+      "retained_equivalent": "prev3_fuel_basket_count"
+    },
+
+    "cat__fuel__m3_basket_count": {
+      "reason": "Exactly duplicated m3_fuel_basket_count in historical training snapshots but diverged in the final competition snapshot. The training data cannot identify separate effects for two historically identical predictors, so the core fuel definition is retained to avoid train-inference ambiguity.",
+      "retained_equivalent": "m3_fuel_basket_count"
+    },
+
+    "unseen_category_count": {
+      "reason": "Deterministic inverse of lifetime_category_breadth because the included category universe is fixed at 24.",
+      "retained_equivalent": "lifetime_category_breadth"
+    }
+  },
+
+  "retention_policy": {
+    "near_constant_features": "retain",
+    "highly_correlated_but_semantically_distinct_features": "retain",
+    "meaningful_missing_values": "retain",
+    "rare_category_state_features": "retain"
+  },
+
+  "drift_watch_features": {
+    "observed_tenure_days": {
+      "latest_to_final_standardized_mean_difference": 0.5308042121518127,
+      "decision": "retain_for_baseline",
+      "reason": "The shift is consistent with increasing observation depth as forecasting origins advance. Monitor importance and forward-validation behaviour rather than removing before modelling."
+    }
+  }
+}

@@ -506,3 +506,245 @@ Phase 03B will construct the first predictive variables covering:
 No momentum or category-state features will be introduced until those
 core behavioural variables have been validated.
 
+
+---
+
+## 17. Phase 03B Results - Core Behavioural Features
+
+Phase 03B successfully created the first predictive customer
+representation.
+
+The resulting feature matrix contains:
+
+    28,167 Customer x Forecasting Origin rows
+
+and:
+
+    57 predictive variables
+
+for every observation.
+
+The row population exactly matches the authoritative Phase 03A
+snapshot index.
+
+---
+
+## 18. Core Feature Integrity Results
+
+All six forecasting origins passed feature-generation integrity checks.
+
+For every forecasting origin:
+
+- snapshot row counts were preserved;
+- predictive feature count remained 57;
+- duplicate snapshot IDs were zero;
+- infinite numeric values were zero;
+- every eligible customer had a valid last historical basket;
+- every eligible customer retained at least three lifetime baskets;
+- historical windows were monotonic with respect to basket counts;
+- and all features were constructed exclusively from transactions
+  strictly before the forecasting cutoff.
+
+The resulting matrix is therefore considered structurally valid.
+
+---
+
+## 19. Historical Non-Fuel Participation
+
+The proportion of eligible customers who had never made a qualifying
+historical non-fuel purchase declined substantially through time.
+
+| Cutoff | Never non-fuel | Share |
+|---|---:|---:|
+| 2024-09-01 | 1,806 | 50.06% |
+| 2024-12-01 | 1,726 | 40.87% |
+| 2025-03-01 | 1,675 | 36.03% |
+| 2025-06-01 | 1,593 | 32.11% |
+| 2025-09-01 | 1,528 | 29.17% |
+| 2025-12-01 | 1,419 | 25.86% |
+
+This provides predictor-side evidence of customer maturation.
+
+As more transaction history becomes available, increasing numbers of
+customers accumulate non-fuel purchase experience.
+
+This observation is consistent with the Phase 02 finding that
+new-category adoption becomes less frequent as customer histories
+mature.
+
+---
+
+## 20. Historical Fuel Participation
+
+Customers with no qualifying historical fuel purchase remain uncommon.
+
+Observed values were:
+
+| Cutoff | Never fuel | Share |
+|---|---:|---:|
+| 2024-09-01 | 23 | 0.64% |
+| 2024-12-01 | 39 | 0.92% |
+| 2025-03-01 | 48 | 1.03% |
+| 2025-06-01 | 63 | 1.27% |
+| 2025-09-01 | 73 | 1.39% |
+| 2025-12-01 | 83 | 1.51% |
+
+The increasing absolute count does not imply that existing customers
+are losing their historical fuel status.
+
+The eligible population itself expands through time, and later entrants
+can become eligible through non-fuel transaction histories without ever
+recording qualifying fuel activity.
+
+This supports the decision to preserve fuel and non-fuel histories as
+separate feature families.
+
+---
+
+## 21. Customers Without Qualifying Historical Activity
+
+One eligible customer at each of the first four forecasting origins
+had no qualifying positive purchase despite satisfying the minimum
+historical basket requirement.
+
+Observed missing qualifying recency values were:
+
+    2024-09-01     1
+    2024-12-01     1
+    2025-03-01     1
+    2025-06-01     1
+    2025-09-01     0
+    2025-12-01     0
+
+This is not treated as missing-data corruption.
+
+Eligibility counts all historical baskets, while qualifying purchase
+activity follows the narrower official Sasol in-scope positive purchase
+definition.
+
+A customer may therefore be historically eligible without yet having
+a qualifying purchase.
+
+The missing recency value is retained as a meaningful customer state.
+
+---
+
+## 22. Recent Net Value Checks
+
+No customer had a negative one-month net fuel or non-fuel value at any
+forecasting origin.
+
+Observed counts were:
+
+    negative m1 fuel net values     = 0
+
+    negative m1 non-fuel net values = 0
+
+This result does not justify clipping negative values generally.
+
+The raw transaction history contains legitimate signed returns and the
+feature pipeline continues to preserve those values.
+
+Longer historical windows may still contain negative line-level effects.
+
+---
+
+## 23. Core Representation Available After Phase 03B
+
+Each customer snapshot now contains information describing:
+
+### Observed lifecycle
+
+    observed_tenure_days
+
+### Recency
+
+    days_since_last_basket
+    days_since_last_qualifying_purchase
+    days_since_last_fuel_purchase
+    days_since_last_nonfuel_purchase
+
+### Historical participation
+
+    has_ever_fuel
+    has_ever_nonfuel
+
+### Frequency
+
+For each of:
+
+    m1
+    m3
+    m6
+    m12
+    lifetime
+
+the representation contains:
+
+    basket_count
+    active_days
+    qualifying_basket_count
+    qualifying_active_days
+
+### Fuel behaviour
+
+For each historical window:
+
+    fuel_basket_count
+    fuel_active_days
+    fuel_litres
+
+### Non-fuel behaviour
+
+For each historical window:
+
+    nonfuel_basket_count
+    nonfuel_active_days
+    nonfuel_spend
+
+The Phase 03B representation therefore captures current activity level
+and historical scale, but it does not yet explicitly represent the
+direction or regularity of behaviour.
+
+---
+
+## 24. Phase 03B Limitation
+
+Absolute historical totals alone cannot distinguish customers with
+different trajectories.
+
+For example, two customers may have identical recent three-month fuel
+volume while one is increasing and the other is declining relative to
+their previous behaviour.
+
+Similarly, a customer with no recent purchases may represent:
+
+- long-term inactivity;
+- temporary dormancy;
+- or an historically active customer approaching reactivation.
+
+Phase 03B therefore provides the behavioural levels required for a
+baseline representation, but additional temporal structure is still
+required.
+
+---
+
+## 25. Phase 03B Decision
+
+Phase 03B is considered complete because:
+
+- 57 documented predictive features were generated;
+- all 28,167 authoritative snapshot rows were preserved;
+- no duplicates or infinite values were introduced;
+- historical windows respect the forecasting cutoff;
+- basket and qualifying activity remain conceptually separated;
+- fuel and non-fuel behaviour remain separately represented;
+- legitimate missing recency states are preserved;
+- and all core feature families passed integrity checks.
+
+No machine-learning model has yet been trained.
+
+The project may now proceed to:
+
+    Phase 03C - Momentum, Previous-Period Comparison and Purchase Regularity
+

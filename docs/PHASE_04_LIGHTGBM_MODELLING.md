@@ -1526,3 +1526,95 @@ The accepted Opportunity specification remains:
     LightGBM multiclass
     with square-root inverse-frequency training weights.
 
+
+---
+
+## 56. Phase 04G Results - Regression Generalization Gap
+
+Phase 04G applied the saved Phase 04B regression models to their original
+training and validation populations.
+
+No model was retrained.
+
+The purpose was to quantify whether the fixed baseline appeared strongly
+overfit, balanced, or potentially capacity-limited before tuning.
+
+---
+
+## 57. Fuel Generalization
+
+Observed Fuel results were:
+
+| Fold | Train RMSE | Validation RMSE | Gap | Validation / Train |
+|---|---:|---:|---:|---:|
+| F1 | 0.501639 | 0.624804 | 0.123166 | 1.246 |
+| F2 | 0.507726 | 0.633544 | 0.125819 | 1.248 |
+| F3 | 0.550343 | 0.596600 | 0.046257 | 1.084 |
+| F4 | 0.554273 | 0.602348 | 0.048075 | 1.087 |
+
+The early historical folds show substantial train-validation separation.
+
+The gap becomes much smaller at the later forecasting origins but
+remains material relative to non-fuel.
+
+Fuel therefore does not provide strong evidence that a larger tree
+capacity should be the first tuning intervention.
+
+The accepted Fuel baseline remains unchanged.
+
+---
+
+## 58. Non-Fuel Generalization
+
+Observed non-fuel results were:
+
+| Fold | Train RMSE | Validation RMSE | Gap | Validation / Train |
+|---|---:|---:|---:|---:|
+| F1 | 0.749938 | 0.823599 | 0.073661 | 1.098 |
+| F2 | 0.739866 | 0.783620 | 0.043754 | 1.059 |
+| F3 | 0.727648 | 0.740761 | 0.013113 | 1.018 |
+| F4 | 0.724418 | 0.743258 | 0.018841 | 1.026 |
+
+At the latest two forecasting origins, training and validation errors
+are close.
+
+In particular, F4 validation RMSE is only approximately 2.6% higher
+than training RMSE.
+
+A small generalization gap does not by itself prove underfitting because
+irreducible target variation may also limit performance.
+
+However, together with the broad non-fuel feature-importance structure
+and the absence of strong latest-period overfitting, it supports a
+controlled model-capacity experiment.
+
+---
+
+## 59. Phase 04G Decision
+
+Fuel and non-fuel will no longer be assumed to require identical
+LightGBM tuning.
+
+Fuel remains frozen at the current baseline configuration.
+
+The next controlled experiment will modify non-fuel only.
+
+The experiment will test whether increasing tree interaction capacity
+improves temporal RMSE while holding all other modelling assumptions
+fixed.
+
+The first parameter changed will be:
+
+    num_leaves
+
+Baseline:
+
+    31
+
+Experiment:
+
+    63
+
+All other parameters, predictors, temporal folds and target definitions
+remain unchanged.
+

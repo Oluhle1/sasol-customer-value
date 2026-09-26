@@ -1128,3 +1128,270 @@ The accepted Opportunity training policy is now:
 Further changes must continue to be evaluated as isolated temporal
 experiments.
 
+
+---
+
+## 42. Regression Magnitude-Bin Diagnostics
+
+Phase 04C positive-target magnitude analysis was reviewed before
+changing the regression formulation.
+
+Fuel positive-target RMSE remains approximately between 0.48 and 0.60
+across the five positive-value quintiles.
+
+The highest-value Fuel quintile does not exhibit a uniquely severe error
+increase.
+
+This indicates that the remaining Fuel error is not primarily an
+extreme-target-tail problem.
+
+Non-fuel displays stronger systematic shrinkage.
+
+Across positive-target quintiles, mean predictions remain substantially
+below typical observed target values.
+
+Approximate positive non-fuel quintile results were:
+
+| Quintile | Target median | Mean prediction | RMSE |
+|---|---:|---:|---:|
+| 1 | 1.446 | 0.807 | 0.801 |
+| 2 | 1.743 | 0.871 | 1.049 |
+| 3 | 1.981 | 1.062 | 1.116 |
+| 4 | 2.246 | 1.387 | 1.076 |
+| 5 | 2.625 | 1.974 | 0.966 |
+
+The error is therefore not confined to the highest-value positive
+customers.
+
+Together with the Phase 04C zero-status analysis, the dominant pattern
+is:
+
+    zero customers      -> systematic overprediction
+    positive customers  -> systematic underprediction
+
+This supports testing a zero-inflation-aware expected-value formulation.
+
+---
+
+## 43. Feature-Importance Concentration
+
+F4 gain concentration was:
+
+### Fuel
+
+    Top 5 features       86.2%
+    Top 10 features      90.7%
+    Top 20 features      95.0%
+    Top 50 features      98.6%
+
+### Non-fuel
+
+    Top 5 features       63.8%
+    Top 10 features      73.7%
+    Top 20 features      83.0%
+    Top 50 features      94.6%
+
+### Opportunity
+
+    Top 5 features       20.9%
+    Top 10 features      34.3%
+    Top 20 features      52.5%
+    Top 50 features      79.1%
+
+Fuel therefore relies on a highly concentrated set of recent quantity
+and recency predictors.
+
+Non-fuel uses a broader behavioural representation.
+
+These findings do not currently support increasing general LightGBM
+capacity as the first regression intervention.
+
+---
+
+## 44. Phase 04E Hypothesis
+
+Phase 04E will test a two-part expected-value model for non-fuel only.
+
+The official transformed target satisfies:
+
+    CLV_nonfuel >= 0
+
+and can therefore be decomposed as:
+
+    E[CLV_nonfuel | X]
+        =
+    P(CLV_nonfuel > 0 | X)
+        *
+    E[CLV_nonfuel | CLV_nonfuel > 0, X]
+
+The first component will be a LightGBM binary classifier.
+
+The second component will be a LightGBM regression model trained only
+on positive non-fuel targets.
+
+The final prediction will be the product of occurrence probability and
+conditional positive magnitude.
+
+The calculation remains entirely in the official transformed target
+space.
+
+Fuel modelling remains unchanged during this experiment so that the
+effect of the new formulation can be evaluated independently.
+
+
+---
+
+## 45. Phase 04E Results - Two-Part Non-Fuel Expected Value
+
+Phase 04E evaluated a two-part formulation for transformed non-fuel
+customer value.
+
+The model decomposed expected value as:
+
+    P(CLV_nonfuel > 0 | X)
+
+multiplied by:
+
+    E[CLV_nonfuel | CLV_nonfuel > 0, X].
+
+The same 276 predictors, temporal folds, LightGBM family and common tree
+configuration were retained.
+
+---
+
+## 46. Temporal RMSE Comparison
+
+Observed results were:
+
+| Fold | Direct baseline RMSE | Two-part RMSE | Change |
+|---|---:|---:|---:|
+| F1 | 0.823599 | 0.818754 | -0.004845 |
+| F2 | 0.783620 | 0.781686 | -0.001934 |
+| F3 | 0.740761 | 0.738296 | -0.002465 |
+| F4 | 0.743258 | 0.744649 | +0.001391 |
+
+Three of the four temporal folds improved.
+
+Pooled temporal RMSE changed from:
+
+    0.770952
+
+to:
+
+    0.769082
+
+for an absolute reduction of:
+
+    0.001870.
+
+The row-weighted mean fold RMSE changed from:
+
+    0.770238
+
+to:
+
+    0.768435.
+
+However, the latest and most competition-proximate validation origin
+did not improve.
+
+At F4:
+
+    Direct baseline RMSE    0.743258
+    Two-part RMSE           0.744649
+
+The deterioration was:
+
+    +0.001391 RMSE.
+
+---
+
+## 47. Occurrence Discrimination
+
+The non-fuel occurrence classifier achieved ROC AUC values of:
+
+    F1    0.799015
+    F2    0.809955
+    F3    0.841902
+    F4    0.840508
+
+Future non-fuel occurrence therefore contains substantial predictable
+signal.
+
+Discrimination improves as historical training data expands and remains
+strong at the latest validation origin.
+
+---
+
+## 48. Conditional Positive Magnitude
+
+The positive-only magnitude model performed substantially better than
+the final combined prediction when evaluated among actual positive
+customers.
+
+Observed positive-magnitude RMSE was:
+
+    F1    0.360995
+    F2    0.344928
+    F3    0.366504
+    F4    0.349306
+
+This indicates that, conditional on future non-fuel value being
+positive, magnitude estimation is comparatively strong.
+
+The principal difficulty in the two-part formulation therefore appears
+to involve the occurrence-probability component and its interaction with
+the conditional magnitude prediction.
+
+---
+
+## 49. F4 Zero and Positive Decomposition
+
+At F4, the two-part formulation did not improve either zero-target or
+positive-target RMSE.
+
+True-zero customers:
+
+    Direct RMSE      0.551164
+    Two-part RMSE    0.553873
+
+True-positive customers:
+
+    Direct RMSE      1.007718
+    Two-part RMSE    1.007890
+
+The latest-origin deterioration is therefore not caused by an obvious
+trade-off between improved zero predictions and worsened positive
+predictions.
+
+Both groups deteriorate slightly.
+
+---
+
+## 50. Phase 04E Decision
+
+The two-part non-fuel formulation is retained as a promising research
+candidate but is not promoted to the current accepted production
+specification.
+
+Reasons:
+
+- three of four temporal folds improve;
+- pooled RMSE improves;
+- occurrence discrimination is strong;
+- conditional positive-magnitude prediction is strong;
+- but the nearest competition-like F4 origin deteriorates slightly;
+- and the overall gain remains small.
+
+The accepted non-fuel specification therefore remains:
+
+    direct LightGBM regression
+
+pending further diagnosis.
+
+The next analysis will investigate probability calibration of the
+two-part occurrence component.
+
+No additional model architecture will be introduced until that
+diagnostic is complete.
+

@@ -1618,3 +1618,119 @@ Experiment:
 All other parameters, predictors, temporal folds and target definitions
 remain unchanged.
 
+
+---
+
+## 60. Phase 04H Results - Non-Fuel Capacity Experiment
+
+Phase 04H tested whether increasing LightGBM interaction capacity could
+improve direct non-fuel regression.
+
+Exactly one parameter changed:
+
+    num_leaves
+
+Baseline:
+
+    31
+
+Experiment:
+
+    63
+
+All other predictors, model parameters, temporal folds and evaluation
+rules remained unchanged.
+
+---
+
+## 61. Temporal RMSE Results
+
+Observed performance was:
+
+| Fold | Baseline RMSE | 63-leaf RMSE | Change |
+|---|---:|---:|---:|
+| F1 | 0.823599 | 0.826437 | +0.002837 |
+| F2 | 0.783620 | 0.785251 | +0.001631 |
+| F3 | 0.740761 | 0.742440 | +0.001679 |
+| F4 | 0.743258 | 0.745510 | +0.002252 |
+
+No temporal fold improved.
+
+The row-weighted temporal RMSE changed from:
+
+    0.770238
+
+to:
+
+    0.772319
+
+for a deterioration of:
+
+    +0.002081 RMSE.
+
+The pooled experimental RMSE was:
+
+    0.773043
+
+which is also worse than the pooled Phase 04B baseline.
+
+---
+
+## 62. Generalization Effect
+
+The larger model reduced training error while increasing validation
+error.
+
+At F4:
+
+    Baseline train RMSE          0.724418
+    Baseline validation RMSE     0.743258
+
+With 63 leaves:
+
+    Experimental train RMSE      0.691419
+    Experimental validation RMSE 0.745510
+
+Increasing model capacity therefore improved in-sample fit but worsened
+future-period generalization.
+
+The F4 validation-to-training RMSE ratio increased from approximately:
+
+    1.026
+
+under the baseline to:
+
+    1.078
+
+under the larger model.
+
+This provides direct evidence that additional leaf complexity encourages
+overfitting rather than resolving a capacity limitation.
+
+---
+
+## 63. Phase 04H Decision
+
+The 63-leaf non-fuel model is rejected.
+
+The accepted non-fuel specification remains:
+
+    direct LightGBM regression
+    num_leaves = 31
+
+No Phase 04H model will be promoted to final competition training.
+
+The experiment also revises the interpretation of the Phase 04G small
+generalization gap.
+
+The baseline model should not be regarded as clearly underfit merely
+because training and validation errors are close.
+
+When additional tree capacity was supplied, training error decreased
+but temporal validation deteriorated.
+
+The next controlled experiment will therefore test the opposite
+direction:
+
+    lower model complexity.
+

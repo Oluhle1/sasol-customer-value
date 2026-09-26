@@ -460,3 +460,187 @@ The project may now proceed to:
 
     Phase 04B - First LightGBM Temporal Baseline
 
+
+---
+
+## 18. Phase 04B Results - First LightGBM Temporal Baseline
+
+The first fixed-methodology LightGBM baseline was successfully trained
+across all four expanding-window temporal validation folds.
+
+Three models were trained per fold:
+
+    transformed CLV_fuel regression
+    transformed CLV_nonfuel regression
+    17-class Opportunity classification
+
+This produced:
+
+    4 folds x 3 tasks
+    = 12 fitted LightGBM models.
+
+No hyperparameter search, class reweighting, ensembling or additional
+feature engineering was performed.
+
+---
+
+## 19. Temporal Baseline Metrics
+
+Observed validation results were:
+
+| Fold | Validation cutoff | Fuel RMSE | Non-fuel RMSE | Opportunity weighted F1 |
+|---|---|---:|---:|---:|
+| F1 | 2024-12-01 | 0.624804 | 0.823599 | 0.446296 |
+| F2 | 2025-03-01 | 0.633544 | 0.783620 | 0.474763 |
+| F3 | 2025-06-01 | 0.596600 | 0.740761 | 0.490870 |
+| F4 | 2025-09-01 | 0.602348 | 0.743258 | 0.503033 |
+
+Pooled out-of-fold performance was:
+
+    Fuel RMSE                    0.613621
+    Non-fuel RMSE               0.770952
+    Opportunity weighted F1     0.482080
+
+These values define the untuned temporal baseline against which later
+controlled improvements will be evaluated.
+
+---
+
+## 20. Opportunity Temporal Pattern
+
+Opportunity weighted F1 increases through the successive validation
+origins:
+
+    0.446296
+    0.474763
+    0.490870
+    0.503033
+
+The absolute difference between the earliest and latest validation
+origins is approximately:
+
+    +0.0567 weighted F1
+
+or approximately:
+
+    +12.7% relative to the F1 score.
+
+This improvement is consistent with a combination of increased training
+population, more mature historical customer representations and reduced
+distributional distance between later historical snapshots and the
+competition environment.
+
+The relative contribution of these mechanisms has not yet been
+established and will be investigated during error analysis.
+
+---
+
+## 21. Non-Fuel Temporal Pattern
+
+Non-fuel RMSE improves substantially from:
+
+    0.823599
+
+at F1 to:
+
+    0.743258
+
+at F4.
+
+The reduction is approximately:
+
+    9.8%.
+
+The strongest observed non-fuel result is:
+
+    F3 RMSE = 0.740761.
+
+This improvement occurs despite the target remaining strongly
+zero-inflated across all forecasting origins.
+
+The later regression models therefore appear to extract useful signal
+from the temporal customer representation.
+
+---
+
+## 22. Fuel Temporal Pattern
+
+Fuel validation performance is comparatively stable.
+
+Observed RMSE values were:
+
+    F1    0.624804
+    F2    0.633544
+    F3    0.596600
+    F4    0.602348
+
+The strongest observed fold was:
+
+    F3 RMSE = 0.596600.
+
+Unlike Opportunity and non-fuel, fuel does not exhibit monotonic
+improvement across validation origins.
+
+Error decomposition is required before making feature or parameter
+changes.
+
+---
+
+## 23. Regression Prediction Floor
+
+Very few raw LightGBM regression predictions were below zero.
+
+Observed raw negative prediction counts were:
+
+    Fuel:
+        F1    0
+        F2    0
+        F3    1
+        F4    2
+
+    Non-fuel:
+        all folds    0
+
+The fixed zero-floor post-processing therefore has negligible effect on
+the current baseline.
+
+---
+
+## 24. Baseline Best Iterations
+
+Observed early-stopping iterations were:
+
+| Fold | Fuel | Non-fuel | Opportunity |
+|---|---:|---:|---:|
+| F1 | 102 | 62 | 57 |
+| F2 | 160 | 87 | 99 |
+| F3 | 133 | 126 | 46 |
+| F4 | 145 | 128 | 147 |
+
+Regression best-iteration values are relatively stable as training data
+expands.
+
+Opportunity best iteration is more variable across folds.
+
+This variation is recorded for later error analysis and controlled
+parameter selection rather than immediately triggering hyperparameter
+search.
+
+---
+
+## 25. Phase 04B Decision
+
+Phase 04B is considered complete.
+
+The first LightGBM temporal baseline has established reproducible
+performance across all four rolling forecasting origins.
+
+The baseline will not yet be tuned.
+
+The next stage is:
+
+    Phase 04C - Baseline Error Analysis
+
+Phase 04C will determine where the models fail before any modelling
+changes are made.
+

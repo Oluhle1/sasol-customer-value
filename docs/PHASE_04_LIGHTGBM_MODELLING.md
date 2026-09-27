@@ -1734,3 +1734,150 @@ direction:
 
     lower model complexity.
 
+
+---
+
+## 64. Phase 04I Results - Lower Non-Fuel Tree Complexity
+
+Phase 04I tested the opposite complexity direction following the failure
+of the 63-leaf experiment.
+
+Exactly one parameter changed relative to the original direct non-fuel
+baseline:
+
+    num_leaves
+
+Baseline:
+
+    31
+
+Experiment:
+
+    15
+
+All other features, temporal folds, LightGBM parameters, target
+definitions and evaluation rules remained unchanged.
+
+---
+
+## 65. Temporal RMSE Results
+
+Observed results were:
+
+| Fold | 31-leaf RMSE | 15-leaf RMSE | Change |
+|---|---:|---:|---:|
+| F1 | 0.823599 | 0.817758 | -0.005841 |
+| F2 | 0.783620 | 0.782150 | -0.001470 |
+| F3 | 0.740761 | 0.739133 | -0.001629 |
+| F4 | 0.743258 | 0.742953 | -0.000305 |
+
+All four temporal folds improved.
+
+The row-weighted temporal RMSE changed from:
+
+    0.770238
+
+to:
+
+    0.768079
+
+for an absolute improvement of:
+
+    -0.002159 RMSE.
+
+The pooled 15-leaf RMSE was:
+
+    0.768720.
+
+The latest F4 RMSE improved from:
+
+    0.743258
+
+to:
+
+    0.742953.
+
+---
+
+## 66. Complexity Direction
+
+The combined capacity experiments now show:
+
+    63 leaves:
+        worse than 31 in all four folds
+
+    31 leaves:
+        original baseline
+
+    15 leaves:
+        better than 31 in all four folds
+
+The non-fuel task therefore benefits from stronger structural
+regularization through simpler trees.
+
+Additional leaf-count searching is not justified.
+
+The project will not continue testing nearby values merely to optimize
+the validation score.
+
+---
+
+## 67. Comparison With Two-Part Non-Fuel Model
+
+The accepted 15-leaf direct regression also outperforms the Phase 04E
+two-part formulation.
+
+Row-weighted temporal RMSE:
+
+    Two-part model      0.768435
+    15-leaf direct      0.768079
+
+Latest F4 RMSE:
+
+    Two-part model      0.744649
+    15-leaf direct      0.742953
+
+The simpler direct regression therefore provides both lower complexity
+and stronger temporal validation performance.
+
+---
+
+## 68. Train-Validation Interpretation
+
+At later folds, 15-leaf training RMSE may exceed validation RMSE.
+
+For example, F4 produced:
+
+    Train RMSE          0.748529
+    Validation RMSE     0.742953
+
+This is not interpreted using the assumptions of random IID
+cross-validation.
+
+The expanding training population combines multiple older forecasting
+regimes, whereas each validation set represents one later temporal
+origin.
+
+Differences in target difficulty and population composition therefore
+contribute to the train-validation relationship.
+
+Temporal validation performance remains the primary selection
+criterion.
+
+---
+
+## 69. Phase 04I Decision
+
+The 15-leaf direct non-fuel LightGBM model is accepted.
+
+The current non-fuel specification is now:
+
+    Direct LightGBM regression
+    276 predictors
+    num_leaves = 15
+
+The num_leaves parameter is frozen.
+
+The 31-leaf baseline and 63-leaf experiment are superseded for the
+non-fuel task.
+

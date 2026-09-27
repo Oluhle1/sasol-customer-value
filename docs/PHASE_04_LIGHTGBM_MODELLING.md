@@ -2174,3 +2174,184 @@ Current accepted regression specifications are:
 The decision follows the pre-registered acceptance rule rather than
 post-hoc selection from individual fold results.
 
+
+---
+
+## 81. Phase 04L - Opportunity Weight-Intensity Experiment
+
+Phase 04D established that moderate Opportunity class weighting improves
+the official weighted-F1 metric across all four temporal validation
+origins.
+
+The accepted Opportunity weighting rule is:
+
+    class weight proportional to
+    (N / (K * n_c)) ^ 0.50
+
+where:
+
+    N   = number of training observations
+    K   = number of Opportunity classes
+    n_c = training frequency of class c.
+
+Phase 04L tests whether stronger, but still moderated, class balancing
+provides additional benefit.
+
+The experimental weighting rule is:
+
+    class weight proportional to
+    (N / (K * n_c)) ^ 0.75
+
+The experiment does not use full inverse-frequency weighting.
+
+All other modelling assumptions remain fixed:
+
+    276 predictors
+    LightGBM multiclass objective
+    num_leaves = 31
+    min_data_in_leaf = 50
+    same learning rate
+    same bagging and feature fractions
+    same L2 regularization
+    same four expanding-window temporal folds
+    same random seed
+    same weighted-F1 early stopping
+    same argmax decision rule
+
+Weights are calculated from each fold's training population only.
+
+---
+
+## 82. Phase 04L Acceptance Rule
+
+The 0.75 weighting exponent will replace the accepted 0.50 exponent only
+if all of the following conditions hold:
+
+1. row-weighted temporal weighted F1 improves;
+2. F4 weighted F1 does not deteriorate;
+3. at least three of four temporal folds improve.
+
+Macro F1, rare-class recall and prediction-space breadth are secondary
+diagnostics.
+
+They do not override deterioration in the official weighted-F1 metric.
+
+The acceptance criteria are defined before observing Phase 04L results.
+
+
+---
+
+## 83. Phase 04L Results - Opportunity Weight Intensity
+
+Phase 04L tested whether stronger Opportunity class balancing improved
+the accepted square-root weighting policy.
+
+Accepted exponent:
+
+    0.50
+
+Experimental exponent:
+
+    0.75
+
+All other modelling assumptions remained fixed.
+
+---
+
+## 84. Temporal Weighted-F1 Results
+
+Observed results were:
+
+| Fold | Alpha 0.50 F1 | Alpha 0.75 F1 | Change |
+|---|---:|---:|---:|
+| F1 | 0.450449 | 0.439856 | -0.010593 |
+| F2 | 0.475097 | 0.463447 | -0.011650 |
+| F3 | 0.496634 | 0.486262 | -0.010372 |
+| F4 | 0.504765 | 0.501600 | -0.003164 |
+
+No temporal fold improved.
+
+Row-weighted temporal weighted F1 fell from:
+
+    0.483390
+
+to:
+
+    0.474637
+
+for a deterioration of:
+
+    -0.008753.
+
+All pre-registered acceptance criteria failed.
+
+---
+
+## 85. Rare-Class Effect
+
+Stronger weighting increased prediction activity for some Adoption
+classes.
+
+At F4, Adoption macro recall reached approximately:
+
+    0.0353.
+
+The experimental model recovered small numbers of:
+
+    Adoption: Beverages
+    Adoption: Lubricants
+    Adoption: Other
+    Adoption: Food & beverage
+
+However, this additional rare-class recovery was accompanied by weaker
+performance on high-support classes.
+
+F4 F1 values included approximately:
+
+    Inactivity       0.742
+    Fuel growth      0.447
+    Stable           0.556
+
+Because these classes account for a large proportion of the evaluation
+population, the official weighted-F1 metric deteriorated.
+
+---
+
+## 86. Optimization Behaviour
+
+The experimental best iterations were:
+
+    F1      5
+    F2      7
+    F3      8
+    F4    360
+
+This pattern is substantially less stable than the accepted 0.50
+weighting experiment.
+
+The early folds indicate that stronger weighting rapidly moves the model
+away from the validation weighted-F1 optimum.
+
+The latest fold tolerates substantially longer training but still fails
+to outperform the accepted weighting strength.
+
+---
+
+## 87. Phase 04L Decision
+
+The 0.75 weighting exponent is rejected.
+
+The accepted Opportunity specification remains:
+
+    LightGBM multiclass
+    276 predictors
+    num_leaves = 31
+    min_data_in_leaf = 50
+    class-weight exponent = 0.50
+    argmax decision rule
+
+The class-weight exponent is now frozen.
+
+No nearby weighting exponents will be tested without a new substantive
+modelling hypothesis.
+

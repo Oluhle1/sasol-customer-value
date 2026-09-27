@@ -178,3 +178,279 @@ Next experiment:
     Phase 06R-A2b
     Warm-start / incremental SGNS in a persistent coordinate system.
 
+
+---
+
+# Phase 06R-A2b — Warm-Start Incremental SGNS
+
+Status:
+
+    REPRESENTATION STABILITY: PASS
+    FINAL TEST COVERAGE: PASS
+
+Purpose:
+
+Replace the failed recursive centroid update with a longitudinal
+warm-start SGNS procedure that preserves the previous embedding
+coordinate system while continuing representation learning.
+
+This follows the longitudinal principle described by Chamberlain
+et al.: existing customer vectors remain in the learned space and
+later customer-product contexts update that space rather than
+independently relearning unrelated coordinates.
+
+Product-level purchase histories follow the retail adaptation used
+by Yan & Resnick.
+
+The Gensim implementation is an adaptation rather than an exact
+reproduction of Chamberlain's ordered old/new pair training schedule.
+
+## Build results
+
+Base:
+
+    cutoff             2024-09-01
+    customer vectors        4,374
+    product documents       1,467
+
+Subsequent vocabulary sizes:
+
+    2024-12-01    4,950
+    2025-03-01    5,377
+    2025-06-01    5,676
+    2025-09-01    5,927
+    2025-12-01    6,196
+
+Existing-customer share among active interval customers:
+
+    Sep-Dec 2024    86.18%
+    Dec-Mar 2025    89.90%
+    Mar-Jun 2025    92.75%
+    Jun-Sep 2025    93.86%
+    Sep-Dec 2025    93.62%
+
+This provides substantial overlap for longitudinal representation
+learning.
+
+## Representation-health results
+
+Centered matrix rank:
+
+    64 / 64 dimensions at every cutoff
+
+Unique vector share:
+
+    100% at every cutoff
+
+Median dimension standard deviation:
+
+    2024-09-01    0.083336
+    2024-12-01    0.122951
+    2025-03-01    0.140691
+    2025-06-01    0.156365
+    2025-09-01    0.165545
+    2025-12-01    0.175526
+
+Unlike the rejected centroid-refresh representation, dispersion
+increased rather than collapsed.
+
+Mean random-pair cosine similarity:
+
+    2024-09-01    0.683295
+    2024-12-01    0.678574
+    2025-03-01    0.643759
+    2025-06-01    0.624399
+    2025-09-01    0.604222
+    2025-12-01    0.590582
+
+Median random-pair cosine similarity:
+
+    2024-09-01    0.953341
+    2025-12-01    0.652382
+
+The representation therefore becomes more discriminative between
+customers rather than converging toward a common direction.
+
+## Temporal continuity
+
+Median cosine similarity for customers whose vectors changed:
+
+    Sep-Dec 2024    0.927303
+    Dec-Mar 2025    0.952067
+    Mar-Jun 2025    0.960189
+    Jun-Sep 2025    0.960016
+    Sep-Dec 2025    0.958838
+
+This indicates substantial continuity of customer position while
+still allowing meaningful evolution.
+
+## Final competition coverage
+
+    test customers       5,488
+    embedded             5,488
+    missing                  0
+    coverage              100%
+
+Eight of the 6,204 raw-history customers do not have a final SGNS
+vector. None are present in the final competition test population.
+
+Their relationship to the historical supervised cohorts is audited
+separately before predictive modelling.
+
+## Decision
+
+Warm-start SGNS representation:
+
+    PASS
+
+The failed recursive centroid representation remains rejected.
+
+The warm-start representation is the candidate representation for
+Phase 06R-A3.
+
+
+---
+
+# Phase 06R-A2b — Warm-Start Incremental SGNS
+
+Status:
+
+    REPRESENTATION STABILITY: PASS
+    HISTORICAL COVERAGE: PASS
+    FINAL TEST COVERAGE: PASS
+    CANDIDATE FOR PREDICTIVE ABLATION: YES
+
+## Motivation
+
+Phase A2 demonstrated that repeated product-centroid averaging
+progressively homogenised customer vectors.
+
+A2b therefore replaced recursive centroid averaging with incremental
+warm-start SGNS in a persistent coordinate system.
+
+Existing customers retain their previously learned coordinates while
+new interaction contexts continue training the representation.
+
+This follows the longitudinal principle described by Chamberlain et al.
+while using product-level purchase histories in the retail setting
+described by Yan & Resnick.
+
+The Gensim implementation is an adaptation rather than an exact
+reproduction of Chamberlain's ordered old/new skip-gram pair schedule.
+
+## Build results
+
+Basket-product purchase events:
+
+    437,372
+
+Customer vocabulary:
+
+    2024-09-01    4,374
+    2024-12-01    4,950
+    2025-03-01    5,377
+    2025-06-01    5,676
+    2025-09-01    5,927
+    2025-12-01    6,196
+
+Share of active interval customers already present in the embedding
+space:
+
+    Sep-Dec 2024    86.18%
+    Dec-Mar 2025    89.90%
+    Mar-Jun 2025    92.75%
+    Jun-Sep 2025    93.86%
+    Sep-Dec 2025    93.62%
+
+## Representation health
+
+Centered matrix rank:
+
+    64 / 64 at every cutoff
+
+Unique vectors:
+
+    100% at every cutoff
+
+Median per-dimension standard deviation:
+
+    2024-09-01    0.083336
+    2024-12-01    0.122951
+    2025-03-01    0.140691
+    2025-06-01    0.156365
+    2025-09-01    0.165545
+    2025-12-01    0.175526
+
+Mean random-pair cosine similarity:
+
+    2024-09-01    0.683295
+    2024-12-01    0.678574
+    2025-03-01    0.643759
+    2025-06-01    0.624399
+    2025-09-01    0.604222
+    2025-12-01    0.590582
+
+Median random-pair cosine similarity:
+
+    2024-09-01    0.953341
+    2025-12-01    0.652382
+
+Unlike the rejected centroid method, customer vectors become more
+discriminative rather than converging toward a common direction.
+
+## Temporal continuity
+
+Median cosine similarity among customers whose vectors changed:
+
+    Sep-Dec 2024    0.927303
+    Dec-Mar 2025    0.952067
+    Mar-Jun 2025    0.960189
+    Jun-Sep 2025    0.960016
+    Sep-Dec 2025    0.958838
+
+The coordinate system therefore preserves substantial continuity while
+still allowing customer representations to evolve.
+
+## Coverage
+
+Historical supervised cohorts:
+
+    2024-09-01    3,608 / 3,608    100%
+    2024-12-01    4,223 / 4,223    100%
+    2025-03-01    4,649 / 4,649    100%
+    2025-06-01    4,961 / 4,961    100%
+    2025-09-01    5,238 / 5,238    100%
+
+Final competition cohort:
+
+    5,488 / 5,488    100%
+
+## Eight raw customers without embeddings
+
+Eight of the 6,204 raw-history customer IDs never entered the SGNS
+vocabulary.
+
+Each has only one distinct transaction basket in the entire available
+history.
+
+Consequently:
+
+- none satisfies the minimum three-basket eligibility requirement;
+- none appears in any historical supervised modelling cohort;
+- none appears in the final competition test cohort.
+
+These eight customers therefore create no missing-value problem for
+either temporal validation or competition inference.
+
+## Decision
+
+Warm-start customer representation:
+
+    PASS
+
+Proceed to:
+
+    Phase 06R-A3 — Frozen LightGBM embedding feature ablation
+
+No embedding hyperparameter tuning is permitted before A3.
+

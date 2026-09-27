@@ -176,7 +176,7 @@ def main():
     required = {
         "ID",
         "TransactionId",
-        "StockItem",
+        "StockItemId",
         "Quantity",
     }
 
@@ -194,9 +194,13 @@ def main():
             f"Raw data missing required columns: {missing}"
         )
 
-    timestamp_column = find_timestamp_column(
-        raw.columns
-    )
+    timestamp_column = "DateTimeZA"
+
+    if timestamp_column not in raw.columns:
+        raise AssertionError(
+            f"Required timestamp column {timestamp_column!r} is missing. "
+            f"Available columns: {list(raw.columns)}"
+        )
 
     print(
         f"Timestamp column: {timestamp_column}"
@@ -208,6 +212,7 @@ def main():
         raw[
             timestamp_column
         ],
+        format="mixed",
         errors="raise",
     )
 
@@ -230,11 +235,11 @@ def main():
         ].gt(0)
         &
         raw[
-            "StockItem"
+            "StockItemId"
         ].ne("")
         &
         ~raw[
-            "StockItem"
+            "StockItemId"
         ].isin(
             ADJUSTMENT_ITEMS
         )
@@ -268,14 +273,14 @@ def main():
                 "_timestamp",
                 "TransactionId",
                 "ID",
-                "StockItem",
+                "StockItemId",
             ]
         )
         .drop_duplicates(
             [
                 "ID",
                 "TransactionId",
-                "StockItem",
+                "StockItemId",
             ]
         )
         .copy()
@@ -320,7 +325,7 @@ def main():
                 "adjustment_rows":
                     int(
                         raw[
-                            "StockItem"
+                            "StockItemId"
                         ].isin(
                             ADJUSTMENT_ITEMS
                         ).sum()
@@ -372,7 +377,7 @@ def main():
         product_stats = (
             history
             .groupby(
-                "StockItem"
+                "StockItemId"
             )
             .agg(
                 events=(
@@ -398,11 +403,11 @@ def main():
             )
             .agg(
                 events=(
-                    "StockItem",
+                    "StockItemId",
                     "size",
                 ),
                 unique_products=(
-                    "StockItem",
+                    "StockItemId",
                     "nunique",
                 ),
                 unique_baskets=(
@@ -417,7 +422,7 @@ def main():
             cutoff_string
         ] = set(
             product_stats[
-                "StockItem"
+                "StockItemId"
             ]
         )
 
@@ -487,13 +492,13 @@ def main():
                     ].ge(
                         threshold
                     ),
-                    "StockItem",
+                    "StockItemId",
                 ]
             )
 
             usable_events = history[
                 history[
-                    "StockItem"
+                    "StockItemId"
                 ].isin(
                     usable_products
                 )
@@ -568,7 +573,7 @@ def main():
             history
             .sort_values(
                 [
-                    "StockItem",
+                    "StockItemId",
                     "_timestamp",
                     "TransactionId",
                     "ID",
@@ -582,7 +587,7 @@ def main():
         ] = (
             ordered
             .groupby(
-                "StockItem"
+                "StockItemId"
             )[
                 "ID"
             ]
@@ -711,7 +716,7 @@ def main():
 
                 "products":
                     history[
-                        "StockItem"
+                        "StockItemId"
                     ].nunique(),
 
                 "baskets":
@@ -865,7 +870,7 @@ def main():
     final_product_stats = (
         final_history
         .groupby(
-            "StockItem"
+            "StockItemId"
         )[
             "ID"
         ]
@@ -900,7 +905,7 @@ def main():
         covered_ids = set(
             final_history.loc[
                 final_history[
-                    "StockItem"
+                    "StockItemId"
                 ].isin(
                     usable_products
                 ),
@@ -1105,3 +1110,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+

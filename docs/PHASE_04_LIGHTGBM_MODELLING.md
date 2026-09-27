@@ -1881,3 +1881,138 @@ The num_leaves parameter is frozen.
 The 31-leaf baseline and 63-leaf experiment are superseded for the
 non-fuel task.
 
+
+---
+
+## 70. Phase 04J Results - Lower Fuel Tree Complexity
+
+Phase 04J tested whether the Fuel regression model also benefited from
+stronger structural regularization.
+
+Exactly one parameter changed:
+
+    num_leaves
+
+Baseline:
+
+    31
+
+Experiment:
+
+    15
+
+All predictors, target definitions, temporal folds, regularization
+parameters and evaluation procedures remained fixed.
+
+---
+
+## 71. Temporal Fuel RMSE
+
+Observed performance was:
+
+| Fold | 31-leaf RMSE | 15-leaf RMSE | Change |
+|---|---:|---:|---:|
+| F1 | 0.624804 | 0.622905 | -0.001899 |
+| F2 | 0.633544 | 0.632140 | -0.001404 |
+| F3 | 0.596600 | 0.595613 | -0.000987 |
+| F4 | 0.602348 | 0.601137 | -0.001211 |
+
+All four temporal validation folds improved.
+
+The row-weighted temporal RMSE improved from:
+
+    0.613430
+
+to:
+
+    0.612078
+
+for an absolute reduction of:
+
+    -0.001352.
+
+The pooled 15-leaf Fuel RMSE was:
+
+    0.612264.
+
+The latest-origin F4 RMSE improved from:
+
+    0.602348
+
+to:
+
+    0.601137.
+
+---
+
+## 72. Fuel Generalization Effect
+
+At F4 the original 31-leaf model produced:
+
+    Train RMSE          0.554273
+    Validation RMSE     0.602348
+    Validation / Train  1.086735
+
+The 15-leaf model produced:
+
+    Train RMSE          0.575423
+    Validation RMSE     0.601137
+    Validation / Train  1.044688
+
+Lower tree complexity deliberately increases training error while
+improving future-period validation error.
+
+The train-validation separation therefore narrows substantially.
+
+This is consistent with beneficial structural regularization rather
+than additional capacity being required.
+
+---
+
+## 73. Cross-Regression Complexity Finding
+
+Both customer-value regression tasks independently favour lower tree
+complexity.
+
+Fuel:
+
+    31 -> 15 leaves
+    improved all 4 temporal folds.
+
+Non-fuel:
+
+    63 leaves
+    worsened all 4 temporal folds.
+
+    31 -> 15 leaves
+    improved all 4 temporal folds.
+
+The evidence therefore supports comparatively conservative tree
+complexity for the regression tasks.
+
+The shared value of 15 leaves is accepted because it was independently
+validated for each target rather than imposed as a common assumption.
+
+---
+
+## 74. Phase 04J Decision
+
+The 15-leaf Fuel model is accepted.
+
+The current regression specifications are:
+
+    Fuel:
+        Direct LightGBM regression
+        276 predictors
+        num_leaves = 15
+
+    Non-fuel:
+        Direct LightGBM regression
+        276 predictors
+        num_leaves = 15
+
+The Fuel num_leaves parameter is now frozen.
+
+Further nearby leaf-count values will not be tested without a new
+evidence-based reason.
+

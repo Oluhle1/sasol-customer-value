@@ -816,3 +816,57 @@ No revised hierarchical architecture will be attempted until the
 methodological basis for further Opportunity modelling has been
 reviewed.
 
+
+---
+
+## 23. Phase 06C Public Leaderboard Diagnostic
+
+The Phase 06C hierarchical Opportunity architecture was submitted as a
+controlled external diagnostic.
+
+The submission preserved the Phase 05 Fuel and non-fuel predictions
+exactly and replaced only the Opportunity predictions.
+
+Control submission:
+
+    S0
+    Public score = 0.289392053
+
+Phase 06C diagnostic submission:
+
+    S1
+    Public score = 0.283652312
+
+Absolute public-score change:
+
+    -0.005739741
+
+Relative change from S0:
+
+    approximately -1.98%
+
+Because Fuel and non-fuel predictions were unchanged between S0 and S1,
+the public-score deterioration is attributable to the Opportunity model
+replacement.
+
+This external result agrees directionally with historical temporal
+validation.
+
+Phase 06C local F4 weighted F1:
+
+    Direct control      0.504765
+    Hierarchical        0.469738
+
+Phase 06C row-weighted F2-F4 weighted F1:
+
+    Direct control      0.492759
+    Hierarchical        0.471795
+
+The hierarchical architecture therefore performs worse both locally and
+on the public leaderboard.
+
+This strengthens confidence in the temporal validation framework as a
+model-selection mechanism.
+
+The Phase 06C architecture remains rejected.
+

@@ -254,3 +254,123 @@ Secondary question:
 No LightGBM adaptation will be attempted until this question is
 answered.
 
+
+---
+
+# Phase 06R-B2b — Enhanced Multi-Stage RF Results
+
+The published enhanced multi-stage idea was tested after the naive
+multi-stage RF failed.
+
+The enhancement consisted of:
+
+    balanced return classification
+    probability recalibration
+    learned sigmoid adjustment of return probability
+    return × frequency × value reconstruction
+
+The sigmoid parameters were estimated using outer-training information
+only. No validation outcomes were used to fit the adjustment.
+
+## Fuel
+
+                Direct RF   Naive M-RF   Enhanced M-RF
+F1              0.660793    0.936287     0.783317
+F2              0.664799    0.895865     0.733803
+F3              0.698385    0.888791     0.898070
+F4              0.633434    0.886615     0.738758
+
+Row-weighted:
+
+    Direct RF       0.664034
+    Naive M-RF      0.900435
+    Enhanced M-RF   0.788859
+
+Enhanced versus naive:
+
+    -0.111576 RMSE
+    approximately 12.4% lower
+
+Enhanced versus direct:
+
+    +0.124825 RMSE
+    approximately 18.8% higher
+
+The enhanced model improved over the naive formulation in 3 of 4
+temporal folds, but beat direct RF in 0 of 4.
+
+## Non-fuel
+
+                Direct RF   Naive M-RF   Enhanced M-RF
+F1              0.883685    1.460411     1.529073
+F2              0.814478    1.296427     0.967438
+F3              0.780165    1.243766     0.864713
+F4              0.784168    1.244555     0.879438
+
+Row-weighted:
+
+    Direct RF       0.812552
+    Naive M-RF      1.304793
+    Enhanced M-RF   1.040912
+
+Enhanced versus naive:
+
+    -0.263881 RMSE
+    approximately 20.2% lower
+
+Enhanced versus direct:
+
+    +0.228360 RMSE
+    approximately 28.1% higher
+
+The enhanced model improved over the naive formulation in 3 of 4
+temporal folds, but beat direct RF in 0 of 4.
+
+## Interpretation
+
+The central Yan & Resnick enhancement partially replicated.
+
+Probability adjustment materially repaired the naive multiplicative
+multi-stage model.
+
+However, the complete enhanced multi-stage RF remained substantially
+worse than direct RF on Sasol for both regression targets.
+
+The fitted adjustment parameters also varied substantially between
+temporal folds.
+
+Every fitted sigmoid reached approximately zero aggregate training
+total-value error.
+
+This highlights a metric-alignment issue:
+
+    matching aggregate predicted customer value
+    is not equivalent to
+    minimizing individual-customer RMSE.
+
+Yan & Resnick optimize aggregate revenue error when fitting the
+probability adjustment, while the Sasol competition evaluates
+customer-level transformed RMSE.
+
+Therefore the paper's optimization objective and Sasol's evaluation
+objective are not identical.
+
+## Decision
+
+Research enhancement replication:
+
+    PASS
+
+Production candidacy:
+
+    REJECT
+
+The RF multi-stage research branch is now closed.
+
+No further RF multi-stage tuning will be performed.
+
+The result does not invalidate multi-stage customer-value modelling
+generally. It establishes that this published RF formulation and
+objective do not outperform direct prediction for the Sasol scoring
+problem.
+

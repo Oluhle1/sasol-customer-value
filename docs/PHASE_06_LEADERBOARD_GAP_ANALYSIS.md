@@ -572,3 +572,145 @@ Current accepted state remains:
         alpha 0.50 class weighting
         no temporal recency weighting
 
+
+---
+
+## 15. Phase 06C - Rule-Aware Hierarchical Opportunity Architecture
+
+The accepted Opportunity model treats the target as a single 17-class
+multiclass problem.
+
+However, the official target construction has an explicit behavioural
+hierarchy:
+
+    Inactivity
+    Stable
+    Existing-category Growth
+    New-category Adoption
+
+Growth then contains four output categories.
+
+Adoption contains eleven output categories.
+
+Phase 04 error analysis also showed that several Growth and Adoption
+classes contain ranking signal without frequently becoming the
+highest-probability class in the direct 17-class model.
+
+Phase 06C therefore tests a hierarchical probability decomposition.
+
+---
+
+## 16. Hierarchical Architecture
+
+Three LightGBM multiclass models are trained.
+
+Model 1 - Macro Behaviour:
+
+    Growth
+    Adoption
+    Inactivity
+    Stable
+
+Training population:
+
+    all training observations
+
+Model 2 - Growth Subtype:
+
+    Existing-category growth: Beverages
+    Existing-category growth: Food & beverage
+    Existing-category growth: Fuel
+    Existing-category growth: Other
+
+Training population:
+
+    true Growth observations only
+
+Model 3 - Adoption Subtype:
+
+    eleven official New category adoption labels
+
+Training population:
+
+    true Adoption observations only
+
+---
+
+## 17. Probability Composition
+
+Hard routing is not used.
+
+Final Growth probabilities are:
+
+    P(Growth class j)
+        =
+    P(Growth)
+        *
+    P(class j | Growth)
+
+Final Adoption probabilities are:
+
+    P(Adoption class k)
+        =
+    P(Adoption)
+        *
+    P(class k | Adoption)
+
+Inactivity and Stable probabilities are taken directly from the macro
+classifier.
+
+The resulting 17-class probability vector must sum to one.
+
+Final prediction remains:
+
+    argmax final class probability.
+
+---
+
+## 18. Phase 06C Fixed Modelling Policy
+
+The experiment remains within the LightGBM modelling framework.
+
+All three stages use:
+
+    num_leaves = 31
+    min_data_in_leaf = 50
+
+The previously accepted class-balancing principle is retained:
+
+    inverse-frequency exponent = 0.50
+
+and is calculated independently within each classification stage.
+
+Features:
+
+    all 276 accepted predictors
+
+Temporal recency weighting:
+
+    disabled
+
+This is consistent with the accepted Opportunity control model.
+
+No structural hyperparameter search is performed.
+
+---
+
+## 19. Phase 06C Acceptance Rule
+
+Validation folds:
+
+    F2
+    F3
+    F4
+
+The hierarchical Opportunity model is accepted only if:
+
+1. row-weighted F2-F4 Weighted F1 improves;
+2. F4 Weighted F1 does not deteriorate;
+3. at least two of three validation folds improve.
+
+Macro-level and subtype-level metrics are diagnostic only.
+
+The final 17-class Weighted F1 remains the model-selection criterion.
+

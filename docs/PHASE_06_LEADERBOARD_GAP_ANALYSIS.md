@@ -714,3 +714,105 @@ Macro-level and subtype-level metrics are diagnostic only.
 
 The final 17-class Weighted F1 remains the model-selection criterion.
 
+
+---
+
+## 20. Phase 06C Results - Hierarchical Opportunity Architecture
+
+The hierarchical Opportunity architecture was evaluated across F2-F4.
+
+Results:
+
+| Fold | Direct control F1 | Hierarchical F1 | Change |
+|---|---:|---:|---:|
+| F2 | 0.475097 | 0.473146 | -0.001951 |
+| F3 | 0.496634 | 0.472702 | -0.023932 |
+| F4 | 0.504765 | 0.469738 | -0.035027 |
+
+No temporal fold improved.
+
+Row-weighted F2-F4 weighted F1 fell from:
+
+    0.492759
+
+to:
+
+    0.471795.
+
+The experiment therefore fails every pre-registered acceptance
+criterion and is rejected.
+
+---
+
+## 21. Structural Failure Analysis
+
+The failure reveals an important problem with the probability
+composition used in this experiment.
+
+Stable and Inactivity are singleton macro classes and therefore retain
+their complete macro probability:
+
+    P(Stable)
+    P(Inactivity)
+
+Growth probability is distributed among four child classes:
+
+    P(Growth class j)
+        =
+    P(Growth) * P(class j | Growth)
+
+Adoption probability is distributed among eleven child classes:
+
+    P(Adoption class k)
+        =
+    P(Adoption) * P(class k | Adoption)
+
+The final argmax therefore compares full singleton macro probabilities
+against fractions of the Growth and Adoption macro probabilities.
+
+This creates a structural granularity disadvantage for classes that
+belong to multi-child branches.
+
+The effect is especially severe for Adoption because its macro
+probability is distributed across eleven child labels.
+
+At F4 the hierarchical model predicted:
+
+    6 of 17 final classes
+
+and predicted:
+
+    0 Adoption observations.
+
+This occurred even though the conditional Adoption subtype classifier
+achieved weighted F1 of approximately:
+
+    0.254692
+
+on true Adoption observations.
+
+Therefore the experiment does not establish that hierarchical
+classification is inherently unsuitable.
+
+It establishes that the specific probability-composition and final
+argmax formulation used in Phase 06C is unsuitable for this target
+structure.
+
+---
+
+## 22. Phase 06C Decision
+
+The hierarchical Opportunity architecture is rejected.
+
+The accepted Opportunity control remains:
+
+    Direct 17-class LightGBM
+    276 predictors
+    num_leaves = 31
+    min_data_in_leaf = 50
+    class-weight exponent = 0.50
+
+No revised hierarchical architecture will be attempted until the
+methodological basis for further Opportunity modelling has been
+reviewed.
+

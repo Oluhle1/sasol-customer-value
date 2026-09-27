@@ -2016,3 +2016,161 @@ The Fuel num_leaves parameter is now frozen.
 Further nearby leaf-count values will not be tested without a new
 evidence-based reason.
 
+
+---
+
+## 75. Phase 04K - Minimum Leaf Support Experiment
+
+The preceding regression experiments established that both Fuel and
+non-fuel customer-value models benefit from lower tree complexity.
+
+The accepted regression configuration currently uses:
+
+    num_leaves = 15
+    min_data_in_leaf = 50
+
+Phase 04K tests whether additional structural regularization improves
+temporal generalization by changing exactly one parameter:
+
+    min_data_in_leaf
+
+Baseline:
+
+    50
+
+Experiment:
+
+    100
+
+The accepted value of:
+
+    num_leaves = 15
+
+remains fixed.
+
+All predictors, target definitions, temporal folds, learning rate,
+feature sampling, bagging, L2 regularization and random seeds remain
+unchanged.
+
+Fuel and non-fuel are evaluated independently.
+
+---
+
+## 76. Phase 04K Acceptance Rule
+
+The experimental min_data_in_leaf value will be accepted separately for
+each regression target only if:
+
+1. row-weighted temporal RMSE improves;
+2. the latest F4 RMSE does not deteriorate;
+3. at least three of four temporal validation folds improve.
+
+This rule is defined before observing Phase 04K results.
+
+The purpose is to avoid selecting a parameter based only on one
+favourable validation period.
+
+
+---
+
+## 77. Phase 04K Results - Minimum Leaf Support
+
+Phase 04K tested stronger terminal-leaf regularization while preserving
+the accepted 15-leaf regression structure.
+
+Exactly one parameter changed:
+
+    min_data_in_leaf
+
+Accepted value before experiment:
+
+    50
+
+Experimental value:
+
+    100
+
+Fuel and non-fuel were evaluated independently using the previously
+defined acceptance rule.
+
+---
+
+## 78. Fuel Results
+
+Fuel performance was:
+
+| Fold | Min-leaf 50 RMSE | Min-leaf 100 RMSE | Change |
+|---|---:|---:|---:|
+| F1 | 0.622905 | 0.621366 | -0.001540 |
+| F2 | 0.632140 | 0.631574 | -0.000566 |
+| F3 | 0.595613 | 0.595067 | -0.000546 |
+| F4 | 0.601137 | 0.600904 | -0.000233 |
+
+All four temporal folds improved.
+
+Row-weighted temporal RMSE improved from:
+
+    0.612078
+
+to:
+
+    0.611393.
+
+All three pre-registered acceptance criteria passed.
+
+Fuel therefore adopts:
+
+    num_leaves = 15
+    min_data_in_leaf = 100
+
+---
+
+## 79. Non-Fuel Results
+
+Non-fuel performance was:
+
+| Fold | Min-leaf 50 RMSE | Min-leaf 100 RMSE | Change |
+|---|---:|---:|---:|
+| F1 | 0.817758 | 0.819457 | +0.001699 |
+| F2 | 0.782150 | 0.780753 | -0.001396 |
+| F3 | 0.739133 | 0.738884 | -0.000248 |
+| F4 | 0.742953 | 0.742954 | approximately 0.000001 |
+
+Only two of four folds improved.
+
+The row-weighted temporal difference was negligible:
+
+    0.768079 -> 0.768050.
+
+Although aggregate RMSE improved marginally, the experiment failed the
+pre-registered requirement that at least three temporal folds improve.
+
+The F4 result was also microscopically worse.
+
+Non-fuel therefore retains:
+
+    num_leaves = 15
+    min_data_in_leaf = 50
+
+---
+
+## 80. Phase 04K Decision
+
+The stronger minimum-leaf regularization is accepted for Fuel and
+rejected for non-fuel.
+
+Current accepted regression specifications are:
+
+    Fuel:
+        Direct LightGBM regression
+        num_leaves = 15
+        min_data_in_leaf = 100
+
+    Non-fuel:
+        Direct LightGBM regression
+        num_leaves = 15
+        min_data_in_leaf = 50
+
+The decision follows the pre-registered acceptance rule rather than
+post-hoc selection from individual fold results.
+

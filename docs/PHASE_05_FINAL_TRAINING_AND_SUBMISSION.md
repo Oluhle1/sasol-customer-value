@@ -151,3 +151,125 @@ Phase 05 final model construction follows these rules:
 Final training is therefore a direct implementation of the Phase 04M
 specification.
 
+
+---
+
+## 8. Phase 05A Final Training Result
+
+The frozen Phase 04M specification was trained on all:
+
+    22,679
+
+historical customer-origin observations.
+
+Final competition population:
+
+    5,488
+
+Three final models were trained:
+
+    Fuel:
+        168 boosting rounds
+        num_leaves = 15
+        min_data_in_leaf = 100
+
+    Non-fuel:
+        145 boosting rounds
+        num_leaves = 15
+        min_data_in_leaf = 50
+
+    Opportunity:
+        232 boosting rounds
+        num_leaves = 31
+        min_data_in_leaf = 50
+        class-weight exponent = 0.50
+
+No validation split or early stopping was used during final training.
+
+---
+
+## 9. Final Prediction Diagnostics
+
+Fuel transformed-CLV predictions:
+
+    minimum     0.038532
+    mean        1.466796
+    median      1.629893
+    maximum     3.144977
+
+Raw negative Fuel predictions:
+
+    0
+
+Non-fuel transformed-CLV predictions:
+
+    minimum     0.021964
+    mean        0.711787
+    median      0.456709
+    maximum     3.084665
+
+Raw negative non-fuel predictions:
+
+    0
+
+Opportunity predictions contained:
+
+    14 of the 17 valid output classes.
+
+The three highest-frequency predictions were:
+
+    Inactivity                     1,884
+    Stable                         1,568
+    Existing-category growth: Fuel 1,209
+
+No manual adjustment was applied to the final prediction distribution.
+
+---
+
+## 10. Phase 05B Submission Integrity Audit
+
+The final submission was reconstructed using the official
+SampleSubmission.csv as the structural authority.
+
+All integrity checks passed:
+
+    official columns                 PASS
+    official row count               PASS
+    exact ID-set match               PASS
+    official ID ordering             PASS
+    missing-value check              PASS
+    Fuel finite/non-negative         PASS
+    Non-fuel finite/non-negative     PASS
+    Opportunity-label validity       PASS
+    serialized-file recheck          PASS
+
+Final submission rows:
+
+    5,488
+
+Unique customer IDs:
+
+    5,488
+
+Predicted Opportunity classes:
+
+    14
+
+The presence of fewer than 17 predicted classes is valid because every
+prediction belongs to the official class set. No artificial class
+predictions are introduced.
+
+---
+
+## 11. Final Submission File
+
+The audited competition file is:
+
+    submissions/sasol_phase05_frozen_lightgbm_submission.csv
+
+This file represents the first submission produced from the frozen
+temporal-validation modelling framework.
+
+Leaderboard feedback must be recorded separately and must not silently
+change the frozen modelling pipeline.
+

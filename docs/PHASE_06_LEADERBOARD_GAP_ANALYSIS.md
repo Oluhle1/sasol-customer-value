@@ -322,3 +322,96 @@ enough to retain but small in absolute magnitude.
 They are not interpreted as sufficient to explain the current public
 leaderboard gap.
 
+
+---
+
+## 10. Phase 06B - Drift-Sensitive Feature Ablation
+
+Phase 03E identified observed_tenure_days as the strongest distribution
+shift between the latest historical feature origin and the final
+competition origin.
+
+Its latest-to-final standardized mean difference was approximately:
+
+    +0.53
+
+It was the only predictor with absolute SMD greater than or equal to:
+
+    0.50
+
+Phase 06B therefore tests whether dependence on this feature reduces
+forward temporal generalization.
+
+Exactly one predictor is removed:
+
+    observed_tenure_days
+
+The modelling feature count changes from:
+
+    276
+
+to:
+
+    275.
+
+No additional feature is added or modified.
+
+---
+
+## 11. Phase 06B Control Models
+
+The ablation is compared against the currently accepted specification
+for each target.
+
+Fuel control:
+
+    LightGBM regression
+    num_leaves = 15
+    min_data_in_leaf = 100
+    Phase 06A temporal recency weighting enabled
+    half-life = 2 quarters
+
+Non-fuel control:
+
+    LightGBM regression
+    num_leaves = 15
+    min_data_in_leaf = 50
+    Phase 06A temporal recency weighting enabled
+    half-life = 2 quarters
+
+Opportunity control:
+
+    LightGBM multiclass
+    num_leaves = 31
+    min_data_in_leaf = 50
+    class-weight exponent = 0.50
+    temporal recency weighting disabled
+
+Thus the only Phase 06B intervention is removal of:
+
+    observed_tenure_days
+
+---
+
+## 12. Phase 06B Acceptance Rule
+
+Validation folds:
+
+    F2
+    F3
+    F4
+
+For Fuel and non-fuel, the ablation is accepted only if:
+
+1. row-weighted F2-F4 RMSE improves;
+2. F4 RMSE does not deteriorate;
+3. at least two of three folds improve.
+
+For Opportunity, the ablation is accepted only if:
+
+1. row-weighted F2-F4 weighted F1 improves;
+2. F4 weighted F1 does not deteriorate;
+3. at least two of three folds improve.
+
+These rules are defined before Phase 06B results are observed.
+

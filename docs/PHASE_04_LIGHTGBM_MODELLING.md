@@ -2355,3 +2355,174 @@ The class-weight exponent is now frozen.
 No nearby weighting exponents will be tested without a new substantive
 modelling hypothesis.
 
+
+---
+
+## 88. Phase 04M - Final Model Specification Freeze
+
+Phase 04 experimentation is now closed.
+
+All three competition targets have an accepted modelling specification
+selected through expanding-window temporal validation.
+
+No further structural or class-weight parameter search will be
+performed before final training.
+
+---
+
+## 89. Accepted Fuel Specification
+
+Model:
+
+    LightGBM regression
+
+Predictors:
+
+    276 frozen Phase 03 predictors
+
+Accepted structural parameters:
+
+    num_leaves = 15
+    min_data_in_leaf = 100
+
+All other common LightGBM parameters remain those defined by the
+Phase 04 baseline configuration.
+
+Latest temporal validation result:
+
+    F4 RMSE = 0.600904
+
+The specification reflects successful controlled experiments in:
+
+    lower tree complexity
+    stronger terminal-leaf support.
+
+---
+
+## 90. Accepted Non-Fuel Specification
+
+Model:
+
+    LightGBM regression
+
+Predictors:
+
+    276 frozen Phase 03 predictors
+
+Accepted structural parameters:
+
+    num_leaves = 15
+    min_data_in_leaf = 50
+
+Latest temporal validation result:
+
+    F4 RMSE = 0.742953
+
+The two-part occurrence-times-magnitude architecture remains a
+documented research candidate but was not promoted because the latest
+F4 temporal origin deteriorated slightly.
+
+Direct regression remains the accepted model.
+
+---
+
+## 91. Accepted Opportunity Specification
+
+Model:
+
+    LightGBM multiclass
+
+Predictors:
+
+    276 frozen Phase 03 predictors
+
+Structural parameters:
+
+    num_leaves = 31
+    min_data_in_leaf = 50
+
+Training class weighting:
+
+    weight proportional to
+    (N / (K * n_c)) ^ 0.50
+
+Prediction rule:
+
+    maximum class probability
+
+Latest temporal validation result:
+
+    F4 weighted F1 = 0.504765
+
+A stronger weighting exponent of:
+
+    0.75
+
+was rejected because weighted F1 deteriorated at every temporal
+validation origin.
+
+---
+
+## 92. Final Boosting-Round Rule
+
+Final models cannot use competition labels for early stopping.
+
+The number of boosting rounds must therefore be determined entirely
+from historical temporal validation.
+
+The frozen rule is:
+
+    use the accepted model's F4 best iteration.
+
+F4 is selected because it is the latest labelled forecasting origin and
+the closest available temporal analogue to the final 2025-12-01
+competition forecasting origin.
+
+Accepted final boosting rounds are:
+
+    Fuel           168
+    Non-fuel       145
+    Opportunity    232
+
+No extrapolation beyond the F4 best iteration is performed.
+
+This rule is fixed before final competition training.
+
+---
+
+## 93. Final Historical Training Population
+
+Final models will train on all five labelled customer-origin snapshots:
+
+    2024-09-01
+    2024-12-01
+    2025-03-01
+    2025-06-01
+    2025-09-01
+
+Total supervised observations:
+
+    22,679
+
+Final predictions will be generated for:
+
+    2025-12-01
+
+Competition observations:
+
+    5,488
+
+No competition-period labels are available or used.
+
+---
+
+## 94. Phase 04M Decision
+
+Phase 04 modelling experimentation is frozen.
+
+Final model construction must reproduce exactly the accepted
+specifications recorded above.
+
+Any later model change must be treated as a new explicitly documented
+experiment rather than silently altering the final pipeline.
+

@@ -1,0 +1,77 @@
+{
+  "specification_version": "phase04m_v1",
+  "status": "FROZEN",
+
+  "training_population": {
+    "historical_rows": 22679,
+    "competition_rows": 5488,
+    "historical_cutoffs": [
+      "2024-09-01",
+      "2024-12-01",
+      "2025-03-01",
+      "2025-06-01",
+      "2025-09-01"
+    ],
+    "prediction_cutoff": "2025-12-01"
+  },
+
+  "feature_policy": {
+    "canonical_phase03_features": 281,
+    "selected_features": 276,
+    "feature_manifest": "data/processed/phase04/model_feature_manifest.csv"
+  },
+
+  "boosting_round_selection": {
+    "rule": "accepted_F4_best_iteration",
+    "rationale": "F4 is the nearest labelled temporal analogue to the final competition forecasting origin"
+  },
+
+  "fuel": {
+    "model_family": "lightgbm",
+    "objective": "regression",
+    "target": "CLV_fuel",
+    "evaluation_metric": "rmse",
+    "num_leaves": 15,
+    "min_data_in_leaf": 100,
+    "num_boost_round": 168,
+    "prediction_floor": 0.0,
+    "class_weighting": null,
+    "accepted_f4_metric": 0.600904
+  },
+
+  "nonfuel": {
+    "model_family": "lightgbm",
+    "objective": "regression",
+    "target": "CLV_nonfuel",
+    "evaluation_metric": "rmse",
+    "num_leaves": 15,
+    "min_data_in_leaf": 50,
+    "num_boost_round": 145,
+    "prediction_floor": 0.0,
+    "class_weighting": null,
+    "accepted_f4_metric": 0.742953
+  },
+
+  "opportunity": {
+    "model_family": "lightgbm",
+    "objective": "multiclass",
+    "target": "Opportunity_class_id",
+    "evaluation_metric": "weighted_f1",
+    "num_class": 17,
+    "num_leaves": 31,
+    "min_data_in_leaf": 50,
+    "num_boost_round": 232,
+    "class_weight_exponent": 0.5,
+    "decision_rule": "argmax_probability",
+    "accepted_f4_metric": 0.504765
+  },
+
+  "frozen_principles": {
+    "random_cross_validation": false,
+    "hyperparameter_search_after_freeze": false,
+    "ensembling": false,
+    "competition_data_used_for_training": false,
+    "competition_labels_used": false,
+    "feature_set_changes_allowed": false
+  }
+}

@@ -174,3 +174,151 @@ No combined local competition score is constructed because the official
 leaderboard aggregation should not be approximated without an explicit
 verified formula.
 
+
+---
+
+## 8. Phase 06A Results - Temporal Recency Weighting
+
+Phase 06A evaluated the pre-registered two-quarter temporal half-life
+across validation folds F2-F4.
+
+The intervention changed only the training observation weights.
+
+All structural model parameters and predictors remained frozen.
+
+### Fuel
+
+Results:
+
+    F2:
+        accepted RMSE     0.631574
+        recency RMSE      0.630047
+        change           -0.001527
+
+    F3:
+        accepted RMSE     0.595067
+        recency RMSE      0.595561
+        change           +0.000493
+
+    F4:
+        accepted RMSE     0.600904
+        recency RMSE      0.600903
+        change           -0.000001
+
+Two of three folds improved.
+
+Row-weighted F2-F4 RMSE improved from:
+
+    0.608557
+
+to:
+
+    0.608243.
+
+Fuel therefore satisfies the pre-registered Phase 06A acceptance rule.
+
+Temporal recency weighting is accepted for Fuel.
+
+---
+
+### Non-Fuel
+
+Results:
+
+    F2:
+        accepted RMSE     0.782150
+        recency RMSE      0.782179
+        change           +0.000029
+
+    F3:
+        accepted RMSE     0.739133
+        recency RMSE      0.737508
+        change           -0.001624
+
+    F4:
+        accepted RMSE     0.742953
+        recency RMSE      0.742726
+        change           -0.000227
+
+Two of three folds improved.
+
+Row-weighted F2-F4 RMSE improved from:
+
+    0.753949
+
+to:
+
+    0.753336.
+
+Non-fuel therefore satisfies the pre-registered Phase 06A acceptance
+rule.
+
+Temporal recency weighting is accepted for non-fuel.
+
+---
+
+### Opportunity
+
+Results:
+
+    F2:
+        accepted weighted F1     0.475097
+        recency weighted F1      0.474661
+        change                  -0.000437
+
+    F3:
+        accepted weighted F1     0.496634
+        recency weighted F1      0.495572
+        change                  -0.001063
+
+    F4:
+        accepted weighted F1     0.504765
+        recency weighted F1      0.510985
+        change                  +0.006220
+
+Only one of three folds improved.
+
+Although the row-weighted F2-F4 metric increased from:
+
+    0.492759
+
+to:
+
+    0.494462,
+
+the experiment fails the pre-registered requirement that at least two
+of three folds improve.
+
+Temporal recency weighting is therefore rejected for Opportunity.
+
+The strong F4 improvement is retained as evidence of possible
+latest-regime sensitivity but does not override the pre-registered
+selection rule.
+
+---
+
+## 9. Phase 06A Decision
+
+Accepted:
+
+    Fuel:
+        temporal half-life = 2 quarters
+
+    Non-fuel:
+        temporal half-life = 2 quarters
+
+Rejected:
+
+    Opportunity:
+        temporal weighting
+
+The accepted Opportunity model therefore remains the Phase 04D
+square-root class-weighted multiclass LightGBM without temporal
+recency weighting.
+
+The Phase 06A regression improvements are statistically consistent
+enough to retain but small in absolute magnitude.
+
+They are not interpreted as sufficient to explain the current public
+leaderboard gap.
+

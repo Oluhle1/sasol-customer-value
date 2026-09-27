@@ -415,3 +415,160 @@ For Opportunity, the ablation is accepted only if:
 
 These rules are defined before Phase 06B results are observed.
 
+
+---
+
+## 13. Phase 06B Results - Drift-Sensitive Feature Ablation
+
+Phase 06B tested removal of:
+
+    observed_tenure_days
+
+This predictor had previously been identified as the strongest
+latest-to-final distribution shift, with absolute standardized mean
+difference of approximately:
+
+    0.53
+
+The feature count changed from:
+
+    276
+
+to:
+
+    275
+
+for the experimental models.
+
+No other predictor or model parameter was changed.
+
+---
+
+### Fuel
+
+Results:
+
+    F2:
+        control RMSE       0.630047
+        no-tenure RMSE     0.629614
+        change            -0.000433
+
+    F3:
+        control RMSE       0.595561
+        no-tenure RMSE     0.596055
+        change            +0.000495
+
+    F4:
+        control RMSE       0.600903
+        no-tenure RMSE     0.601321
+        change            +0.000417
+
+Only one of three folds improved.
+
+Row-weighted F2-F4 RMSE worsened from:
+
+    0.608243
+
+to:
+
+    0.608420.
+
+The Fuel ablation is rejected.
+
+---
+
+### Non-Fuel
+
+Results:
+
+    F2:
+        control RMSE       0.782179
+        no-tenure RMSE     0.784078
+        change            +0.001899
+
+    F3:
+        control RMSE       0.737508
+        no-tenure RMSE     0.739711
+        change            +0.002202
+
+    F4:
+        control RMSE       0.742726
+        no-tenure RMSE     0.743380
+        change            +0.000655
+
+No validation fold improved.
+
+Row-weighted F2-F4 RMSE worsened from:
+
+    0.753336
+
+to:
+
+    0.754897.
+
+The non-fuel ablation is rejected.
+
+---
+
+### Opportunity
+
+Results:
+
+    F2:
+        control weighted F1       0.475097
+        no-tenure weighted F1     0.477869
+        change                   +0.002772
+
+    F3:
+        control weighted F1       0.496634
+        no-tenure weighted F1     0.495417
+        change                   -0.001217
+
+    F4:
+        control weighted F1       0.504765
+        no-tenure weighted F1     0.496956
+        change                   -0.007809
+
+Only one of three folds improved.
+
+Row-weighted F2-F4 weighted F1 fell from:
+
+    0.492759
+
+to:
+
+    0.490466.
+
+The deterioration was especially pronounced at the latest validation
+origin.
+
+The Opportunity ablation is rejected.
+
+---
+
+## 14. Phase 06B Decision
+
+The observed_tenure_days predictor is retained for all three targets.
+
+Although its marginal feature distribution shifts between the latest
+historical and competition origins, temporal ablation demonstrates that
+removing it reduces predictive performance.
+
+Therefore distribution shift alone is not treated as sufficient
+evidence for feature removal.
+
+Current accepted state remains:
+
+    Fuel:
+        276 predictors
+        Phase 06A recency weighting enabled
+
+    Non-fuel:
+        276 predictors
+        Phase 06A recency weighting enabled
+
+    Opportunity:
+        276 predictors
+        alpha 0.50 class weighting
+        no temporal recency weighting
+

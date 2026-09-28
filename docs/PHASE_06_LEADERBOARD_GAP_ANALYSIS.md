@@ -870,3 +870,106 @@ model-selection mechanism.
 
 The Phase 06C architecture remains rejected.
 
+
+---
+
+# Phase 06R-G0 — Exact Grok Architecture Temporal Replication
+
+Public benchmark:
+
+    0.301425001
+
+Purpose:
+
+Determine whether the complete architecture that achieved the stronger
+public leaderboard score also generalises under nested temporal
+validation.
+
+F1 was excluded because G0 requires an earlier labelled period for
+internal recipe selection.
+
+Nested outer folds:
+
+    F2: tune Dec-2024 -> evaluate Mar-2025
+    F3: tune Mar-2025 -> evaluate Jun-2025
+    F4: tune Jun-2025 -> evaluate Sep-2025
+
+## Results
+
+Fuel:
+
+    S0 row-weighted RMSE     0.608626
+    G0 row-weighted RMSE     0.611020
+    folds won by G0          1 / 3
+
+    F4:
+        S0                  0.600904
+        G0                  0.605988
+
+Decision:
+
+    REJECT
+
+Nonfuel:
+
+    S0 row-weighted RMSE     0.754297
+    G0 row-weighted RMSE     0.757748
+    folds won by G0          1 / 3
+
+    F4:
+        S0                  0.742953
+        G0                  0.750256
+
+Decision:
+
+    REJECT
+
+Opportunity:
+
+    S0 row-weighted F1       0.485527
+    G0 row-weighted F1       0.485776
+    folds won by G0          2 / 3
+
+    F4:
+        S0                  0.504765
+        G0                  0.499061
+
+The aggregate difference was only:
+
+    +0.000249 weighted F1
+
+and the latest temporal origin deteriorated materially.
+
+## Interpretation
+
+The 0.301425001 public leaderboard result is retained as valid
+same-challenge empirical evidence.
+
+However, the full architecture did not demonstrate robust superiority
+under nested temporal validation.
+
+Fuel and nonfuel both deteriorated overall.
+
+Opportunity was effectively tied overall and deteriorated at the latest
+historical forecasting origin.
+
+The selected internal recipes also varied across temporal origins.
+
+## Decision
+
+    PROMOTE G0 DIRECTION: NO
+
+The G0 architecture will not replace S0.
+
+Individual G0 components will not be searched independently merely
+because the public score was higher.
+
+S0 remains the primary validated architecture.
+
+Phase 06R-G0 is closed.
+
+Next research hypothesis:
+
+    Phase 06R-C
+    Sequence-aware CLV representation.
+

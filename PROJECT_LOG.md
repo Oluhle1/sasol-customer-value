@@ -103,3 +103,10 @@ Next phase:
 
 Phase 02 - Label Reconstruction and Target Forensics.
 
+
+
+## 2026-10-10 — Monthly pipeline and current best
+
+Recovered from the Windows working folder and documented on 2026-10-13. The October baseline advanced from 0.304344557 to 0.309164264 through monthly Opportunity training, category-dynamics features, two-part nonfuel and small monthly fuel models. A group-specialist upload deteriorated publicly and was excluded from later best submissions. Subsequent local diversity and compact-model tests were rejected.
+
+See [the submission journal](submission_journal_2026-10-10/README.md) for exact files and score lineage, [methods](submission_journal_2026-10-10/METHODS_AND_DECISIONS.md) for recipes and rationale, and [results](docs/OCT10_EXPERIMENT_RESULTS.md) for measured validation and failures. The September frozen specification remains a historical baseline, not the current October recipe.

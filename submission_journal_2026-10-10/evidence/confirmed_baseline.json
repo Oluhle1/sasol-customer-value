@@ -1,0 +1,293 @@
+{
+  "public_score": 0.304344557,
+  "source": "/mnt/c/Users/oluhl/Downloads/submission.csv",
+  "sha256": "f63072c009a6049fb0fbd59242a869e46d7d8c6fcc9d4738d79c70dda75081fa",
+  "historical_report": {
+    "target_board": 0.318678065,
+    "reconstruction": "0.3*(1-rmse_fuel/0.6905)+0.3*(1-rmse_shop/0.9296)+0.4*weighted_f1",
+    "june": {
+      "rmse_fuel": 0.5943270122504838,
+      "rmse_nonfuel": 0.737693006793616,
+      "weighted_f1": 0.5007931647170651,
+      "board": 0.3040334492293108
+    },
+    "september": {
+      "rmse_fuel": 0.5970499880061185,
+      "rmse_nonfuel": 0.7427168603796318,
+      "weighted_f1": 0.5130711211952799,
+      "board": 0.3061402913350257
+    },
+    "blend": {
+      "fuel": {
+        "lgb": 0.4,
+        "hurdle": 0.35,
+        "resid": 0.25
+      },
+      "shop": {
+        "lgb": 0.55,
+        "cat": 0.45
+      },
+      "fuel_shift": 0.0,
+      "shop_shift": 0.0
+    },
+    "opportunity": {
+      "family_alpha": 0.0,
+      "specialist_alpha": 0.0,
+      "multipliers": {
+        "growth": 1.25,
+        "adopt": 2.0,
+        "food": 2.5,
+        "fuel": 1.0,
+        "bev": 1.0
+      }
+    },
+    "importance_fuel": [
+      [
+        "fuel_ses_fast_z",
+        164.0
+      ],
+      [
+        "fuel_bgnbd_z",
+        140.0
+      ],
+      [
+        "fuel_cadence_z",
+        129.0
+      ],
+      [
+        "site_loo_fuel_z",
+        120.5
+      ],
+      [
+        "recency_days",
+        115.0
+      ],
+      [
+        "fuel_ses_z",
+        115.0
+      ],
+      [
+        "gap_cv",
+        106.5
+      ],
+      [
+        "overdue",
+        106.0
+      ],
+      [
+        "weekend_share",
+        101.5
+      ],
+      [
+        "fuel_price_q1",
+        89.5
+      ],
+      [
+        "fuel_gap_mean",
+        87.5
+      ],
+      [
+        "gap_max",
+        83.0
+      ],
+      [
+        "m4_fuel_l",
+        82.0
+      ],
+      [
+        "fuel_fill_recent",
+        80.5
+      ],
+      [
+        "gap_mean",
+        78.0
+      ],
+      [
+        "fuel_recency",
+        77.5
+      ],
+      [
+        "fuel_gap_cv",
+        77.5
+      ],
+      [
+        "primary_share",
+        75.5
+      ],
+      [
+        "m6_fuel_l",
+        73.5
+      ],
+      [
+        "recency_over_maxgap",
+        67.0
+      ]
+    ],
+    "importance_shop": [
+      [
+        "recency_days",
+        91.0
+      ],
+      [
+        "shop_tx",
+        90.5
+      ],
+      [
+        "shop_bgnbd_z",
+        87.0
+      ],
+      [
+        "shop_recency",
+        81.0
+      ],
+      [
+        "gap_cv",
+        72.0
+      ],
+      [
+        "shop_cadence_z",
+        72.0
+      ],
+      [
+        "price_gap",
+        70.0
+      ],
+      [
+        "site_loo_shop_z",
+        68.5
+      ],
+      [
+        "shop_amt_life",
+        67.5
+      ],
+      [
+        "shop_per_tx",
+        67.5
+      ],
+      [
+        "fuel_cadence_z",
+        67.5
+      ],
+      [
+        "fuel_price_q1",
+        66.5
+      ],
+      [
+        "primary_share",
+        64.5
+      ],
+      [
+        "site_loo_fuel_z",
+        61.5
+      ],
+      [
+        "shop_ses_z",
+        60.0
+      ],
+      [
+        "evening_share",
+        57.5
+      ],
+      [
+        "fuel_rate_ratio",
+        56.5
+      ],
+      [
+        "age_days",
+        56.0
+      ],
+      [
+        "shop_z_eb",
+        55.5
+      ],
+      [
+        "fuel_bgnbd_z",
+        55.5
+      ]
+    ],
+    "importance_opp": [
+      [
+        "site_loo_fuel_z",
+        1315.5
+      ],
+      [
+        "site_loo_shop_z",
+        1170.0
+      ],
+      [
+        "weekend_share",
+        1097.5
+      ],
+      [
+        "evening_share",
+        1087.0
+      ],
+      [
+        "gap_cv",
+        1042.0
+      ],
+      [
+        "fuel_fill_ratio",
+        1021.5
+      ],
+      [
+        "fuel_rate_ratio",
+        1003.0
+      ],
+      [
+        "fuel_price_q1",
+        968.5
+      ],
+      [
+        "fuel_modal_dow",
+        957.0
+      ],
+      [
+        "primary_share",
+        956.5
+      ],
+      [
+        "morning_share",
+        920.5
+      ],
+      [
+        "fuel_q_cv",
+        892.5
+      ],
+      [
+        "price_gap",
+        853.5
+      ],
+      [
+        "fuel_dz",
+        847.5
+      ],
+      [
+        "gap_max",
+        844.5
+      ]
+    ],
+    "test_rows": 5488,
+    "test_means": {
+      "CLV_fuel": 1.48034620223261,
+      "CLV_nonfuel": 0.7347289171803012
+    },
+    "test_opportunity_share": {
+      "Stable": 0.3212,
+      "Inactivity": 0.3034,
+      "Existing-category growth: Fuel": 0.2905,
+      "Existing-category growth: Other": 0.0488,
+      "Existing-category growth: Food & beverage": 0.0302,
+      "Existing-category growth: Beverages": 0.0047,
+      "New category adoption: Other": 0.0009,
+      "New category adoption: Food & beverage": 0.0002
+    },
+    "test_bias_correction": {
+      "fuel": -0.01877631358243748,
+      "shop": -0.01853510386260194
+    },
+    "september_board": 0.3061402913350257,
+    "note": "Local board is the reconstruction, not a Zindi upload. A blend was kept only when June and September both agreed."
+  },
+  "note": "Confirmed by user; submission bytes match sasol-fresh/submission.csv. Historical metrics are recorded, not yet independently reproduced."
+}

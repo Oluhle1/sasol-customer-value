@@ -1,0 +1,11 @@
+{
+  "accepted": [],
+  "screen_gains": [
+    -0.0005055836363476729,
+    -6.057597279940374e-05
+  ],
+  "features": 305,
+  "catboost_weight": 0.25,
+  "rule": "Beat the better of confirmed fuel baseline and current fuel control on both June and September, mean gain >=0.001; improve at least 5 of 6 origins against current fuel control, mean gain >=0.001, no loss >0.002.",
+  "extra_control": "Monthly 40/35/25 direct/hurdle/residual fuel model with same 305 features; the current publicly confirmed fuel recipe."
+}

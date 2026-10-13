@@ -1,0 +1,17 @@
+{
+  "accepted": false,
+  "status": "early_rejected",
+  "main_gains": [
+    -0.0009013195430884
+  ],
+  "features": 305,
+  "variant": "compact_opportunity",
+  "model_params": {
+    "num_leaves": 31,
+    "min_child_samples": 60,
+    "reg_lambda": 2.4
+  },
+  "rule": "Improve June and September with mean F1 gain >=0.001, then improve >=5 of 6 evaluated origins, mean gain >=0.001, no loss >0.002.",
+  "reason": "June F1 below the confirmed baseline; stopped before completing September because the screen cannot pass.",
+  "public_score": null
+}

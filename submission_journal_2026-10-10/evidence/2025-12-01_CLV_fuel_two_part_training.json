@@ -1,0 +1,16 @@
+[
+  {
+    "seed": 7,
+    "purchase_rounds": 134,
+    "conditional_rounds": 124,
+    "train_rows": 59300,
+    "latest_training_origin": "2025-09-01"
+  },
+  {
+    "seed": 21,
+    "purchase_rounds": 118,
+    "conditional_rounds": 118,
+    "train_rows": 59300,
+    "latest_training_origin": "2025-09-01"
+  }
+]

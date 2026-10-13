@@ -1,0 +1,19 @@
+{
+  "baseline": "/mnt/c/Users/oluhl/sasol-customer-value/outputs/oct10/baseline_0304344557.csv",
+  "baseline_sha256": "f63072c009a6049fb0fbd59242a869e46d7d8c6fcc9d4738d79c70dda75081fa",
+  "output": "/mnt/c/Users/oluhl/sasol-customer-value/submissions/sasol_oct10_monthly_experiment.csv",
+  "rows": 5488,
+  "changed_opportunity_labels": 671,
+  "chosen_model": "monthly",
+  "regression_columns_preserved": true,
+  "june_september_f1_gains_over_recorded_best": [
+    0.00859551346554821,
+    6.89081029722205e-05
+  ],
+  "gains_over_larger_available_control_or_recorded_best": [
+    0.005764116570391331,
+    6.89081029722205e-05
+  ],
+  "experimental_export": true,
+  "validation_gate_passed": false
+}

@@ -1,0 +1,15 @@
+{
+  "public_score": 0.306894638,
+  "best_public_score": 0.307534678,
+  "gain_vs_best": -0.00064004,
+  "score_source": "user-reported Zindi public leaderboard result",
+  "submission": "/mnt/c/Users/oluhl/sasol-customer-value/submissions/sasol_oct10_group_specialist.csv",
+  "sha256": "dd58cd0301652114ef39e1ed0842cda068a1e264d1fada4e888d26bcc9624b7b",
+  "status": "rejected_public_regression",
+  "best_baseline": "outputs/oct10/baseline_0307534678.csv",
+  "local_gains": [
+    0.00014368896323235791,
+    0.0015618875077223482
+  ],
+  "validation_gate_passed": false
+}

@@ -1,0 +1,16 @@
+{
+  "folder": "03_group_specialist_rejected",
+  "csv": "submissions/sasol_oct10_group_specialist.csv",
+  "baseline": "submissions/sasol_oct10_category_dynamics.csv",
+  "public_score": "0.306894638",
+  "baseline_public_score": "0.307534678",
+  "gain": "-0.000640040",
+  "changed_targets": [
+    "Opportunity"
+  ],
+  "sha256": "dd58cd0301652114ef39e1ed0842cda068a1e264d1fada4e888d26bcc9624b7b",
+  "score_source": "User-reported public leaderboard result",
+  "keep_as_best": false,
+  "training_source": "source_snapshot/experiments/oct10",
+  "baseline_sha256": "a70340046ff7971c80bfee9213a641ccda37523472202166f818ee3be910ea44"
+}

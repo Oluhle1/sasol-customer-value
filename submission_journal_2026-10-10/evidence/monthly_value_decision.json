@@ -1,0 +1,14 @@
+{
+  "accepted": [],
+  "gains": {
+    "CLV_fuel": [
+      0.002195475349821119,
+      -0.0011027511427244008
+    ],
+    "CLV_nonfuel": [
+      0.002221078046908409,
+      -0.0006097391595462076
+    ]
+  },
+  "rule": "Both folds improve over the confirmed baseline's recorded RMSE; mean reduction >=0.001"
+}

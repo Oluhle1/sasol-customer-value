@@ -1,0 +1,15 @@
+{
+  "accepted": [],
+  "screen_gains": [
+    -0.0018511064714282766,
+    -0.0011072211313718494
+  ],
+  "features": 305,
+  "blend": {
+    "direct": 0.4,
+    "hurdle": 0.35,
+    "residual": 0.25
+  },
+  "rule": "Beat the better of recorded fuel baseline and smaller-model control on both June and September, mean gain >=0.001; improve at least 5 of 6 origins against control, mean gain >=0.001, no loss >0.002.",
+  "extra_control": "Same fixed fuel blend with low-capacity enriched monthly models; not original submission's exact validation predictions."
+}

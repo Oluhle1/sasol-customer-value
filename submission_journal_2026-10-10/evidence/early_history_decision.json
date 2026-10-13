@@ -1,0 +1,50 @@
+{
+  "accepted": false,
+  "main_gains": [
+    0.0009709864385837319,
+    -0.0008621607183288971
+  ],
+  "classes": [
+    "Existing-category growth: Beverages",
+    "Existing-category growth: Food & beverage",
+    "Existing-category growth: Fuel",
+    "Existing-category growth: Other",
+    "Inactivity",
+    "New category adoption: Beverages",
+    "New category adoption: Braai & Ice",
+    "New category adoption: Breads & rolls",
+    "New category adoption: Confectionary",
+    "New category adoption: Food & beverage",
+    "New category adoption: Groceries",
+    "New category adoption: Ice-cream",
+    "New category adoption: Lubricants",
+    "New category adoption: Other",
+    "New category adoption: Snacking",
+    "New category adoption: Tobacco",
+    "Stable"
+  ],
+  "multipliers": [
+    1.3,
+    2.0,
+    1.0,
+    1.3,
+    1.0,
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    0.85
+  ],
+  "features": 305,
+  "variant": "early_history",
+  "weight_decay_months": null,
+  "rule": "Improve June and September with mean F1 gain >=0.001, then improve >=5 of 6 evaluated origins, mean gain >=0.001, no loss >0.002.",
+  "extra_validation": "March-fitted models forecast April/May; June-fitted models forecast July/August. Both controls use the same frozen fitting origins. Feature cutoffs use available past data at each forecast date."
+}

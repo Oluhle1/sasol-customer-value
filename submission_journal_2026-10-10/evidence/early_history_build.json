@@ -1,0 +1,29 @@
+{
+  "added_origins": [
+    {
+      "cutoff": "2024-06-01",
+      "customers": 2745,
+      "prior_label_origin": "2024-03-01",
+      "prior_outcomes_end": "2024-06-01",
+      "target_end": "2024-09-01"
+    },
+    {
+      "cutoff": "2024-07-01",
+      "customers": 3083,
+      "prior_label_origin": "2024-04-01",
+      "prior_outcomes_end": "2024-07-01",
+      "target_end": "2024-10-01"
+    },
+    {
+      "cutoff": "2024-08-01",
+      "customers": 3339,
+      "prior_label_origin": "2024-05-01",
+      "prior_outcomes_end": "2024-08-01",
+      "target_end": "2024-11-01"
+    }
+  ],
+  "origins": 16,
+  "final_training_rows": 68467,
+  "features": 305,
+  "existing_feature_tables_unchanged": true
+}

@@ -1,0 +1,11 @@
+{
+  "accepted": [],
+  "screen_gains": [
+    0.0007309280982057409,
+    0.00023159824310770016
+  ],
+  "features": 305,
+  "residual_weight": 0.25,
+  "rule": "Beat the better of recorded fuel baseline and two-part control on both June and September, mean gain >=0.001; improve at least 5 of 6 origins against two-part control, mean gain >=0.001, no loss >0.002.",
+  "extra_control": "Monthly 50/50 direct/hurdle fuel model with same 305 features; not original submission's exact validation predictions."
+}

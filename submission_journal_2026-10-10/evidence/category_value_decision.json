@@ -1,0 +1,22 @@
+{
+  "accepted": [],
+  "screen": {
+    "CLV_fuel": {
+      "gains": [
+        -0.00028291150385895136,
+        -0.0004482308838609228
+      ],
+      "passed": false
+    },
+    "CLV_nonfuel": {
+      "gains": [
+        -0.0003778605043821548,
+        -0.0008145167008946075
+      ],
+      "passed": false
+    }
+  },
+  "features": 305,
+  "rule": "Beat the better of recorded baseline and feature-control RMSE on June and September with mean gain >=0.001; then beat the feature control in at least 5 of 6 origins, mean gain >=0.001, no loss >0.002.",
+  "extra_control": "Same monthly low-capacity regressors with original 197 features; not the historical best submission recipe."
+}

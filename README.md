@@ -1,59 +1,31 @@
 # Sasol Customer Value Recruitment Challenge
 
-## Project Purpose
+## Current result
 
-This repository documents the development of a reproducible machine-learning solution for the Sasol Customer Value Recruitment Challenge.
+Latest recorded best public score: **0.309164264**, reported by the user after the October 10, 2026 Zindi submission. The starting October baseline was **0.304344557**, a gain of **0.004819707**. Private score is unknown.
 
-The project is being approached as an applied data science research project rather than only as a leaderboard optimisation exercise.
+The best file is [sasol_oct10_small_fuel_values.csv](submission_journal_2026-10-10/submissions/sasol_oct10_small_fuel_values.csv), with 5,488 customers. SHA-256: `11a4da31d86ab4738c2366b9c06f8439124991fc1e138bef685dbc38e61eb79a`.
 
-## Challenge Objectives
+| Component | Accepted recipe |
+|---|---|
+| Opportunity | Two-seed monthly LightGBM, category dynamics, 305 features and frozen class decision multipliers |
+| Nonfuel CLV | 50% direct regression + 50% positive-outcome hurdle, on the official transformed scale |
+| Fuel CLV | Small monthly LightGBM models, 40% direct + 35% hurdle + 25% prior-quarter residual |
 
-The solution must predict three customer outcomes for the following three-month period:
+Final training uses 13 monthly origins and 59,300 correlated customer snapshots. Nested temporal round selection excludes outcome windows crossing validation origins. Later failed experiments did not replace this baseline.
 
-1. Fuel customer lifetime value (CLV_fuel)
-2. Non-fuel customer lifetime value (CLV_nonfuel)
-3. Customer Opportunity behaviour
+## Results and decision record
 
-## Modelling Strategy
+- [Complete submission journal](submission_journal_2026-10-10/README.md): all five October uploads, exact CSVs, hashes and provenance.
+- [Methods and decision rationale](submission_journal_2026-10-10/METHODS_AND_DECISIONS.md): labels, features, formulas, parameters, seeds, temporal validation, acceptance gates and exceptions.
+- [Experiment results](docs/OCT10_EXPERIMENT_RESULTS.md): successful and failed tests and component validation metrics.
+- [Reproduction instructions](submission_journal_2026-10-10/REPRODUCIBILITY.md) and [canonical source](experiments/oct10/README.md).
+- [Rejected experiments](submission_journal_2026-10-10/FAILED_EXPERIMENTS.md) and [resume notes](submission_journal_2026-10-10/NEXT_ROUND.md).
 
-The project will use a temporal customer-snapshot modelling framework.
+The September Phase 04–06 documents describe an earlier frozen 276-feature baseline. The October experiments are a subsequent separate pipeline adapted from the newer local model source; the older frozen configuration is preserved as historical evidence.
 
-Historical transaction data will be converted into customer-level behavioural representations at specific forecasting cutoffs.
+## Repository layout
 
-The selected modelling family is LightGBM.
+`configs/` contains label and model policies; `src/` contains the original phase scripts and reference labels; `experiments/oct10/` contains the portable October pipeline; `docs/` contains technical reports; `submission_journal_2026-10-10/` preserves October prediction artifacts, evidence and source snapshots. Raw competition data, generated caches and trained models remain local.
 
-Separate models will be developed for:
-
-- Fuel CLV regression
-- Non-fuel CLV regression
-- Opportunity multiclass classification
-
-## Core Research Principles
-
-- No future-data leakage
-- Time-based validation
-- Reproducible experiments
-- Documented feature hypotheses
-- Documented modelling decisions
-- Error analysis before model changes
-- No blind model switching
-- Competition data will not be committed to this repository
-
-## Repository Structure
-
-    configs/       Configuration files
-    data/          Local competition and processed data
-    docs/          Research and technical documentation
-    experiments/   Experiment tracking
-    models/        Generated model artefacts
-    notebooks/     Exploratory and analytical notebooks
-    outputs/       Analysis outputs
-    src/           Reusable Python source code
-    submissions/   Generated competition submissions
-
-## Status
-
-Current phase: Project setup and documentation.
-
-Next phase: Phase 1 - Transaction Data Forensics.
-
+Public scores are user-reported results, not newly retrieved authenticated receipts. Repeated historical validation and overlapping label horizons limit claims about generalization. Recorded rationale is documented from source and evidence; unrecorded reasoning is not invented.

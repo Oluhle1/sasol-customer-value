@@ -1,0 +1,14 @@
+[
+  {
+    "seed": 11,
+    "rounds": 253,
+    "train_rows": 43858,
+    "latest_training_origin": "2025-06-01"
+  },
+  {
+    "seed": 29,
+    "rounds": 249,
+    "train_rows": 43858,
+    "latest_training_origin": "2025-06-01"
+  }
+]

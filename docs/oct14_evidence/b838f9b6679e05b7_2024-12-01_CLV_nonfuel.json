@@ -1,0 +1,28 @@
+{
+  "variant": "baseline_reconstruction",
+  "fingerprint": "b838f9b6679e05b7",
+  "target": "CLV_nonfuel",
+  "origin": "2024-12-01",
+  "latest_training_origin": "2024-09-01",
+  "train_rows": 3608,
+  "threads": 1,
+  "models": [
+    {
+      "seed": 11,
+      "direct_rounds": 40,
+      "purchase_rounds": 40,
+      "positive_value_rounds": 40
+    },
+    {
+      "seed": 29,
+      "direct_rounds": 40,
+      "purchase_rounds": 40,
+      "positive_value_rounds": 40
+    }
+  ],
+  "nested_selection": false,
+  "fallback_rounds": 40,
+  "original_fingerprint": "69532575cdb7ed16",
+  "migration": "Model-producing functions params/stack/fit_one/forecast proven AST-identical to archived source v1 after normalizing only ID-array serialization to Unicode. Predictions checked exactly unchanged. Measurement correction and calendar feature construction do not alter baseline fitted predictions.",
+  "original_source_snapshot_sha256": "5be8618441a32bedbeaa4d24d781ed26c8e0e069e21fff10f70d77d7f6acfc0d"
+}

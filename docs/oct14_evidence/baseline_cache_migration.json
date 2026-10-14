@@ -1,0 +1,52 @@
+{
+  "baseline_model_AST_identical": true,
+  "new_fingerprint": "b838f9b6679e05b7",
+  "records": [
+    {
+      "old": "69532575cdb7ed16_2024-12-01_Opportunity.json",
+      "new": "b838f9b6679e05b7_2024-12-01_Opportunity.npz",
+      "prediction_sha256": "364bcf57a26db8881669cbdf7b8110bb7c3a98de9c40a76d36899c8c9923fd99"
+    },
+    {
+      "old": "69532575cdb7ed16_2024-12-01_CLV_fuel.json",
+      "new": "b838f9b6679e05b7_2024-12-01_CLV_fuel.npz",
+      "prediction_sha256": "d7efe99ca3e93c6d0fece73d7124eb65d57f1ef2e8705ddd4c1553047e2a471c"
+    },
+    {
+      "old": "69532575cdb7ed16_2024-12-01_CLV_nonfuel.json",
+      "new": "b838f9b6679e05b7_2024-12-01_CLV_nonfuel.npz",
+      "prediction_sha256": "dd337bd74beb7c7d2334d3f94354560bbcba04e08f9b219e1857ace501bf3096"
+    },
+    {
+      "old": "da0a6340021ed35b_2025-06-01_Opportunity.json",
+      "new": "b838f9b6679e05b7_2025-06-01_Opportunity.npz",
+      "prediction_sha256": "fb03492bd6254bb1abd603043828e4920ee778d0a769812bb3694e367c635dba"
+    },
+    {
+      "old": "da0a6340021ed35b_2025-06-01_CLV_fuel.json",
+      "new": "b838f9b6679e05b7_2025-06-01_CLV_fuel.npz",
+      "prediction_sha256": "54c2f73cfc61d653acb712f43fb871bca54e5cfc61563ac906fc7527e7dabf3e"
+    },
+    {
+      "old": "da0a6340021ed35b_2025-06-01_CLV_nonfuel.json",
+      "new": "b838f9b6679e05b7_2025-06-01_CLV_nonfuel.npz",
+      "prediction_sha256": "f093c65d16e11b80a3b1e530add8c0c628054932d26c57a21f438dbb9c8f5475"
+    },
+    {
+      "old": "da0a6340021ed35b_2025-09-01_Opportunity.json",
+      "new": "b838f9b6679e05b7_2025-09-01_Opportunity.npz",
+      "prediction_sha256": "8ff996c55d52924befa8f6bd038074846fb0446c0869688820deddc1ad9f780d"
+    },
+    {
+      "old": "da0a6340021ed35b_2025-09-01_CLV_fuel.json",
+      "new": "b838f9b6679e05b7_2025-09-01_CLV_fuel.npz",
+      "prediction_sha256": "08fcc550652b11355ac2ea27eb206824e969b788d6cc92fc3d2b9abfa33b8ed2"
+    },
+    {
+      "old": "da0a6340021ed35b_2025-09-01_CLV_nonfuel.json",
+      "new": "b838f9b6679e05b7_2025-09-01_CLV_nonfuel.npz",
+      "prediction_sha256": "84954b5b5f42f5bda1922fa787b24317b2d96ccea9eb3c9c38441da33eded16c"
+    }
+  ],
+  "fresh_reproduction_metrics_already_matched_archive": true
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "origin": "2025-06-01",
+    "rows": 4961,
+    "archived_class_prediction_ids_and_truth_match_panel": true
+  },
+  {
+    "origin": "2025-09-01",
+    "rows": 5238,
+    "archived_class_prediction_ids_and_truth_match_panel": true
+  }
+]

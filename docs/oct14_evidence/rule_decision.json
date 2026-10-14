@@ -1,0 +1,35 @@
+{
+  "accepted": false,
+  "comparisons": [
+    {
+      "variant": "fuel_rule_correction_v1",
+      "origin": "2025-06-01",
+      "target": "Opportunity",
+      "baseline_metric": 0.5095271507692096,
+      "candidate_metric": 0.493008126121514,
+      "gain": -0.016519024647695613,
+      "rows": 4961,
+      "missing_rows": 0,
+      "gain_vs_matching_logistic_control": -0.0017092091135259002,
+      "matching_control_metric": 0.4947173352350399,
+      "unobserved_training_classes": [],
+      "gain_vs_archived": -0.016519024647695613
+    },
+    {
+      "variant": "fuel_rule_correction_v1",
+      "origin": "2025-09-01",
+      "target": "Opportunity",
+      "baseline_metric": 0.5165568275346171,
+      "candidate_metric": 0.49782582475470455,
+      "gain": -0.01873100277991252,
+      "rows": 5238,
+      "missing_rows": 0,
+      "gain_vs_matching_logistic_control": 0.0013926354197049129,
+      "matching_control_metric": 0.49643318933499964,
+      "unobserved_training_classes": [],
+      "gain_vs_archived": -0.01873100277991252
+    }
+  ],
+  "public_score": null,
+  "export": "Not exported if screen fails. An eligible candidate requires separate final OOF refit and export audit."
+}

@@ -1,0 +1,3 @@
+variant,origin,target,baseline_metric,candidate_metric,gain,rows,missing_rows,gain_vs_matching_logistic_control,matching_control_metric,unobserved_training_classes,gain_vs_archived
+fuel_rule_correction_v1,2025-06-01,Opportunity,0.5095271507692096,0.493008126121514,-0.016519024647695613,4961,0,-0.0017092091135259002,0.4947173352350399,[],-0.016519024647695613
+fuel_rule_correction_v1,2025-09-01,Opportunity,0.5165568275346171,0.49782582475470455,-0.01873100277991252,5238,0,0.0013926354197049129,0.49643318933499964,[],-0.01873100277991252

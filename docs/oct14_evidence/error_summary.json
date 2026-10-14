@@ -1,0 +1,18 @@
+[
+  {
+    "origin": "2025-06-01",
+    "rows": 4961,
+    "majority_three_share": 0.8171739568635356,
+    "fuel_growth_support": 1311,
+    "median_adjusted_probability_margin": 0.2133978364246364,
+    "errors_low_margin_005": 461
+  },
+  {
+    "origin": "2025-09-01",
+    "rows": 5238,
+    "majority_three_share": 0.8161512027491409,
+    "fuel_growth_support": 1435,
+    "median_adjusted_probability_margin": 0.24833696166154356,
+    "errors_low_margin_005": 390
+  }
+]

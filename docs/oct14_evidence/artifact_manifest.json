@@ -1,0 +1,407 @@
+[
+  {
+    "path": "2025-06-01_confusion.csv",
+    "sha256": "55a15b93288dd5b5dabb3d3f66839596ed3db702162b6a58b5f56aab99dc557f",
+    "bytes": 1690
+  },
+  {
+    "path": "2025-09-01_confusion.csv",
+    "sha256": "6b6027074cbf3d3e7acfe44ad7c674b27f292cca4447451370e9024fcd7c26eb",
+    "bytes": 1692
+  },
+  {
+    "path": "69532575cdb7ed16_2024-12-01_CLV_fuel.json",
+    "sha256": "02f82ebe30ba411cb07cd483ee7e3043bf85bd3bc17e1d5be2d69a489fbfa44c",
+    "bytes": 581
+  },
+  {
+    "path": "69532575cdb7ed16_2024-12-01_CLV_nonfuel.json",
+    "sha256": "69b310a49166ba5503773e1493c8fcd853d2632bd9276b08ef344396d674b47c",
+    "bytes": 527
+  },
+  {
+    "path": "69532575cdb7ed16_2024-12-01_Opportunity.json",
+    "sha256": "6b4dc75f3f6c135d81306e64e03225b03ee4f48175ee1df377f63c8da02366f6",
+    "bytes": 384
+  },
+  {
+    "path": "RESULTS.md",
+    "sha256": "25d56c9d4fd8f90282eb4a25fea88554679177257b7772762689f9e48077b4cd",
+    "bytes": 10594
+  },
+  {
+    "path": "archive_alignment.json",
+    "sha256": "c35cc97478624065dacb781d696dd28ad56899863c91730915ee1d61b405a9b8",
+    "bytes": 241
+  },
+  {
+    "path": "audit.md",
+    "sha256": "c644d6eb6b721e34679a78022d039042d3e66494323674984a48d65ab4c00c4e",
+    "bytes": 4482
+  },
+  {
+    "path": "audit_decision.json",
+    "sha256": "ebb29fcaf637271bba61c35b5f0852e4e0131c8d1f386a7804a702b72084d925",
+    "bytes": 7054
+  },
+  {
+    "path": "audit_proposal.json",
+    "sha256": "ac6c5f10dfc1193e53c42c3d69d8bf3526d40f3e81a800d47d5aabb49968e386",
+    "bytes": 752
+  },
+  {
+    "path": "audit_stage_v1/audit.md",
+    "sha256": "9a9feddbacc16a76b40ea5867cecc32ef45d0edb63d91ca3153ad1e401c2de91",
+    "bytes": 4396
+  },
+  {
+    "path": "audit_stage_v1/audit_decision.json",
+    "sha256": "ebb29fcaf637271bba61c35b5f0852e4e0131c8d1f386a7804a702b72084d925",
+    "bytes": 7054
+  },
+  {
+    "path": "b838f9b6679e05b7_2024-12-01_CLV_fuel.json",
+    "sha256": "a00d6e3255309de45a6c9e5061754fb9bf8351e6240dbf6fc465a7120b834a28",
+    "bytes": 1045
+  },
+  {
+    "path": "b838f9b6679e05b7_2024-12-01_CLV_nonfuel.json",
+    "sha256": "d6d896c12b79def032b81278d3416860b2b9e43d41c86a2f1688fba4215e1cea",
+    "bytes": 991
+  },
+  {
+    "path": "b838f9b6679e05b7_2024-12-01_Opportunity.json",
+    "sha256": "c14d0c8ea9600c608e9e938ef73c89f70416e3829f49412c2e104d54563c9d34",
+    "bytes": 848
+  },
+  {
+    "path": "b838f9b6679e05b7_2025-01-01_Opportunity.json",
+    "sha256": "23e4ee659e953925b6e2ef5c8ca66f96891464269dd32524e3ce1484f09317d5",
+    "bytes": 384
+  },
+  {
+    "path": "b838f9b6679e05b7_2025-02-01_Opportunity.json",
+    "sha256": "8ddcd03a83e996ef880e99251c22107f3f3cadba0ad70f0d4b20fddb07e8fc09",
+    "bytes": 385
+  },
+  {
+    "path": "b838f9b6679e05b7_2025-03-01_Opportunity.json",
+    "sha256": "bb58b49367f82cfa16350cf5abd7ade43b79a96fe4c77ee7e0dc557153036b7e",
+    "bytes": 386
+  },
+  {
+    "path": "b838f9b6679e05b7_2025-04-01_Opportunity.json",
+    "sha256": "88ad73bbe834badfe2a7892f92025af2a808f424c47e6a2760114e626ad4ce8e",
+    "bytes": 386
+  },
+  {
+    "path": "b838f9b6679e05b7_2025-05-01_Opportunity.json",
+    "sha256": "2458eae8754c5fd67cfe54b37f393eee01f0fa1fae539e04544669f5d6af6855",
+    "bytes": 386
+  },
+  {
+    "path": "b838f9b6679e05b7_2025-06-01_CLV_fuel.json",
+    "sha256": "64380ddbc2108bc58ed3c07fb696e740f82e6450c90dc1677a410061e3c27ce0",
+    "bytes": 1054
+  },
+  {
+    "path": "b838f9b6679e05b7_2025-06-01_CLV_nonfuel.json",
+    "sha256": "e2b0fd022d37980cd2a1691e61f6dc2abdcd80eed11d0ae6679440f2b39a5b6d",
+    "bytes": 997
+  },
+  {
+    "path": "b838f9b6679e05b7_2025-06-01_Opportunity.json",
+    "sha256": "aa8ca8f2cd56b21b688f86251bd2f076f721efc219caca1ce068d16e00474270",
+    "bytes": 850
+  },
+  {
+    "path": "b838f9b6679e05b7_2025-09-01_CLV_fuel.json",
+    "sha256": "01b71f1d8397c77d8e91888622c15047da2c29d13a1327424e5f1dd66af5ed42",
+    "bytes": 1054
+  },
+  {
+    "path": "b838f9b6679e05b7_2025-09-01_CLV_nonfuel.json",
+    "sha256": "b133ee4330c3df3071451f925fa15f048efe4fbad641c7fb86d5094fd5a3b50a",
+    "bytes": 998
+  },
+  {
+    "path": "b838f9b6679e05b7_2025-09-01_Opportunity.json",
+    "sha256": "9bbff36aec1fde716de01450f614b00fbd0dcf88e9cd01b76cb38debda4cc3fc",
+    "bytes": 850
+  },
+  {
+    "path": "baseline_cache_migration.json",
+    "sha256": "850812baec9f4c2293de9377a2612f275d9935ec4322d3ac5bb0ea333877894f",
+    "bytes": 2199
+  },
+  {
+    "path": "baseline_reproduction_corrected.csv",
+    "sha256": "d4b18e81a89d13761e9ea89cc98d900ba76decdd8a1a025a44aff075fea86239",
+    "bytes": 910
+  },
+  {
+    "path": "c773e20f73ebaa1d_2024-12-01_CLV_fuel.json",
+    "sha256": "fca5601be9bf3c42a429675280f86eb0c771448963b49eadeaea299860650c95",
+    "bytes": 581
+  },
+  {
+    "path": "c773e20f73ebaa1d_2024-12-01_CLV_nonfuel.json",
+    "sha256": "022025aac171750da1d9b23feaabff3dc178ba0627f8e7949a0d8de5436f2bb2",
+    "bytes": 527
+  },
+  {
+    "path": "c773e20f73ebaa1d_2024-12-01_Opportunity.json",
+    "sha256": "f7357139498358a734453b7c702717d1b8a7079e6d90bd1f9f2e18f49cba25d6",
+    "bytes": 384
+  },
+  {
+    "path": "calendar_CLV_fuel_bootstrap.json",
+    "sha256": "ad7f82aafa61ad227278bf9fed343f6cf9de64ecb572b738289c6ebad5dbbc4b",
+    "bytes": 267
+  },
+  {
+    "path": "calendar_CLV_nonfuel_bootstrap.json",
+    "sha256": "929b85634dc2e2d870230483b46de51f4f2f9e661f69e1cd2205f728fbc5f27e",
+    "bytes": 267
+  },
+  {
+    "path": "calendar_Opportunity_bootstrap.json",
+    "sha256": "037f0c13baec16ca3701f42419d645d0aafd7e905ab374814efe3f6143948faf",
+    "bytes": 264
+  },
+  {
+    "path": "calendar_Opportunity_bootstrap_corrected.json",
+    "sha256": "037f0c13baec16ca3701f42419d645d0aafd7e905ab374814efe3f6143948faf",
+    "bytes": 264
+  },
+  {
+    "path": "calendar_cohort_comparison.csv",
+    "sha256": "22f85fcd0e9809f4e5784c928d1fe3c0dac4f8c6dbe5ab468f836dbfefffb350",
+    "bytes": 14879
+  },
+  {
+    "path": "calendar_comparison_corrected.csv",
+    "sha256": "9eddfb8722360f39566180f4b2594d8196e89ce1a6cec0a9325b72a2c9831e50",
+    "bytes": 1183
+  },
+  {
+    "path": "calendar_decision.json",
+    "sha256": "7ba5785fced77e5f38f37925339c71c5441938790d0b6603b01a26286ba43aca",
+    "bytes": 3051
+  },
+  {
+    "path": "calendar_decision_corrected.json",
+    "sha256": "7d4ba6eac4815f06b5fd2c186edfb2c1ac604b213205e949dd65c4bda89bf800",
+    "bytes": 3255
+  },
+  {
+    "path": "calendar_proposal.json",
+    "sha256": "262ab24cccc7c3d481007dd139114785f66f50a4add5d96678baec39112db9fb",
+    "bytes": 1272
+  },
+  {
+    "path": "class_error_contributions.csv",
+    "sha256": "9a8b1b9ea804cbe37b941152ef62518699f3dd671afa5272e1c4eb3bfc259213",
+    "bytes": 4051
+  },
+  {
+    "path": "d64bcc6797d6201b_2024-12-01_CLV_fuel.json",
+    "sha256": "d6a6d1cc2c553494a15e83f2d773cfba1fa63c7559f29ba625c0a59f3aac9e12",
+    "bytes": 578
+  },
+  {
+    "path": "d64bcc6797d6201b_2024-12-01_CLV_nonfuel.json",
+    "sha256": "2462561eda913f00c70870e98f86b6aa48e5c6740bd4e88427b72139495645dc",
+    "bytes": 524
+  },
+  {
+    "path": "d64bcc6797d6201b_2024-12-01_Opportunity.json",
+    "sha256": "d0c7116e2b3653867ca26823097f3b5b271849e4ac50a0cb54b3cee95fe88bd3",
+    "bytes": 381
+  },
+  {
+    "path": "d64bcc6797d6201b_2025-06-01_CLV_fuel.json",
+    "sha256": "91759b1097075d13f081e1acbfbd7d5608eb52b39110134be8b2b136e0f30b0f",
+    "bytes": 587
+  },
+  {
+    "path": "d64bcc6797d6201b_2025-06-01_CLV_nonfuel.json",
+    "sha256": "db9a10cd75a944688f0c44d020440e8c541d5f6d02c77488f89941654f069e63",
+    "bytes": 530
+  },
+  {
+    "path": "d64bcc6797d6201b_2025-06-01_Opportunity.json",
+    "sha256": "c607144b2f825824e565a0c911abb9209ad0d2d9599842228a10355e2b592c91",
+    "bytes": 383
+  },
+  {
+    "path": "d64bcc6797d6201b_2025-09-01_CLV_fuel.json",
+    "sha256": "937696c3a545e62ac00f6d66821e21bbed8d8c8de14b17d5f8c45756dcfd37c9",
+    "bytes": 586
+  },
+  {
+    "path": "d64bcc6797d6201b_2025-09-01_CLV_nonfuel.json",
+    "sha256": "f5dca3714a447ae72d353e46f554f54e27cd1928a086d15e9dabda22d87ac40e",
+    "bytes": 530
+  },
+  {
+    "path": "d64bcc6797d6201b_2025-09-01_Opportunity.json",
+    "sha256": "18609abfd7d700b5d1f5119abdc03bb3cd7341d001ba5ee2abb5fab8344e752f",
+    "bytes": 383
+  },
+  {
+    "path": "da0a6340021ed35b_2025-06-01_CLV_fuel.json",
+    "sha256": "f14c5f4854beefdb6b7edc03b3a5952bf186d1f622e5e5da1aedb507e0f7e26f",
+    "bytes": 590
+  },
+  {
+    "path": "da0a6340021ed35b_2025-06-01_CLV_nonfuel.json",
+    "sha256": "3c40a114d0a472117b63d8961999f7ef359f5707024b035c088efc47a3b241a0",
+    "bytes": 533
+  },
+  {
+    "path": "da0a6340021ed35b_2025-06-01_Opportunity.json",
+    "sha256": "f392611a45ab5e16e4e52395a4fd5ab978dd499cdf4463df9f1ce20baccd7999",
+    "bytes": 386
+  },
+  {
+    "path": "da0a6340021ed35b_2025-09-01_CLV_fuel.json",
+    "sha256": "f7b0bdceab8c34e4d1d8099c0d363dee4a2819c1cb67e063ed078dbe6e00a282",
+    "bytes": 590
+  },
+  {
+    "path": "da0a6340021ed35b_2025-09-01_CLV_nonfuel.json",
+    "sha256": "90b08c46eaf99626f718c72ffc93568ab7d23bd091e2a583c5120a47cf10d622",
+    "bytes": 534
+  },
+  {
+    "path": "da0a6340021ed35b_2025-09-01_Opportunity.json",
+    "sha256": "1364868a43e5dff7ae49d45a3ae50fe0e1a09d1e1365ee4ddd639b24f0dbbe68",
+    "bytes": 386
+  },
+  {
+    "path": "december_scoring_amendment.json",
+    "sha256": "71c52dab4975473b4f4df4c7fd9be691bc77ceba539d161e8c8265263a5ab81b",
+    "bytes": 927
+  },
+  {
+    "path": "december_scoring_correction.json",
+    "sha256": "622cf7a82687c1962c8a0a79d91f6759e05e278d8984f9fb932304dc8e3c530a",
+    "bytes": 1346
+  },
+  {
+    "path": "ec6a767c20f0514a_2025-06-01_rule_alignment.json",
+    "sha256": "af7769f5217743bed7d4f68976d8485b169b2e5b568af8874c6619eae73f7417",
+    "bytes": 233
+  },
+  {
+    "path": "ec6a767c20f0514a_2025-09-01_rule_alignment.json",
+    "sha256": "001bd0649074c4a762c379bfd9bd6d27b2120fb816da88ec26d9c870f5439c9b",
+    "bytes": 287
+  },
+  {
+    "path": "eligibility_history_audit.csv",
+    "sha256": "2c5673f542ce766b6a49758b604c7b31637d809c7dfa948a0c871cb400efc1f3",
+    "bytes": 329
+  },
+  {
+    "path": "environment.json",
+    "sha256": "de26861a686241536afa1d088d40f092642dde290337739e49f51a8066e24440",
+    "bytes": 3014
+  },
+  {
+    "path": "error_summary.json",
+    "sha256": "7d882742c093835de7aa33ea14fb72b01ae7135989a01a5ff84155bec83de060",
+    "bytes": 466
+  },
+  {
+    "path": "final_integrity.json",
+    "sha256": "dbb8bfc2a6e87d7ae26010a20244b1a6777078ca9b4b429743c40b59dc76097a",
+    "bytes": 139
+  },
+  {
+    "path": "initial_git_status.json",
+    "sha256": "96a9aa0abb20921b5118dacd56c73e48c8a0604871c5448ea5fa83a007e8780b",
+    "bytes": 509
+  },
+  {
+    "path": "matched_population_changes.csv",
+    "sha256": "006fd0cc3b8690f049d04192f578763f32c72bd1fd3f4978880b82d24ecb3f7a",
+    "bytes": 2048
+  },
+  {
+    "path": "population_comparison_corrected.csv",
+    "sha256": "95c494baa6eddcec86d4e02e2a292a9f39fb653944b114753be1f51dad9296c3",
+    "bytes": 23539
+  },
+  {
+    "path": "prior_year_coverage.csv",
+    "sha256": "e8ac9ff18c334342e79542218f1613f4ab1411020f9f71bc02f46db5a1faef0c",
+    "bytes": 882
+  },
+  {
+    "path": "recency_cohorts.csv",
+    "sha256": "33ac2489de2c1b65519debc3e8dc9ca67aaa51429e68b9385ec46a5989efb0c9",
+    "bytes": 633
+  },
+  {
+    "path": "rule_2025-06-01_fuel_growth_event_calibration.csv",
+    "sha256": "4658a58d8958ce681615cf538191f4c034641b4dac9293e4d46e26297b6cbd60",
+    "bytes": 483
+  },
+  {
+    "path": "rule_2025-06-01_purchase_calibration.csv",
+    "sha256": "7a6f0cf2a63fa8eeac2bdde1bc2a87b39afff323daf99a99e2b298cec9f5c27c",
+    "bytes": 592
+  },
+  {
+    "path": "rule_2025-09-01_fuel_growth_event_calibration.csv",
+    "sha256": "e4f1e2371e88e9a7385c4f2d83a25577a3eaa088349267411c214ba7c5543968",
+    "bytes": 503
+  },
+  {
+    "path": "rule_2025-09-01_purchase_calibration.csv",
+    "sha256": "eca9b2b37a9bde47dec558eeb13640b920de97e0319ed7183835887bbe14fa20",
+    "bytes": 580
+  },
+  {
+    "path": "rule_bootstrap.json",
+    "sha256": "2de035c44740ca613bdcfbb8ea46de9d14547ab8c06a52c1a46b7b6f944329d4",
+    "bytes": 265
+  },
+  {
+    "path": "rule_comparison.csv",
+    "sha256": "433bd306faf31bf323ea05589615d65a9629b7e84dc9b34e96dbd9ea583b6e73",
+    "bytes": 541
+  },
+  {
+    "path": "rule_decision.json",
+    "sha256": "bb44d4e913fdd3f76b4d92e291a83c35d310b2871c065afa1e23af3dbdf3f18f",
+    "bytes": 1188
+  },
+  {
+    "path": "rule_probability_metrics.json",
+    "sha256": "f186b6d46075b77d1ce69178f1e69685b0423f4c476a67a1a3672b41b5e7acfa",
+    "bytes": 1393
+  },
+  {
+    "path": "rule_proposal.json",
+    "sha256": "622e3ce3cf3121daa7b3773fc6c11058b9667e7c7a61578aa7c604f7fd710f81",
+    "bytes": 3097
+  },
+  {
+    "path": "run_summary.json",
+    "sha256": "f25e460e4faaf24474ab422ac626b4fcdf155bae504acbffc849f11d4b6ffc79",
+    "bytes": 151
+  },
+  {
+    "path": "threshold_category_competition_audit.csv",
+    "sha256": "5c067e4d9ae889d1445338419027a100995dee548cf808bedcfc29c7417b7c15",
+    "bytes": 389
+  },
+  {
+    "path": "weighted_f1_deficit.png",
+    "sha256": "787175115fe3dba867bd4c109d069edb617bdc881f6870f668c4a7c92e273181",
+    "bytes": 58930
+  }
+]

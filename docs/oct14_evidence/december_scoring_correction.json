@@ -1,0 +1,19 @@
+{
+  "December_baseline_untuned_F1": 0.4328970319911569,
+  "source": "b838f9b6679e05b7_2024-12-01_Opportunity.json",
+  "amendment": {
+    "recorded_utc": "2026-10-13T23:32:07.381382+00:00",
+    "stage": "Before calendar proposal/fitting",
+    "reason": "Existing Opportunity decision multipliers were tuned on March2025 labels, which are unavailable at December2024.",
+    "amendment": "December Opportunity metrics use uniform multipliers (untuned argmax), for baseline and candidate. No model predictions or data change. June/September retain frozen multipliers.",
+    "initial_december_metric_status": "Superseded diagnostic using later-tuned multipliers; must not be presented as a causal December backtest.",
+    "acceptance": "Same numerical gates and no-December-deterioration guard; apply using corrected December Opportunity scoring. Correction declared before candidate fitting, not a retrospective gate relaxation.",
+    "implementation": "Result finalization will preserve raw stage files and write corrected baseline/calendar comparison and decision files."
+  },
+  "no_model_refit": true,
+  "December_calendar_untuned_F1": 0.4390300321838049,
+  "December_calendar_gain": 0.006133000192647953,
+  "calendar_source": "d64bcc6797d6201b_2024-12-01_Opportunity.json",
+  "accepted_targets_corrected": [],
+  "raw_acceptance_changed": false
+}

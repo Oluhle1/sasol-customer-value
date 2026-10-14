@@ -1,0 +1,3 @@
+{
+  "status": " M docs/PHASE_05_FINAL_TRAINING_AND_SUBMISSION.md\n M requirements-py313.txt\n?? docs/OCT10_EXPERIMENT_RESULTS.md\n?? experiments/next_round/\n?? experiments/oct10/\n?? src/phase06c_build_experimental_submission.py\n?? src/phase06c_train_final_hierarchical_opportunity.py\n?? src/phase06ra3_embedding_ablation.py\n?? src/phase06rc1_sequence_feasibility.py\n?? src/phase06rc2_fuel_sequence_model.py\n?? submission_journal_2026-10-10/\n?? top4_papers/\n?? top4_shipped/\n?? top4_submission/\n"
+}

@@ -1,0 +1,21 @@
+{
+  "variant": "baseline_reconstruction",
+  "fingerprint": "b838f9b6679e05b7",
+  "target": "Opportunity",
+  "origin": "2025-01-01",
+  "latest_training_origin": "2024-10-01",
+  "train_rows": 7432,
+  "threads": 1,
+  "models": [
+    {
+      "seed": 7,
+      "rounds": 40
+    },
+    {
+      "seed": 23,
+      "rounds": 40
+    }
+  ],
+  "nested_selection": false,
+  "fallback_rounds": 40
+}

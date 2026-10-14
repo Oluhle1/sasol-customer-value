@@ -1,0 +1,233 @@
+{
+  "test_first": "One calendar-exposure variant, keeping capacity/seeds/decision weights/rows fixed.",
+  "rule_candidate_supported": true,
+  "support": "Observed fuel-growth confusion, threshold cohorts and category-competition event counts; see CSVs. This is a diagnostic hypothesis, not proof of improvement.",
+  "pooled_seasonal_variant": "Deferred: only one observed December outcome season and sparse prior-year coverage; no additional variant search this round.",
+  "existing_seasonality_features": [
+    "origin_month",
+    "yago_fuel_l",
+    "yago_shop_r",
+    "fuel_z_yago",
+    "shop_z_yago",
+    "fuel_ses_z",
+    "shop_ses_z",
+    "fuel_ses_fast_z",
+    "shop_ses_fast_z",
+    "fuel_bgnbd_z",
+    "shop_bgnbd_z",
+    "dyn_automotive_products_purchases",
+    "dyn_beverages_purchases",
+    "dyn_braai_and_ice_purchases",
+    "dyn_breads_and_rolls_purchases",
+    "dyn_car_wash_purchases",
+    "dyn_coffee_purchases",
+    "dyn_confectionary_purchases",
+    "dyn_food_and_beverage_purchases",
+    "dyn_frozen_food_purchases",
+    "dyn_fuel_purchases",
+    "dyn_gas_purchases",
+    "dyn_general_merchandise_purchases",
+    "dyn_groceries_purchases",
+    "dyn_ice_cream_purchases",
+    "dyn_krispy_kreme_purchases",
+    "dyn_lubricants_purchases",
+    "dyn_miscellaneous_purchases",
+    "dyn_na_purchases",
+    "dyn_perishables_purchases",
+    "dyn_promotional_items_purchases",
+    "dyn_seattle_purchases",
+    "dyn_snacking_purchases",
+    "dyn_tobacco_purchases",
+    "dyn_unknown_purchases"
+  ],
+  "error_summary": [
+    {
+      "origin": "2025-06-01",
+      "rows": 4961,
+      "majority_three_share": 0.8171739568635356,
+      "fuel_growth_support": 1311,
+      "median_adjusted_probability_margin": 0.2133978364246364,
+      "errors_low_margin_005": 461
+    },
+    {
+      "origin": "2025-09-01",
+      "rows": 5238,
+      "majority_three_share": 0.8161512027491409,
+      "fuel_growth_support": 1435,
+      "median_adjusted_probability_margin": 0.24833696166154356,
+      "errors_low_margin_005": 390
+    }
+  ],
+  "top_population_shifts": [
+    {
+      "historical_origin": "2025-09-01",
+      "feature": "price_change",
+      "historical_mean": 0.00907127429805632,
+      "final_mean": -0.021830985915492925,
+      "smd": -1.2596357894267676e+16,
+      "historical_zero_fraction": 0.0,
+      "final_zero_fraction": 0.0,
+      "historical_rows": 5238,
+      "final_rows": 5488
+    },
+    {
+      "historical_origin": "2025-09-01",
+      "feature": "price_index",
+      "historical_mean": 21.59827213822894,
+      "final_mean": 21.126760563380284,
+      "smd": -187692599025318.06,
+      "historical_zero_fraction": 0.0,
+      "final_zero_fraction": 0.0,
+      "historical_rows": 5238,
+      "final_rows": 5488
+    },
+    {
+      "historical_origin": "2025-09-01",
+      "feature": "price_gap",
+      "historical_mean": 0.002742249495739582,
+      "final_mean": 0.015150771628816635,
+      "smd": 0.5677293717058707,
+      "historical_zero_fraction": 0.26384116074837727,
+      "final_zero_fraction": 0.28589650145772594,
+      "historical_rows": 5238,
+      "final_rows": 5488
+    },
+    {
+      "historical_origin": "2025-09-01",
+      "feature": "age_days",
+      "historical_mean": 442.4269191038821,
+      "final_mean": 516.1177174012787,
+      "smd": 0.5308042121509563,
+      "historical_zero_fraction": 0.0,
+      "final_zero_fraction": 0.0,
+      "historical_rows": 5238,
+      "final_rows": 5488
+    },
+    {
+      "historical_origin": "2025-09-01",
+      "feature": "recency_days",
+      "historical_mean": 71.57432103304467,
+      "final_mean": 84.68490532100762,
+      "smd": 0.10427696902748622,
+      "historical_zero_fraction": 0.0,
+      "final_zero_fraction": 0.0,
+      "historical_rows": 5238,
+      "final_rows": 5488
+    },
+    {
+      "historical_origin": "2025-09-01",
+      "feature": "n_tx",
+      "historical_mean": 58.478235967926686,
+      "final_mean": 66.44806851311954,
+      "smd": 0.09110226641718726,
+      "historical_zero_fraction": 0.0,
+      "final_zero_fraction": 0.0,
+      "historical_rows": 5238,
+      "final_rows": 5488
+    },
+    {
+      "historical_origin": "2025-09-01",
+      "feature": "log_n_tx",
+      "historical_mean": 3.4559905533112465,
+      "final_mean": 3.5573062262510775,
+      "smd": 0.08726584924588283,
+      "historical_zero_fraction": 0.0,
+      "final_zero_fraction": 0.0,
+      "historical_rows": 5238,
+      "final_rows": 5488
+    },
+    {
+      "historical_origin": "2025-09-01",
+      "feature": "fuel_recency",
+      "historical_mean": 87.12015987740718,
+      "final_mean": 101.7647411831222,
+      "smd": 0.08701880807437948,
+      "historical_zero_fraction": 0.0,
+      "final_zero_fraction": 0.0,
+      "historical_rows": 5238,
+      "final_rows": 5488
+    },
+    {
+      "historical_origin": "2025-09-01",
+      "feature": "dyn_fuel_recency",
+      "historical_mean": 87.12015987740718,
+      "final_mean": 101.7647411831222,
+      "smd": 0.08701880807437948,
+      "historical_zero_fraction": 0.0,
+      "final_zero_fraction": 0.0,
+      "historical_rows": 5238,
+      "final_rows": 5488
+    },
+    {
+      "historical_origin": "2025-09-01",
+      "feature": "n_cat_ever",
+      "historical_mean": 3.665139366170294,
+      "final_mean": 3.876275510204082,
+      "smd": 0.07738849848864089,
+      "historical_zero_fraction": 0.0,
+      "final_zero_fraction": 0.0,
+      "historical_rows": 5238,
+      "final_rows": 5488
+    },
+    {
+      "historical_origin": "2025-09-01",
+      "feature": "fuel_growth_gap",
+      "historical_mean": -0.39675956355001774,
+      "final_mean": -0.42242947052498964,
+      "smd": -0.07366169398284103,
+      "historical_zero_fraction": 0.013936617029400534,
+      "final_zero_fraction": 0.015123906705539359,
+      "historical_rows": 5238,
+      "final_rows": 5488
+    },
+    {
+      "historical_origin": "2025-09-01",
+      "feature": "dyn_fuel_q2",
+      "historical_mean": 5.9494340955861675,
+      "final_mean": 5.679014973591225,
+      "smd": -0.07315778711693474,
+      "historical_zero_fraction": 0.2527682321496755,
+      "final_zero_fraction": 0.2857142857142857,
+      "historical_rows": 5238,
+      "final_rows": 5488
+    }
+  ],
+  "threshold_cohorts": [
+    {
+      "origin": "2025-06-01",
+      "cohort": "within_100_rand_of_threshold",
+      "n": 1057,
+      "error_rate": 0.16367076631977295
+    },
+    {
+      "origin": "2025-06-01",
+      "cohort": "fuel_growth_event_eligible",
+      "n": 1315,
+      "error_rate": 0.5133079847908745
+    },
+    {
+      "origin": "2025-06-01",
+      "cohort": "fuel_event_lost_category_competition",
+      "n": 4,
+      "error_rate": 1.0
+    },
+    {
+      "origin": "2025-09-01",
+      "cohort": "within_100_rand_of_threshold",
+      "n": 1249,
+      "error_rate": 0.16092874299439552
+    },
+    {
+      "origin": "2025-09-01",
+      "cohort": "fuel_growth_event_eligible",
+      "n": 1436,
+      "error_rate": 0.5355153203342619
+    },
+    {
+      "origin": "2025-09-01",
+      "cohort": "fuel_event_lost_category_competition",
+      "n": 1,
+      "error_rate": 1.0
+    }
+  ]
+}

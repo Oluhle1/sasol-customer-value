@@ -1,0 +1,12 @@
+{
+  "rows": 4961,
+  "oof_origins": [
+    "2024-12-01",
+    "2025-01-01",
+    "2025-02-01",
+    "2025-03-01"
+  ],
+  "latest_training_origin": "2025-03-01",
+  "missing_eval_ids": 0,
+  "in_sample_upstream_training_predictions": false
+}

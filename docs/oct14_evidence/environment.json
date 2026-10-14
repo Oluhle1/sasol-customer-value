@@ -1,0 +1,72 @@
+{
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "executable": "/home/oluhle/.venvs/sasol-oct14/bin/python",
+  "versions": {
+    "numpy": "2.4.4",
+    "pandas": "3.0.2",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.8.0",
+    "lightgbm": "4.6.0",
+    "catboost": "1.2.10"
+  },
+  "threads": 1,
+  "baseline_sha256": "11a4da31d86ab4738c2366b9c06f8439124991fc1e138bef685dbc38e61eb79a",
+  "inputs_verified": [
+    {
+      "path": "data/raw/SampleSubmission.csv",
+      "bytes": 137236,
+      "sha256": "d15f676c684f73a90ef4ba76aae1641656584dfb390c3c0501ef51984555ce54",
+      "included_in_package": false
+    },
+    {
+      "path": "data/raw/test.csv",
+      "bytes": 76835,
+      "sha256": "9c9b99a5d0b78c981a3067111d29775be19e3a1871e4f205f8cf788acd5740a0",
+      "included_in_package": false
+    },
+    {
+      "path": "data/raw/train.csv",
+      "bytes": 75271932,
+      "sha256": "902c267284aee87fa28680d6602880e5eeb659f0a9efb1510b5f5320374ab52c",
+      "included_in_package": false
+    },
+    {
+      "path": "data/processed/phase02_labels/labels_transformed_2024-09-01.csv",
+      "bytes": 222638,
+      "sha256": "53408fe279273712295abdd7c188a419894ce78228e1008671af88f4d07d905d",
+      "included_in_package": false
+    },
+    {
+      "path": "data/processed/phase02_labels/labels_transformed_2024-12-01.csv",
+      "bytes": 249453,
+      "sha256": "4bc4a6eef2f556e453409b849a02d639f9499e4b1d098b2511c79963ed37ffed",
+      "included_in_package": false
+    },
+    {
+      "path": "data/processed/phase02_labels/labels_transformed_2025-03-01.csv",
+      "bytes": 266935,
+      "sha256": "11d2b56c07d53df837062ae1380c9e499d0bf208f6b1e43226472d4bfa84be8d",
+      "included_in_package": false
+    },
+    {
+      "path": "data/processed/phase02_labels/labels_transformed_2025-06-01.csv",
+      "bytes": 280490,
+      "sha256": "a46dc0ead927126b7c416a3e543f25ae3964044ccdce35e22cbab4b16cfecf58",
+      "included_in_package": false
+    },
+    {
+      "path": "data/processed/phase02_labels/labels_transformed_2025-09-01.csv",
+      "bytes": 296822,
+      "sha256": "04dfa0daebc1df6bc42540fe9db6c8277c62c77fe2785b00d32cc84661baf36e",
+      "included_in_package": false
+    }
+  ],
+  "local_archive_files_compared": 178,
+  "local_verifier_missing": "Completed published archive verifier run instead; realized local artifacts compared with published copies.",
+  "cpu": 8,
+  "memory": "               total        used        free      shared  buff/cache   available\nMem:           2.8Gi       786Mi       1.4Gi       3.5Mi       639Mi       2.0Gi\nSwap:          1.0Gi          0B       1.0Gi\n",
+  "disk": "Filesystem      Size  Used Avail Use% Mounted on\nC:\\             475G  237G  238G  50% /mnt/c\n",
+  "rules_url": "https://zindi.world/competitions/sasol-customer-value-recruitment-challenge",
+  "evaluation": "Separate transformed fuel/nonfuel RMSE and weighted F1; final weights .3/.3/.4, normalization denominator unavailable.",
+  "external_data": "No holidays or other external datasets."
+}

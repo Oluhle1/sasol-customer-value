@@ -1,0 +1,533 @@
+{
+  "date": "2026-10-19",
+  "event": "Sasol Customer Value Recruitment Challenge closed 2026-10-18; the final private leaderboard was revealed 2026-10-19. This is the first and only reveal of private scores for this competition.",
+  "provenance": {
+    "source": "Zindi public API v1 (unauthenticated)",
+    "endpoint": "GET https://api.zindi.world/v1/competitions/sasol-customer-value-recruitment-challenge/participations?page=N&per_page=100",
+    "competition_url": "https://zindi.world/competitions/sasol-customer-value-recruitment-challenge",
+    "fetched": "2026-10-19 (WSL session; raw dump saved in this directory)",
+    "n_participations": 242,
+    "n_ranked": 156,
+    "raw_dump": "final_private_leaderboard_raw_2026-10-19.json",
+    "ranked_csv": "final_private_leaderboard_ranked_2026-10-19.csv",
+    "provisional_note": "The competition page displayed 'Under code review' after the close; scores can change until review completes (stated date 2026-11-08). All figures here are as fetched on 2026-10-19 and are not user-reported."
+  },
+  "portfolio_actual": {
+    "user": "Oluhle (id 236375)",
+    "public_rank": 32,
+    "best_public_score": 0.313217559,
+    "private_rank": 116,
+    "best_private_score": 0.302880883,
+    "best_private_submission_public_score": 0.289392053,
+    "best_private_submitted_at": "2026-09-27T01:20:57.683Z",
+    "submission_count": 27,
+    "private_metric_breakdown": {
+      "CLV fuel": {
+        "raw": 0.57655852,
+        "normalised_weighted": 0.220866864,
+        "weight": "0.3"
+      },
+      "CLV non-fuel": {
+        "raw": 0.729268505,
+        "normalised_weighted": 0.106288595,
+        "weight": "0.3"
+      },
+      "Opportunity": {
+        "raw": 0.511835614,
+        "normalised_weighted": 0.511835614,
+        "weight": "0.4"
+      }
+    },
+    "scored_file_identification": {
+      "file": "submissions/sasol_phase05_frozen_lightgbm_submission.csv",
+      "role": "S0 (frozen Phase 05 quarterly pipeline output)",
+      "md5": "4e315b5615b66bcde1e8879dc2178e0e",
+      "recorded_public": 0.289392053,
+      "evidence": "Zindi's best_private_submission_public_score (0.289392053) equals S0's recorded public score exactly (docs/PHASE_05_FINAL_TRAINING_AND_SUBMISSION.md, docs/PHASE_06_LEADERBOARD_GAP_ANALYSIS.md), and best_private_submitted_at (2026-09-27T01:20:57.683Z) matches the S0-era upload window.",
+      "private_delta_vs_public": 0.013488830000000007
+    },
+    "selection_error": {
+      "intended_pair": [
+        {
+          "file": "submissions/sasol_sprint16_r4full_vR.csv",
+          "public": 0.313217559,
+          "md5": "aaa9e4ca3258bbbb384a4cdb5a592e38"
+        },
+        {
+          "file": "submissions/sasol_sprint16_blend_vR.csv",
+          "public": 0.309967901,
+          "md5": "4f6532d63823c782b1a25ce8d0f91780"
+        }
+      ],
+      "intended_status": "The better-scoring private submission is identified as an S0-era file (see scored_file_identification); per the user, the intended pair was never selected. The second scored file is unidentified and scored <= 0.302880883.",
+      "second_scored_file_constraint": {
+        "note": "If (contrary to the user's account) one of the intended files had been the unidentified second scored submission, its private score would have to be <= 0.302880883. Across all 156 ranked rows that transfer is rare: for r4full_vR it needs a public->private delta of -0.010337 or worse (observed in 5/156 = 3.2% of pairs); for blend_vR -0.007087 or worse (15/156 = 9.6%)."
+      }
+    }
+  },
+  "final_top10_private": [
+    {
+      "rank": 1,
+      "username": "DrMarcoLotz",
+      "private": 0.315560685,
+      "public": 0.316759783,
+      "privsub_public": 0.316759783
+    },
+    {
+      "rank": 2,
+      "username": "PHYBoi",
+      "private": 0.314884034,
+      "public": 0.317136582,
+      "privsub_public": 0.316081903
+    },
+    {
+      "rank": 3,
+      "username": "Regan_Shen",
+      "private": 0.31457177,
+      "public": 0.312811319,
+      "privsub_public": 0.31223735
+    },
+    {
+      "rank": 4,
+      "username": "nextgen",
+      "private": 0.314554129,
+      "public": 0.315209329,
+      "privsub_public": 0.314983502
+    },
+    {
+      "rank": 5,
+      "username": "Ntsikelelo_Nicholas",
+      "private": 0.31383351,
+      "public": 0.310736456,
+      "privsub_public": 0.310736456
+    },
+    {
+      "rank": 6,
+      "username": "TevinH",
+      "private": 0.313549889,
+      "public": 0.310570465,
+      "privsub_public": 0.310570465
+    },
+    {
+      "rank": 7,
+      "username": "Zithobe",
+      "private": 0.313248807,
+      "public": 0.310198503,
+      "privsub_public": 0.309413944
+    },
+    {
+      "rank": 8,
+      "username": "Kgaume_Pitsi",
+      "private": 0.313070594,
+      "public": 0.305433017,
+      "privsub_public": 0.305433017
+    },
+    {
+      "rank": 9,
+      "username": "Ntokozo_Dlamini",
+      "private": 0.312809489,
+      "public": 0.318107016,
+      "privsub_public": 0.318107016
+    },
+    {
+      "rank": 10,
+      "username": "Matsi",
+      "private": 0.312723243,
+      "public": 0.317316369,
+      "privsub_public": 0.317316369
+    }
+  ],
+  "final_top10_public_reference": [
+    {
+      "rank": 1,
+      "username": "Ndalegend",
+      "public": 0.321805663,
+      "private": 0.31244496,
+      "privsub_public": 0.320773387
+    },
+    {
+      "rank": 2,
+      "username": "Thelightthatshines",
+      "public": 0.320782036,
+      "private": 0.312004766,
+      "privsub_public": 0.313549124
+    },
+    {
+      "rank": 3,
+      "username": "Cleve_ftp",
+      "public": 0.320394545,
+      "private": 0.311972947,
+      "privsub_public": 0.309917649
+    },
+    {
+      "rank": 4,
+      "username": "Perc",
+      "public": 0.319788878,
+      "private": 0.309727626,
+      "privsub_public": 0.315451848
+    },
+    {
+      "rank": 5,
+      "username": "Oleeboow",
+      "public": 0.318722236,
+      "private": 0.309355588,
+      "privsub_public": 0.318629624
+    },
+    {
+      "rank": 6,
+      "username": "MR_MS",
+      "public": 0.318357865,
+      "private": 0.308710552,
+      "privsub_public": 0.307791585
+    },
+    {
+      "rank": 7,
+      "username": "akhile_sa",
+      "public": 0.31835158,
+      "private": 0.306996926,
+      "privsub_public": 0.31835158
+    },
+    {
+      "rank": 8,
+      "username": "Ntokozo_Dlamini",
+      "public": 0.318107016,
+      "private": 0.312809489,
+      "privsub_public": 0.318107016
+    },
+    {
+      "rank": 9,
+      "username": "siya_maroad",
+      "public": 0.317920296,
+      "private": 0.306913091,
+      "privsub_public": 0.317920296
+    },
+    {
+      "rank": 10,
+      "username": "makamisa",
+      "public": 0.317885008,
+      "private": 0.307047461,
+      "privsub_public": 0.317279574
+    }
+  ],
+  "cuts": {
+    "private_rank10_cut": 0.312723243,
+    "public_rank10_cut": 0.317885008,
+    "private_rank1": 0.315560685,
+    "winner": "DrMarcoLotz"
+  },
+  "transfer_analysis": {
+    "definition": "For every ranked row: delta = best_private_score minus best_private_submission_public_score (the public score of the same submission that was privately scored). Same-submission transfer, n=156.",
+    "all_pairs": {
+      "n": 156,
+      "mean": 0.001097257179487179,
+      "median": 0.0011958524999999831,
+      "sd_ddof0": 0.006140332246891955,
+      "sd_ddof1": 0.006160107925293825,
+      "min": -0.024760000000000115,
+      "max": 0.018847816000000017,
+      "share_positive": 0.6282051282051282
+    },
+    "clean_selection_cohort": {
+      "definition": "Ranked rows where the privately-scored submission's public score equals the participant's best public score (no public-side downgrade in the selection).",
+      "n": 101,
+      "mean": 0.0011515154059405942,
+      "median": 0.001199907,
+      "sd_ddof0": 0.005729809907010206,
+      "sd_ddof1": 0.005758387689811882,
+      "min": -0.024760000000000115,
+      "max": 0.016726328000000013,
+      "share_positive": 0.6336633663366337
+    },
+    "public_side_downgrade_cohort": {
+      "definition": "Ranked rows where the privately-scored submission's public score is strictly below the participant's best public score.",
+      "n": 55,
+      "mean": 0.0009976193454545438,
+      "median": 0.0011917979999999662,
+      "sd_ddof0": 0.006829119275667971,
+      "sd_ddof1": 0.006892061797716713,
+      "min": -0.010948155000000015,
+      "max": 0.018847816000000017,
+      "share_positive": 0.6181818181818182
+    },
+    "user_delta": {
+      "delta": 0.013488830000000007,
+      "percentile_within_156": 0.9807692307692307,
+      "note": "S0's +0.01348883 transfer is a near-top-2% positive transfer (98.1st percentile of the 156 pairs), yet still left the portfolio 0.009842 below the private top-10 cut."
+    }
+  },
+  "neighborhood_of_intended_public_score": {
+    "target_public": 0.313217559,
+    "target_file": "submissions/sasol_sprint16_r4full_vR.csv",
+    "windows": [
+      {
+        "width": 0.0005,
+        "n": 5,
+        "median_private": 0.310785096,
+        "median_private_rank": 31.0,
+        "min_private": 0.30856949,
+        "max_private": 0.312004766,
+        "share_above_private_cut": 0.0,
+        "members": [
+          {
+            "username": "Noxie",
+            "privsub_public": 0.313679885,
+            "private": 0.30856949,
+            "rank": 58
+          },
+          {
+            "username": "DeeMash",
+            "privsub_public": 0.313459952,
+            "private": 0.309721497,
+            "rank": 39
+          },
+          {
+            "username": "TTM",
+            "privsub_public": 0.312725553,
+            "private": 0.310785096,
+            "rank": 31
+          },
+          {
+            "username": "Manti_Mafokwane_JHB",
+            "privsub_public": 0.313278909,
+            "private": 0.311008083,
+            "rank": 27
+          },
+          {
+            "username": "Thelightthatshines",
+            "privsub_public": 0.313549124,
+            "private": 0.312004766,
+            "rank": 15
+          }
+        ]
+      },
+      {
+        "width": 0.001,
+        "n": 9,
+        "median_private": 0.309721497,
+        "median_private_rank": 39.0,
+        "min_private": 0.306331057,
+        "max_private": 0.31457177,
+        "share_above_private_cut": 0.1111111111111111,
+        "members": [
+          {
+            "username": "AMG_Junior",
+            "privsub_public": 0.313745112,
+            "private": 0.306331057,
+            "rank": 91
+          },
+          {
+            "username": "Lemi_girl",
+            "privsub_public": 0.313854939,
+            "private": 0.308392875,
+            "rank": 59
+          },
+          {
+            "username": "Noxie",
+            "privsub_public": 0.313679885,
+            "private": 0.30856949,
+            "rank": 58
+          },
+          {
+            "username": "Thabss",
+            "privsub_public": 0.312241144,
+            "private": 0.308702786,
+            "rank": 57
+          },
+          {
+            "username": "DeeMash",
+            "privsub_public": 0.313459952,
+            "private": 0.309721497,
+            "rank": 39
+          },
+          {
+            "username": "TTM",
+            "privsub_public": 0.312725553,
+            "private": 0.310785096,
+            "rank": 31
+          },
+          {
+            "username": "Manti_Mafokwane_JHB",
+            "privsub_public": 0.313278909,
+            "private": 0.311008083,
+            "rank": 27
+          },
+          {
+            "username": "Thelightthatshines",
+            "privsub_public": 0.313549124,
+            "private": 0.312004766,
+            "rank": 15
+          },
+          {
+            "username": "Regan_Shen",
+            "privsub_public": 0.31223735,
+            "private": 0.31457177,
+            "rank": 3
+          }
+        ]
+      },
+      {
+        "width": 0.002,
+        "n": 19,
+        "median_private": 0.309721497,
+        "median_private_rank": 39.0,
+        "min_private": 0.306331057,
+        "max_private": 0.31457177,
+        "share_above_private_cut": 0.10526315789473684,
+        "members": [
+          {
+            "username": "AMG_Junior",
+            "privsub_public": 0.313745112,
+            "private": 0.306331057,
+            "rank": 91
+          },
+          {
+            "username": "yavuya",
+            "privsub_public": 0.314613477,
+            "private": 0.306944059,
+            "rank": 83
+          },
+          {
+            "username": "azukile",
+            "privsub_public": 0.311687753,
+            "private": 0.307568365,
+            "rank": 74
+          },
+          {
+            "username": "Lemi_girl",
+            "privsub_public": 0.313854939,
+            "private": 0.308392875,
+            "rank": 59
+          },
+          {
+            "username": "Noxie",
+            "privsub_public": 0.313679885,
+            "private": 0.30856949,
+            "rank": 58
+          },
+          {
+            "username": "Thabss",
+            "privsub_public": 0.312241144,
+            "private": 0.308702786,
+            "rank": 57
+          },
+          {
+            "username": "Rhie",
+            "privsub_public": 0.312063482,
+            "private": 0.30884176,
+            "rank": 54
+          },
+          {
+            "username": "the_specialist",
+            "privsub_public": 0.311341227,
+            "private": 0.309270073,
+            "rank": 48
+          },
+          {
+            "username": "Simanga",
+            "privsub_public": 0.311451842,
+            "private": 0.309625166,
+            "rank": 42
+          },
+          {
+            "username": "DeeMash",
+            "privsub_public": 0.313459952,
+            "private": 0.309721497,
+            "rank": 39
+          },
+          {
+            "username": "Swaetc_siya",
+            "privsub_public": 0.311789684,
+            "private": 0.310737761,
+            "rank": 32
+          },
+          {
+            "username": "TTM",
+            "privsub_public": 0.312725553,
+            "private": 0.310785096,
+            "rank": 31
+          },
+          {
+            "username": "Shareholder",
+            "privsub_public": 0.314404125,
+            "private": 0.310804649,
+            "rank": 30
+          },
+          {
+            "username": "Manti_Mafokwane_JHB",
+            "privsub_public": 0.313278909,
+            "private": 0.311008083,
+            "rank": 27
+          },
+          {
+            "username": "Aye_Sbu",
+            "privsub_public": 0.311538072,
+            "private": 0.311212476,
+            "rank": 26
+          },
+          {
+            "username": "Mr_V",
+            "privsub_public": 0.311567975,
+            "private": 0.311980751,
+            "rank": 16
+          },
+          {
+            "username": "Thelightthatshines",
+            "privsub_public": 0.313549124,
+            "private": 0.312004766,
+            "rank": 15
+          },
+          {
+            "username": "nextgen",
+            "privsub_public": 0.314983502,
+            "private": 0.314554129,
+            "rank": 4
+          },
+          {
+            "username": "Regan_Shen",
+            "privsub_public": 0.31223735,
+            "private": 0.31457177,
+            "rank": 3
+          }
+        ]
+      },
+      {
+        "width": 0.003,
+        "n": 30,
+        "median_private": 0.309965942,
+        "median_private_rank": 36.0,
+        "min_private": 0.305033482,
+        "max_private": 0.314884034,
+        "share_above_private_cut": 0.16666666666666666,
+        "members": null
+      }
+    ],
+    "note": "Public -> private mapping near the intended best file's public score, using each row's privately-scored submission. Shows the strong top-table regression: similar public scores mostly landed near 0.3097 privately."
+  },
+  "counterfactual_if_intended_pair_selected": {
+    "status": "ESTIMATE ONLY - not a recorded score; the intended files never received a private score",
+    "estimate_neighborhood_median": {
+      "private": 0.309721497,
+      "implied_rank": 39,
+      "note": "median private of the 9 rows with privsub_public within +-0.001 of the target"
+    },
+    "estimate_naive_median_transfer": {
+      "private": 0.31441341149999996,
+      "implied_rank": 5,
+      "note": "target + median transfer of all 156 pairs; optimistic because transfer is score-level dependent and penalises the top of the table"
+    },
+    "estimate_local_linear_0p003": {
+      "private": 0.31025370370368144,
+      "implied_rank": 34,
+      "residual_sd": 0.002457289940841186,
+      "note": "OLS of private on privsub_public over the +-0.003 window (n=30); agrees with the conditioned neighborhood median"
+    },
+    "share_of_neighborhood_beating_private_cut": {
+      "width_0.0005": 0.0,
+      "width_0.001": 0.1111111111111111,
+      "width_0.002": 0.10526315789473684,
+      "width_0.003": 0.16666666666666666
+    },
+    "conclusion": "The intended selection would have needed an unusually strong transfer from public 0.3132 to beat the top-10 cut (roughly 10-17% of comparable rows did). The conditioned estimates (neighborhood median ~0.3097, local linear ~0.3103) project a mid-table landing (~rank 34-39). The naive market-wide median transfer (rank ~5) ignores the observed score-level regression at the top of this leaderboard and is an optimistic upper bound, not an expectation. Estimate only - the true private score of sasol_sprint16_r4full_vR.csv was never computed by the platform because the file was not selected."
+  },
+  "decision": "Record the final outcome. Competition closed; no further submissions are possible. Nothing in submissions/ changes; sasol_sprint16_r4full_vR.csv remains the best public file (0.313217559) and S0 remains the recorded private-scoring file."
+}

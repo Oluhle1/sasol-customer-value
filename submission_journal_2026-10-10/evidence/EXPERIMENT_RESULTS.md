@@ -238,5 +238,5 @@ help reject inconsistent candidates, but do not provide an unbiased estimate
 of public or private leaderboard improvement. No top-10 rank is guaranteed.
 
 Reproduction commands and methodology are in
-[`experiments/oct10/README.md`](../experiments/oct10/README.md). Exact CSV
+[`experiments/oct10/README.md`](../../experiments/oct10/README.md). Exact CSV
 hashes and export checks accompany each submission in its audit JSON.

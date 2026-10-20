@@ -13,7 +13,7 @@ OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MPLCONFIGDIR=/tmp/sasol-mpl python3 -u 
 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MPLCONFIGDIR=/tmp/sasol-mpl python3 -u experiments/oct10/run_values.py
 ```
 
-Python package versions for this run are in `requirements.txt`. Single-thread
+Python package versions for this run are in `experiments/oct10/requirements.txt`. Single-thread
 model fitting limits contention in the current environment. Models use fixed
 seeds. Outputs and caches stay under `outputs/oct10`, which is ignored by Git.
 The cache is a locally generated pickle; load only your own trusted cache.

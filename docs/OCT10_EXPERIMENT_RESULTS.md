@@ -9,6 +9,7 @@
 | `submissions/sasol_oct10_category_dynamics.csv` | **0.307534678** | **+0.002527491** |
 | `submissions/sasol_oct10_group_specialist.csv` | 0.306894638 | −0.000640040 vs best; rejected |
 | `submissions/sasol_oct10_two_part_values.csv` | **0.308109087** | **+0.000574409** vs previous best |
+| `submissions/sasol_oct10_small_fuel_values.csv` | **0.309164264** | **+0.001055177** vs previous best |
 
 The monthly submission changed 671 Opportunity predictions across 5,488
 customers and preserved both CLV columns. Its public gain is confirmed by the

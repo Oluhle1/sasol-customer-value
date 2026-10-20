@@ -1,0 +1,47 @@
+{
+  "accepted": false,
+  "gains": [
+    0.004992904526656905,
+    -0.002621920943926326
+  ],
+  "classes": [
+    "Existing-category growth: Beverages",
+    "Existing-category growth: Food & beverage",
+    "Existing-category growth: Fuel",
+    "Existing-category growth: Other",
+    "Inactivity",
+    "New category adoption: Beverages",
+    "New category adoption: Braai & Ice",
+    "New category adoption: Breads & rolls",
+    "New category adoption: Confectionary",
+    "New category adoption: Food & beverage",
+    "New category adoption: Groceries",
+    "New category adoption: Ice-cream",
+    "New category adoption: Lubricants",
+    "New category adoption: Other",
+    "New category adoption: Snacking",
+    "New category adoption: Tobacco",
+    "Stable"
+  ],
+  "multipliers": [
+    1.3,
+    2.0,
+    1.0,
+    1.3,
+    1.0,
+    2.0,
+    2.0,
+    2.0,
+    2.0,
+    2.0,
+    2.0,
+    2.0,
+    2.0,
+    2.0,
+    2.0,
+    2.0,
+    0.85
+  ],
+  "features": 201,
+  "rule": "Both June and September improve over the larger available control or recorded baseline; mean gain >=0.003"
+}

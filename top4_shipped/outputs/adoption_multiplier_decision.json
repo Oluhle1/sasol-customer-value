@@ -1,0 +1,17 @@
+{
+  "rule_script": "C:\\Users\\oluhl\\sasol-customer-value\\top4_shipped\\train_growth_override.py",
+  "rule_file": "C:\\Users\\oluhl\\Downloads\\submission (1).csv",
+  "june_weighted_f1": {
+    "1.5": 0.4990103907055729,
+    "2.0": 0.49959049139463474,
+    "2.5": 0.4994209506358558
+  },
+  "frozen_adoption_multiplier": 2.0,
+  "september_weighted_f1": 0.507504360510685,
+  "september_control_weighted_f1": 0.5082986958829383,
+  "published_september_f1": 0.5118,
+  "june_gain": 0.00016954075877895214,
+  "september_gain": -0.0007943353722532631,
+  "mean_gain": -0.0003123973067371555,
+  "accepted": false
+}

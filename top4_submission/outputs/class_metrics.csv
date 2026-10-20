@@ -1,0 +1,154 @@
+fold_id,method,class_id,Opportunity,support,precision,recall,f1,predicted
+F2,control,0,Existing-category growth: Beverages,125,0.06818181818181818,0.048,0.056338028169014086,88
+F2,control,1,Existing-category growth: Food & beverage,84,0.12727272727272726,0.08333333333333333,0.10071942446043165,55
+F2,control,2,Existing-category growth: Fuel,1396,0.4786053882725832,0.4326647564469914,0.454477050413845,1262
+F2,control,3,Existing-category growth: Other,185,0.24056603773584906,0.2756756756756757,0.25692695214105793,212
+F2,control,4,Inactivity,1031,0.629887054735013,0.7032007759456838,0.6645279560036663,1151
+F2,control,5,New category adoption: Beverages,41,0.0,0.0,0.0,6
+F2,control,6,New category adoption: Braai & Ice,9,0.0,0.0,0.0,1
+F2,control,7,New category adoption: Breads & rolls,13,0.0,0.0,0.0,1
+F2,control,8,New category adoption: Confectionary,29,0.0,0.0,0.0,3
+F2,control,9,New category adoption: Food & beverage,65,0.0,0.0,0.0,3
+F2,control,10,New category adoption: Groceries,16,0.0,0.0,0.0,0
+F2,control,11,New category adoption: Ice-cream,11,0.0,0.0,0.0,0
+F2,control,12,New category adoption: Lubricants,71,0.0,0.0,0.0,1
+F2,control,13,New category adoption: Other,59,0.0,0.0,0.0,1
+F2,control,14,New category adoption: Snacking,28,0.0,0.0,0.0,4
+F2,control,15,New category adoption: Tobacco,21,0.0,0.0,0.0,0
+F2,control,16,Stable,1465,0.5040300913487372,0.6402730375426621,0.5640408899579074,1861
+F2,head,0,Existing-category growth: Beverages,125,0.11290322580645161,0.112,0.11244979919678715,124
+F2,head,1,Existing-category growth: Food & beverage,84,0.13095238095238096,0.13095238095238096,0.13095238095238096,84
+F2,head,2,Existing-category growth: Fuel,1396,0.4890202702702703,0.414756446991404,0.44883720930232557,1184
+F2,head,3,Existing-category growth: Other,185,0.23870967741935484,0.4,0.298989898989899,310
+F2,head,4,Inactivity,1031,0.6508820798514392,0.6799224054316197,0.6650853889943074,1077
+F2,head,5,New category adoption: Beverages,41,0.0,0.0,0.0,3
+F2,head,6,New category adoption: Braai & Ice,9,0.0,0.0,0.0,0
+F2,head,7,New category adoption: Breads & rolls,13,0.0,0.0,0.0,1
+F2,head,8,New category adoption: Confectionary,29,0.0,0.0,0.0,0
+F2,head,9,New category adoption: Food & beverage,65,0.0,0.0,0.0,4
+F2,head,10,New category adoption: Groceries,16,0.0,0.0,0.0,0
+F2,head,11,New category adoption: Ice-cream,11,0.0,0.0,0.0,1
+F2,head,12,New category adoption: Lubricants,71,0.0,0.0,0.0,1
+F2,head,13,New category adoption: Other,59,0.0,0.0,0.0,3
+F2,head,14,New category adoption: Snacking,28,0.0,0.0,0.0,3
+F2,head,15,New category adoption: Tobacco,21,0.0,0.0,0.0,2
+F2,head,16,Stable,1465,0.5124190064794817,0.6477815699658703,0.5722037986132047,1852
+F2,shift,0,Existing-category growth: Beverages,125,0.06818181818181818,0.048,0.056338028169014086,88
+F2,shift,1,Existing-category growth: Food & beverage,84,0.12727272727272726,0.08333333333333333,0.10071942446043165,55
+F2,shift,2,Existing-category growth: Fuel,1396,0.4786053882725832,0.4326647564469914,0.454477050413845,1262
+F2,shift,3,Existing-category growth: Other,185,0.24056603773584906,0.2756756756756757,0.25692695214105793,212
+F2,shift,4,Inactivity,1031,0.629887054735013,0.7032007759456838,0.6645279560036663,1151
+F2,shift,5,New category adoption: Beverages,41,0.0,0.0,0.0,6
+F2,shift,6,New category adoption: Braai & Ice,9,0.0,0.0,0.0,1
+F2,shift,7,New category adoption: Breads & rolls,13,0.0,0.0,0.0,1
+F2,shift,8,New category adoption: Confectionary,29,0.0,0.0,0.0,3
+F2,shift,9,New category adoption: Food & beverage,65,0.0,0.0,0.0,3
+F2,shift,10,New category adoption: Groceries,16,0.0,0.0,0.0,0
+F2,shift,11,New category adoption: Ice-cream,11,0.0,0.0,0.0,0
+F2,shift,12,New category adoption: Lubricants,71,0.0,0.0,0.0,1
+F2,shift,13,New category adoption: Other,59,0.0,0.0,0.0,1
+F2,shift,14,New category adoption: Snacking,28,0.0,0.0,0.0,4
+F2,shift,15,New category adoption: Tobacco,21,0.0,0.0,0.0,0
+F2,shift,16,Stable,1465,0.5040300913487372,0.6402730375426621,0.5640408899579074,1861
+F3,control,0,Existing-category growth: Beverages,141,0.14655172413793102,0.12056737588652482,0.13229571984435798,116
+F3,control,1,Existing-category growth: Food & beverage,111,0.16161616161616163,0.14414414414414414,0.1523809523809524,99
+F3,control,2,Existing-category growth: Fuel,1311,0.4760508308895406,0.3714721586575134,0.41730934018851756,1023
+F3,control,3,Existing-category growth: Other,265,0.30124223602484473,0.3660377358490566,0.33049403747870526,322
+F3,control,4,Inactivity,1280,0.6548064918851436,0.81953125,0.7279666897987509,1602
+F3,control,5,New category adoption: Beverages,58,0.14285714285714285,0.017241379310344827,0.03076923076923077,7
+F3,control,6,New category adoption: Braai & Ice,12,0.0,0.0,0.0,0
+F3,control,7,New category adoption: Breads & rolls,27,0.0,0.0,0.0,0
+F3,control,8,New category adoption: Confectionary,29,0.0,0.0,0.0,3
+F3,control,9,New category adoption: Food & beverage,54,0.041666666666666664,0.018518518518518517,0.02564102564102564,24
+F3,control,10,New category adoption: Groceries,13,0.0,0.0,0.0,0
+F3,control,11,New category adoption: Ice-cream,10,0.0,0.0,0.0,1
+F3,control,12,New category adoption: Lubricants,53,0.09090909090909091,0.018867924528301886,0.03125,11
+F3,control,13,New category adoption: Other,81,0.0,0.0,0.0,9
+F3,control,14,New category adoption: Snacking,31,0.4,0.06451612903225806,0.1111111111111111,5
+F3,control,15,New category adoption: Tobacco,22,0.0,0.0,0.0,0
+F3,control,16,Stable,1463,0.5370902817711328,0.6384142173615858,0.5833853841349157,1739
+F3,head,0,Existing-category growth: Beverages,141,0.12578616352201258,0.14184397163120568,0.13333333333333333,159
+F3,head,1,Existing-category growth: Food & beverage,111,0.14285714285714285,0.13513513513513514,0.1388888888888889,105
+F3,head,2,Existing-category growth: Fuel,1311,0.4746268656716418,0.36384439359267734,0.4119170984455959,1005
+F3,head,3,Existing-category growth: Other,265,0.285,0.43018867924528303,0.34285714285714286,400
+F3,head,4,Inactivity,1280,0.6510191476219889,0.8234375,0.7271472921697137,1619
+F3,head,5,New category adoption: Beverages,58,0.3333333333333333,0.05172413793103448,0.08955223880597014,9
+F3,head,6,New category adoption: Braai & Ice,12,0.0,0.0,0.0,0
+F3,head,7,New category adoption: Breads & rolls,27,0.0,0.0,0.0,1
+F3,head,8,New category adoption: Confectionary,29,0.0,0.0,0.0,0
+F3,head,9,New category adoption: Food & beverage,54,0.09523809523809523,0.037037037037037035,0.05333333333333334,21
+F3,head,10,New category adoption: Groceries,13,0.0,0.0,0.0,0
+F3,head,11,New category adoption: Ice-cream,10,0.0,0.0,0.0,1
+F3,head,12,New category adoption: Lubricants,53,0.14285714285714285,0.018867924528301886,0.03333333333333333,7
+F3,head,13,New category adoption: Other,81,0.11764705882352941,0.024691358024691357,0.04081632653061224,17
+F3,head,14,New category adoption: Snacking,31,0.09090909090909091,0.03225806451612903,0.047619047619047616,11
+F3,head,15,New category adoption: Tobacco,22,0.0,0.0,0.0,1
+F3,head,16,Stable,1463,0.5613707165109034,0.6158578263841422,0.5873533246414603,1605
+F3,shift,0,Existing-category growth: Beverages,141,0.14655172413793102,0.12056737588652482,0.13229571984435798,116
+F3,shift,1,Existing-category growth: Food & beverage,111,0.16161616161616163,0.14414414414414414,0.1523809523809524,99
+F3,shift,2,Existing-category growth: Fuel,1311,0.4760508308895406,0.3714721586575134,0.41730934018851756,1023
+F3,shift,3,Existing-category growth: Other,265,0.30124223602484473,0.3660377358490566,0.33049403747870526,322
+F3,shift,4,Inactivity,1280,0.6548064918851436,0.81953125,0.7279666897987509,1602
+F3,shift,5,New category adoption: Beverages,58,0.14285714285714285,0.017241379310344827,0.03076923076923077,7
+F3,shift,6,New category adoption: Braai & Ice,12,0.0,0.0,0.0,0
+F3,shift,7,New category adoption: Breads & rolls,27,0.0,0.0,0.0,0
+F3,shift,8,New category adoption: Confectionary,29,0.0,0.0,0.0,3
+F3,shift,9,New category adoption: Food & beverage,54,0.041666666666666664,0.018518518518518517,0.02564102564102564,24
+F3,shift,10,New category adoption: Groceries,13,0.0,0.0,0.0,0
+F3,shift,11,New category adoption: Ice-cream,10,0.0,0.0,0.0,1
+F3,shift,12,New category adoption: Lubricants,53,0.09090909090909091,0.018867924528301886,0.03125,11
+F3,shift,13,New category adoption: Other,81,0.0,0.0,0.0,9
+F3,shift,14,New category adoption: Snacking,31,0.4,0.06451612903225806,0.1111111111111111,5
+F3,shift,15,New category adoption: Tobacco,22,0.0,0.0,0.0,0
+F3,shift,16,Stable,1463,0.5370902817711328,0.6384142173615858,0.5833853841349157,1739
+F4,control,0,Existing-category growth: Beverages,188,0.19672131147540983,0.06382978723404255,0.0963855421686747,61
+F4,control,1,Existing-category growth: Food & beverage,129,0.2857142857142857,0.06201550387596899,0.10191082802547771,28
+F4,control,2,Existing-category growth: Fuel,1435,0.47792408985282725,0.4299651567944251,0.45267791636096844,1291
+F4,control,3,Existing-category growth: Other,278,0.2697947214076246,0.33093525179856115,0.2972536348949919,341
+F4,control,4,Inactivity,1436,0.7101080737444374,0.7778551532033426,0.7424393486208043,1573
+F4,control,5,New category adoption: Beverages,63,0.1,0.015873015873015872,0.0273972602739726,10
+F4,control,6,New category adoption: Braai & Ice,14,0.0,0.0,0.0,0
+F4,control,7,New category adoption: Breads & rolls,20,0.0,0.0,0.0,0
+F4,control,8,New category adoption: Confectionary,27,0.0,0.0,0.0,0
+F4,control,9,New category adoption: Food & beverage,50,0.0,0.0,0.0,4
+F4,control,10,New category adoption: Groceries,20,0.0,0.0,0.0,0
+F4,control,11,New category adoption: Ice-cream,23,0.0,0.0,0.0,0
+F4,control,12,New category adoption: Lubricants,54,0.3333333333333333,0.018518518518518517,0.03508771929824561,3
+F4,control,13,New category adoption: Other,52,0.0,0.0,0.0,5
+F4,control,14,New category adoption: Snacking,25,0.0,0.0,0.0,4
+F4,control,15,New category adoption: Tobacco,20,0.0,0.0,0.0,1
+F4,control,16,Stable,1404,0.48513302034428796,0.6623931623931624,0.5600722673893406,1917
+F4,head,0,Existing-category growth: Beverages,188,0.22448979591836735,0.11702127659574468,0.15384615384615385,98
+F4,head,1,Existing-category growth: Food & beverage,129,0.2,0.17054263565891473,0.18410041841004185,110
+F4,head,2,Existing-category growth: Fuel,1435,0.4912,0.42787456445993033,0.45735567970204843,1250
+F4,head,3,Existing-category growth: Other,278,0.2584856396866841,0.35611510791366907,0.29954614220877457,383
+F4,head,4,Inactivity,1436,0.7281947261663286,0.75,0.7389365351629502,1479
+F4,head,5,New category adoption: Beverages,63,0.11764705882352941,0.031746031746031744,0.05,17
+F4,head,6,New category adoption: Braai & Ice,14,0.0,0.0,0.0,0
+F4,head,7,New category adoption: Breads & rolls,20,0.0,0.0,0.0,0
+F4,head,8,New category adoption: Confectionary,27,0.0,0.0,0.0,1
+F4,head,9,New category adoption: Food & beverage,50,0.08,0.04,0.05333333333333334,25
+F4,head,10,New category adoption: Groceries,20,0.0,0.0,0.0,0
+F4,head,11,New category adoption: Ice-cream,23,0.0,0.0,0.0,0
+F4,head,12,New category adoption: Lubricants,54,0.0,0.0,0.0,8
+F4,head,13,New category adoption: Other,52,0.15789473684210525,0.057692307692307696,0.08450704225352113,19
+F4,head,14,New category adoption: Snacking,25,0.0,0.0,0.0,4
+F4,head,15,New category adoption: Tobacco,20,0.0,0.0,0.0,0
+F4,head,16,Stable,1404,0.5016268980477223,0.6588319088319088,0.5695812807881774,1844
+F4,shift,0,Existing-category growth: Beverages,188,0.2037037037037037,0.05851063829787234,0.09090909090909091,54
+F4,shift,1,Existing-category growth: Food & beverage,129,0.25925925925925924,0.05426356589147287,0.08974358974358974,27
+F4,shift,2,Existing-category growth: Fuel,1435,0.45782312925170066,0.4689895470383275,0.46333907056798623,1470
+F4,shift,3,Existing-category growth: Other,278,0.26605504587155965,0.3129496402877698,0.28760330578512394,327
+F4,shift,4,Inactivity,1436,0.7222955145118733,0.7625348189415042,0.741869918699187,1516
+F4,shift,5,New category adoption: Beverages,63,0.1111111111111111,0.015873015873015872,0.027777777777777776,9
+F4,shift,6,New category adoption: Braai & Ice,14,0.0,0.0,0.0,0
+F4,shift,7,New category adoption: Breads & rolls,20,0.0,0.0,0.0,0
+F4,shift,8,New category adoption: Confectionary,27,0.0,0.0,0.0,0
+F4,shift,9,New category adoption: Food & beverage,50,0.0,0.0,0.0,4
+F4,shift,10,New category adoption: Groceries,20,0.0,0.0,0.0,0
+F4,shift,11,New category adoption: Ice-cream,23,0.0,0.0,0.0,0
+F4,shift,12,New category adoption: Lubricants,54,0.3333333333333333,0.018518518518518517,0.03508771929824561,3
+F4,shift,13,New category adoption: Other,52,0.0,0.0,0.0,5
+F4,shift,14,New category adoption: Snacking,25,0.0,0.0,0.0,4
+F4,shift,15,New category adoption: Tobacco,20,0.0,0.0,0.0,1
+F4,shift,16,Stable,1404,0.4878987898789879,0.6317663817663818,0.5505896958410925,1818

@@ -1,0 +1,10 @@
+{
+  "june_weighted_f1": {
+    "1.5": 0.4990103907055729,
+    "2.0": 0.49959049139463474,
+    "2.5": 0.4994209506358558
+  },
+  "frozen_adoption_multiplier": 2.0,
+  "control_adoption_multiplier": 2.5,
+  "september_not_used": true
+}

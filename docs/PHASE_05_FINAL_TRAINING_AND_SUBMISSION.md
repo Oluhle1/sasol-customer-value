@@ -273,3 +273,43 @@ temporal-validation modelling framework.
 Leaderboard feedback must be recorded separately and must not silently
 change the frozen modelling pipeline.
 
+
+---
+
+## 12. First Public Leaderboard Result
+
+The first submission produced by the frozen Phase 05 modelling pipeline
+was submitted without any leaderboard-driven adjustment.
+
+Public leaderboard result:
+
+    Public score: 0.289392053
+    Public rank: 23
+
+This score is designated:
+
+    S0
+
+and serves as the external benchmark for subsequent controlled
+experiments.
+
+At the time of observation, visible leaderboard reference scores
+included:
+
+    Rank 7:  0.307567003
+    Rank 1:  0.310346593
+
+Therefore the observed gap between S0 and the rank-7 score was:
+
+    0.018174950
+
+and the observed gap between S0 and the leading score was:
+
+    0.020954540
+
+The leaderboard result will not be used as a hyperparameter optimization
+signal.
+
+Subsequent changes must first be supported by historical temporal
+validation and documented as explicit modelling hypotheses.
+

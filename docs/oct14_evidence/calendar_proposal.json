@@ -1,0 +1,42 @@
+{
+  "phase": 2,
+  "hypothesis": "Cyclic month and known calendar exposure may improve December-transfer behavior.",
+  "variant_count": 1,
+  "features": [
+    "month sin/cos",
+    "forecast-day weighted sin/cos",
+    "actual calendar-window length",
+    "weekend and December fractions",
+    "window/prior-quarter day ratio",
+    "fuel/shop exposure interactions"
+  ],
+  "comparator": "Fresh baseline reproduction on same IDs plus recorded archive metric as a second guard",
+  "seeds": {
+    "Opportunity": [
+      7,
+      23
+    ],
+    "fuel": [
+      7,
+      21
+    ],
+    "nonfuel": [
+      11,
+      29
+    ]
+  },
+  "threads": 1,
+  "rows_capacity_decision_weights": "Held fixed. Inner round selection is the unchanged nested procedure.",
+  "tuning_dates": "latest eligible inner origin, purged; December fixed40 and untuned uniform decision multipliers",
+  "evaluation_dates": [
+    "2024-12-01",
+    "2025-06-01",
+    "2025-09-01",
+    "2025-04-01",
+    "2025-05-01",
+    "2025-07-01",
+    "2025-08-01"
+  ],
+  "gate": "Both June and September improve over better of reconstructed/archived metric, mean >=.001; at least5/6 improve, mean>=.001, worst>=-.002. December cannot deteriorate. Bootstrap diagnostic, not extra acceptance search.",
+  "budget_seconds": 3600
+}

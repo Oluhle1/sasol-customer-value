@@ -1,0 +1,4 @@
+origin,historical_n,final_n,matched_n,final_newly_eligible,historical_not_final,historical_short_history_90d,final_short_history_90d,missing_historical_feature_values,missing_final_feature_values
+2024-12-01,4223,5488,4223,1265,0,282,149,0,0
+2025-06-01,4961,5488,4961,527,0,144,149,0,0
+2025-09-01,5238,5488,5238,250,0,136,149,0,0

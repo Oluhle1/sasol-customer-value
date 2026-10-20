@@ -1,0 +1,25 @@
+{
+  "variant": "calendar_exposure_v1",
+  "fingerprint": "d64bcc6797d6201b",
+  "target": "CLV_nonfuel",
+  "origin": "2025-09-01",
+  "latest_training_origin": "2025-06-01",
+  "train_rows": 43858,
+  "threads": 1,
+  "models": [
+    {
+      "seed": 11,
+      "direct_rounds": 164,
+      "purchase_rounds": 160,
+      "positive_value_rounds": 72
+    },
+    {
+      "seed": 29,
+      "direct_rounds": 131,
+      "purchase_rounds": 136,
+      "positive_value_rounds": 90
+    }
+  ],
+  "nested_selection": true,
+  "fallback_rounds": null
+}

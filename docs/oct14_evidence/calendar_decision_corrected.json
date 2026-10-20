@@ -1,0 +1,108 @@
+{
+  "accepted_targets": [],
+  "rows": [
+    {
+      "variant": "calendar_exposure_v1",
+      "origin": "2024-12-01",
+      "target": "Opportunity",
+      "baseline_metric": 0.4328970319911569,
+      "candidate_metric": 0.4390300321838049,
+      "gain": 0.006133000192647953,
+      "rows": 4223,
+      "missing_rows": 0,
+      "gain_vs_archived": null
+    },
+    {
+      "variant": "calendar_exposure_v1",
+      "origin": "2025-06-01",
+      "target": "Opportunity",
+      "baseline_metric": 0.5095271507692096,
+      "candidate_metric": 0.5100739511193448,
+      "gain": 0.0005468003501352,
+      "rows": 4961,
+      "missing_rows": 0,
+      "gain_vs_archived": 0.0005468003501352
+    },
+    {
+      "variant": "calendar_exposure_v1",
+      "origin": "2025-09-01",
+      "target": "Opportunity",
+      "baseline_metric": 0.5165568275346171,
+      "candidate_metric": 0.515344815174794,
+      "gain": -0.001212012359823,
+      "rows": 5238,
+      "missing_rows": 0,
+      "gain_vs_archived": -0.001212012359823
+    },
+    {
+      "variant": "calendar_exposure_v1",
+      "origin": "2024-12-01",
+      "target": "CLV_fuel",
+      "baseline_metric": 0.6327432738799041,
+      "candidate_metric": 0.6333466256342675,
+      "gain": -0.0006033517543633,
+      "rows": 4223,
+      "missing_rows": 0,
+      "gain_vs_archived": null
+    },
+    {
+      "variant": "calendar_exposure_v1",
+      "origin": "2025-06-01",
+      "target": "CLV_fuel",
+      "baseline_metric": 0.5915117844522825,
+      "candidate_metric": 0.5911443705823219,
+      "gain": 0.0003674138699605,
+      "rows": 4961,
+      "missing_rows": 0,
+      "gain_vs_archived": 0.0003674138699605
+    },
+    {
+      "variant": "calendar_exposure_v1",
+      "origin": "2025-09-01",
+      "target": "CLV_fuel",
+      "baseline_metric": 0.5967862625611445,
+      "candidate_metric": 0.5966069115503811,
+      "gain": 0.0001793510107633,
+      "rows": 5238,
+      "missing_rows": 0,
+      "gain_vs_archived": 0.0001793510107633
+    },
+    {
+      "variant": "calendar_exposure_v1",
+      "origin": "2024-12-01",
+      "target": "CLV_nonfuel",
+      "baseline_metric": 0.822938763236278,
+      "candidate_metric": 0.8228596977275678,
+      "gain": 7.906550871017437e-05,
+      "rows": 4223,
+      "missing_rows": 0,
+      "gain_vs_archived": null
+    },
+    {
+      "variant": "calendar_exposure_v1",
+      "origin": "2025-06-01",
+      "target": "CLV_nonfuel",
+      "baseline_metric": 0.7341000618559954,
+      "candidate_metric": 0.7342410575853909,
+      "gain": -0.0001409957293955,
+      "rows": 4961,
+      "missing_rows": 0,
+      "gain_vs_archived": -0.0001409957293955
+    },
+    {
+      "variant": "calendar_exposure_v1",
+      "origin": "2025-09-01",
+      "target": "CLV_nonfuel",
+      "baseline_metric": 0.7423595601227382,
+      "candidate_metric": 0.7424807692625404,
+      "gain": -0.0001212091398021,
+      "rows": 5238,
+      "missing_rows": 0,
+      "gain_vs_archived": -0.0001212091398021
+    }
+  ],
+  "gate": "Unchanged predeclared calendar protocol; no automatic promotion for a December-only win.",
+  "public_score": null,
+  "measurement_amendment": "December uniform multipliers declared before candidate fitting; raw evidence preserved.",
+  "raw_decision_accepted_targets": []
+}

@@ -1,0 +1,16 @@
+{
+  "folder": "04_two_part_nonfuel",
+  "csv": "submissions/sasol_oct10_two_part_values.csv",
+  "baseline": "submissions/sasol_oct10_category_dynamics.csv",
+  "public_score": "0.308109087",
+  "baseline_public_score": "0.307534678",
+  "gain": "0.000574409",
+  "changed_targets": [
+    "CLV_nonfuel"
+  ],
+  "sha256": "0e6aba5ff2e7252f14e972e5dadcc62af755d65117df94de0b1bf1908d224e65",
+  "score_source": "User-reported public leaderboard result",
+  "keep_as_best": true,
+  "training_source": "source_snapshot/experiments/oct10",
+  "baseline_sha256": "a70340046ff7971c80bfee9213a641ccda37523472202166f818ee3be910ea44"
+}

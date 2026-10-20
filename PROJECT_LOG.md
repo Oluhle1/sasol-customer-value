@@ -1,5 +1,10 @@
 # Sasol Customer Value Challenge - Project Log
 
+This is the early diary, from project setup through the first phases.
+The final model, the scores, and the reusable method are in `README.md`
+and `SOLUTION.md`. Phase notes under `docs/` record the quarterly pipeline
+that produced S0. Later rounds live under `experiments/`.
+
 This document records the development history of the project.
 
 ---

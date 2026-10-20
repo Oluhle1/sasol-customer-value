@@ -1,59 +1,47 @@
-# Sasol Customer Value Recruitment Challenge
+# Sasol Customer Value
 
-## Project Purpose
+Temporal LightGBM solution for a three-target customer forecast: fuel value, non-fuel value, and one behaviour class. The same pattern applies to any problem where each entity is scored on a future window, some targets are zero-inflated amounts, and one target is a rare-class label that dominates the score.
 
-This repository documents the development of a reproducible machine-learning solution for the Sasol Customer Value Recruitment Challenge.
+The competition closed on 18 October 2026. Private scores were revealed on 19 October 2026 and stay provisional until Zindi's code review (stated 2026-11-08).
 
-The project is being approached as an applied data science research project rather than only as a leaderboard optimisation exercise.
+| | |
+|---|---|
+| Best public file | `submissions/sasol_sprint16_r4full_vR.csv` — **0.313217559**, public rank 32 |
+| File that was privately scored | `submissions/sasol_phase05_frozen_lightgbm_submission.csv` (S0) — **0.302880883**, private rank 116 |
+| Private top 10 | 0.312723243 |
+| Winner | DrMarcoLotz, 0.315560685 |
 
-## Challenge Objectives
+The two private-scoring slots were left on the September frozen model. The October file above was never privately scored. Full account: [docs/final_outcome_2026-10-19/README.md](docs/final_outcome_2026-10-19/README.md).
 
-The solution must predict three customer outcomes for the following three-month period:
+## Start here
 
-1. Fuel customer lifetime value (CLV_fuel)
-2. Non-fuel customer lifetime value (CLV_nonfuel)
-3. Customer Opportunity behaviour
+1. [SOLUTION.md](SOLUTION.md) — the recipe, the decision rule, and how to reuse it.
+2. [experiments/README.md](experiments/README.md) — which round produced which piece, and which rounds were rejected.
+3. [docs/LABEL_RULES.md](docs/LABEL_RULES.md) — the label contract. Do not reimplement it from memory.
 
-## Modelling Strategy
+`PROJECT_LOG.md` and the phase notes under `docs/PHASE_*.md` are the research diary. They stop being the source of truth once a later round replaces a component.
 
-The project will use a temporal customer-snapshot modelling framework.
+## What is in this checkout
 
-Historical transaction data will be converted into customer-level behavioural representations at specific forecasting cutoffs.
+| Path | Role |
+|---|---|
+| `SOLUTION.md` | Final recipe and the reusable method |
+| `src/reference/label_rules.py`, `configs/` | Frozen labels, feature policy, and the original quarterly spec |
+| `src/phase0*` | Original quarterly pipeline that produced S0. Leave it frozen |
+| `experiments/oct10/` | 305-feature panel, value blends, category-dynamics classifier |
+| `experiments/top10_round/` | Four-class ranker (`run_rank4.py`) |
+| `experiments/sprint16/` | Decode vector `vR` and the best public file |
+| `experiments/sprint17/`, `feature_rebuild/`, `moonshot/` | Later families. All rejected |
+| `data/`, `models/`, `outputs/`, `submissions/` | Local only. A fresh clone has none of them |
 
-The selected modelling family is LightGBM.
+## Environment
 
-Separate models will be developed for:
+WSL, system Python 3.12. The packages used to fit the solution are pinned in [experiments/oct10/requirements.txt](experiments/oct10/requirements.txt): numpy 2.4.4, pandas 3.0.2, scipy 1.17.1, scikit-learn 1.8.0, lightgbm 4.6.0, catboost 1.2.10.
 
-- Fuel CLV regression
-- Non-fuel CLV regression
-- Opportunity multiclass classification
+Run from the repository root, one process at a time:
 
-## Core Research Principles
+```bash
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MPLCONFIGDIR=/tmp/sasol-mpl python3 -u experiments/oct10/run_experiment.py
+```
 
-- No future-data leakage
-- Time-based validation
-- Reproducible experiments
-- Documented feature hypotheses
-- Documented modelling decisions
-- Error analysis before model changes
-- No blind model switching
-- Competition data will not be committed to this repository
-
-## Repository Structure
-
-    configs/       Configuration files
-    data/          Local competition and processed data
-    docs/          Research and technical documentation
-    experiments/   Experiment tracking
-    models/        Generated model artefacts
-    notebooks/     Exploratory and analytical notebooks
-    outputs/       Analysis outputs
-    src/           Reusable Python source code
-    submissions/   Generated competition submissions
-
-## Status
-
-Current phase: Project setup and documentation.
-
-Next phase: Phase 1 - Transaction Data Forensics.
-
+Do not use `.venv313/`. That tree is a Windows environment and is not the fit that produced these scores. `requirements-py313.txt` records that Windows environment only.

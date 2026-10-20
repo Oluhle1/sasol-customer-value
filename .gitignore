@@ -52,4 +52,8 @@ Thumbs.db
 
 .venv*/
 
-.venv*/
+# Fitted dumps and archived prediction files. The method is in the source.
+top4_submission/models/*
+top4_submission/*.csv
+submission_journal_2026-10-10/submissions/*.csv
+submission_journal_2026-10-10/original_baseline/submission.csv

@@ -1,0 +1,21 @@
+{
+  "paper": "Anderson, Kumar, Tomkins, Vassilvitskii (WWW 2014)",
+  "mechanism": "category-level days since last qualifying purchase",
+  "multipliers_retuned": false,
+  "rows": [
+    {
+      "model": "shipped_features",
+      "june_f1": 0.4994209506358558,
+      "september_f1": 0.5082986958829383
+    },
+    {
+      "model": "category_recency",
+      "june_f1": 0.5015599339375929,
+      "september_f1": 0.5084419513935783
+    }
+  ],
+  "june_gain": 0.0021389833017371185,
+  "september_gain": 0.00014325551063998354,
+  "published_september_f1": 0.5118,
+  "accepted": false
+}

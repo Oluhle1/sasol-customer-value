@@ -1,0 +1,18 @@
+{
+  "baseline_public_score": 0.307534678,
+  "baseline_sha256": "a70340046ff7971c80bfee9213a641ccda37523472202166f818ee3be910ea44",
+  "output": "/mnt/c/Users/oluhl/sasol-customer-value/submissions/sasol_oct10_group_specialist.csv",
+  "output_sha256": "dd58cd0301652114ef39e1ed0842cda068a1e264d1fada4e888d26bcc9624b7b",
+  "rows": 5488,
+  "changed_opportunity_labels": 115,
+  "chosen_model": "group_specialist",
+  "features": 305,
+  "june_september_f1_gains": [
+    0.00014368896323235791,
+    0.0015618875077223482
+  ],
+  "regression_columns_preserved": true,
+  "public_score": null,
+  "validation_gate_passed": false,
+  "experimental_export": true
+}

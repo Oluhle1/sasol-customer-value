@@ -1,0 +1,82 @@
+[
+  {
+    "folder": "01_monthly_opportunity",
+    "csv": "submissions/sasol_oct10_monthly_experiment.csv",
+    "baseline": "original_baseline/submission.csv",
+    "public_score": "0.305007187",
+    "baseline_public_score": "0.304344557",
+    "gain": "0.000662630",
+    "changed_targets": [
+      "Opportunity"
+    ],
+    "sha256": "e24c931018b953b1d9a2131ae3df76dd21e3e535573894e99dddfc450f20f35e",
+    "score_source": "User-reported public leaderboard result",
+    "keep_as_best": true,
+    "training_source": "source_snapshot/experiments/oct10",
+    "baseline_sha256": "f63072c009a6049fb0fbd59242a869e46d7d8c6fcc9d4738d79c70dda75081fa"
+  },
+  {
+    "folder": "02_category_dynamics",
+    "csv": "submissions/sasol_oct10_category_dynamics.csv",
+    "baseline": "submissions/sasol_oct10_monthly_experiment.csv",
+    "public_score": "0.307534678",
+    "baseline_public_score": "0.305007187",
+    "gain": "0.002527491",
+    "changed_targets": [
+      "Opportunity"
+    ],
+    "sha256": "a70340046ff7971c80bfee9213a641ccda37523472202166f818ee3be910ea44",
+    "score_source": "User-reported public leaderboard result",
+    "keep_as_best": true,
+    "training_source": "source_snapshot/experiments/oct10",
+    "baseline_sha256": "e24c931018b953b1d9a2131ae3df76dd21e3e535573894e99dddfc450f20f35e"
+  },
+  {
+    "folder": "03_group_specialist_rejected",
+    "csv": "submissions/sasol_oct10_group_specialist.csv",
+    "baseline": "submissions/sasol_oct10_category_dynamics.csv",
+    "public_score": "0.306894638",
+    "baseline_public_score": "0.307534678",
+    "gain": "-0.000640040",
+    "changed_targets": [
+      "Opportunity"
+    ],
+    "sha256": "dd58cd0301652114ef39e1ed0842cda068a1e264d1fada4e888d26bcc9624b7b",
+    "score_source": "User-reported public leaderboard result",
+    "keep_as_best": false,
+    "training_source": "source_snapshot/experiments/oct10",
+    "baseline_sha256": "a70340046ff7971c80bfee9213a641ccda37523472202166f818ee3be910ea44"
+  },
+  {
+    "folder": "04_two_part_nonfuel",
+    "csv": "submissions/sasol_oct10_two_part_values.csv",
+    "baseline": "submissions/sasol_oct10_category_dynamics.csv",
+    "public_score": "0.308109087",
+    "baseline_public_score": "0.307534678",
+    "gain": "0.000574409",
+    "changed_targets": [
+      "CLV_nonfuel"
+    ],
+    "sha256": "0e6aba5ff2e7252f14e972e5dadcc62af755d65117df94de0b1bf1908d224e65",
+    "score_source": "User-reported public leaderboard result",
+    "keep_as_best": true,
+    "training_source": "source_snapshot/experiments/oct10",
+    "baseline_sha256": "a70340046ff7971c80bfee9213a641ccda37523472202166f818ee3be910ea44"
+  },
+  {
+    "folder": "05_small_monthly_fuel_best",
+    "csv": "submissions/sasol_oct10_small_fuel_values.csv",
+    "baseline": "submissions/sasol_oct10_two_part_values.csv",
+    "public_score": "0.309164264",
+    "baseline_public_score": "0.308109087",
+    "gain": "0.001055177",
+    "changed_targets": [
+      "CLV_fuel"
+    ],
+    "sha256": "11a4da31d86ab4738c2366b9c06f8439124991fc1e138bef685dbc38e61eb79a",
+    "score_source": "User-reported public leaderboard result",
+    "keep_as_best": true,
+    "training_source": "source_snapshot/experiments/oct10",
+    "baseline_sha256": "0e6aba5ff2e7252f14e972e5dadcc62af755d65117df94de0b1bf1908d224e65"
+  }
+]

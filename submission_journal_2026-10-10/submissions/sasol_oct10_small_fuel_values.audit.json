@@ -1,0 +1,71 @@
+{
+  "baseline_public_score": 0.308109087,
+  "baseline_sha256": "0e6aba5ff2e7252f14e972e5dadcc62af755d65117df94de0b1bf1908d224e65",
+  "output": "/mnt/c/Users/oluhl/sasol-customer-value/submissions/sasol_oct10_small_fuel_values.csv",
+  "output_sha256": "11a4da31d86ab4738c2366b9c06f8439124991fc1e138bef685dbc38e61eb79a",
+  "rows": 5488,
+  "changed_targets": [
+    "CLV_fuel"
+  ],
+  "model": "small_fuel",
+  "opportunity_preserved": true,
+  "validation": [
+    {
+      "cutoff": "2025-06-01",
+      "target": "CLV_fuel",
+      "control_rmse": 0.5945610860231086,
+      "candidate_rmse": 0.5915117844522825,
+      "recorded_baseline_rmse": 0.5943270122504838,
+      "gain_vs_control": 0.0030493015708261,
+      "gain_vs_recorded": 0.0028152277982013
+    },
+    {
+      "cutoff": "2025-09-01",
+      "target": "CLV_fuel",
+      "control_rmse": 0.5971118679075238,
+      "candidate_rmse": 0.5967862625611445,
+      "recorded_baseline_rmse": 0.5970499880061185,
+      "gain_vs_control": 0.0003256053463792,
+      "gain_vs_recorded": 0.0002637254449739
+    },
+    {
+      "cutoff": "2025-04-01",
+      "target": "CLV_fuel",
+      "control_rmse": 0.6249517504786016,
+      "candidate_rmse": 0.6184810397238675,
+      "recorded_baseline_rmse": null,
+      "gain_vs_control": 0.0064707107547341,
+      "gain_vs_recorded": null
+    },
+    {
+      "cutoff": "2025-05-01",
+      "target": "CLV_fuel",
+      "control_rmse": 0.6151917351827754,
+      "candidate_rmse": 0.6091278957192247,
+      "recorded_baseline_rmse": null,
+      "gain_vs_control": 0.0060638394635507,
+      "gain_vs_recorded": null
+    },
+    {
+      "cutoff": "2025-07-01",
+      "target": "CLV_fuel",
+      "control_rmse": 0.5990827339832178,
+      "candidate_rmse": 0.5949676071403952,
+      "recorded_baseline_rmse": null,
+      "gain_vs_control": 0.0041151268428225,
+      "gain_vs_recorded": null
+    },
+    {
+      "cutoff": "2025-08-01",
+      "target": "CLV_fuel",
+      "control_rmse": 0.6081076854066776,
+      "candidate_rmse": 0.6033144800311433,
+      "recorded_baseline_rmse": null,
+      "gain_vs_control": 0.0047932053755342,
+      "gain_vs_recorded": null
+    }
+  ],
+  "extra_control": "Original quarterly 197-feature 47-leaf direct/hurdle/residual recipe with recorded fixed 40/35/25 weights, reconstructed in this environment. Original cached feature pickle requires unavailable pyarrow; exact byte-level training reproduction is not claimed.",
+  "public_score": 0.309164264,
+  "score_source": "user-reported Zindi public leaderboard result"
+}

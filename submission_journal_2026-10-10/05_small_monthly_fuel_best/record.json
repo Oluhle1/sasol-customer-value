@@ -1,0 +1,16 @@
+{
+  "folder": "05_small_monthly_fuel_best",
+  "csv": "submissions/sasol_oct10_small_fuel_values.csv",
+  "baseline": "submissions/sasol_oct10_two_part_values.csv",
+  "public_score": "0.309164264",
+  "baseline_public_score": "0.308109087",
+  "gain": "0.001055177",
+  "changed_targets": [
+    "CLV_fuel"
+  ],
+  "sha256": "11a4da31d86ab4738c2366b9c06f8439124991fc1e138bef685dbc38e61eb79a",
+  "score_source": "User-reported public leaderboard result",
+  "keep_as_best": true,
+  "training_source": "source_snapshot/experiments/oct10",
+  "baseline_sha256": "0e6aba5ff2e7252f14e972e5dadcc62af755d65117df94de0b1bf1908d224e65"
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "part": "direct",
+    "seed": 7,
+    "rounds": 110,
+    "train_rows": 29242
+  },
+  {
+    "part": "direct",
+    "seed": 21,
+    "rounds": 108,
+    "train_rows": 29242
+  },
+  {
+    "part": "residual",
+    "seed": 7,
+    "rounds": 53,
+    "train_rows": 29242
+  },
+  {
+    "part": "conditional",
+    "seed": 7,
+    "rounds": 120,
+    "train_rows": 23877
+  },
+  {
+    "part": "purchase_probability",
+    "seed": 7,
+    "rounds": 89,
+    "train_rows": 29242
+  }
+]

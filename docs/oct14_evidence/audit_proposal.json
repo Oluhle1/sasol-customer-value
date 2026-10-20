@@ -1,0 +1,15 @@
+{
+  "phase": 1,
+  "hypothesis": "December seasonal exposure or final-population drift may contribute to plateau; not established.",
+  "baseline": "0.309164264",
+  "tuning_dates": "none; December backtest uses fixed 40 rounds without nested selection",
+  "evaluation_dates": [
+    "2024-12-01",
+    "2025-06-01",
+    "2025-09-01"
+  ],
+  "baseline_reproduction": "Fresh single-thread fits on matching June/September rows; compare cached historical vectors and metric deltas.",
+  "budget_seconds": 3600,
+  "December_prior_use": "Phase 04 F1 and target calibration used December; reused seasonal check, not fresh.",
+  "seasonality_existing": "prior-year customer volumes/spend, elapsed origin_month, actual forecast horizon in existing cadence features"
+}

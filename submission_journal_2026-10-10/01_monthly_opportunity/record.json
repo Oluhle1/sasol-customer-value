@@ -1,0 +1,16 @@
+{
+  "folder": "01_monthly_opportunity",
+  "csv": "submissions/sasol_oct10_monthly_experiment.csv",
+  "baseline": "original_baseline/submission.csv",
+  "public_score": "0.305007187",
+  "baseline_public_score": "0.304344557",
+  "gain": "0.000662630",
+  "changed_targets": [
+    "Opportunity"
+  ],
+  "sha256": "e24c931018b953b1d9a2131ae3df76dd21e3e535573894e99dddfc450f20f35e",
+  "score_source": "User-reported public leaderboard result",
+  "keep_as_best": true,
+  "training_source": "source_snapshot/experiments/oct10",
+  "baseline_sha256": "f63072c009a6049fb0fbd59242a869e46d7d8c6fcc9d4738d79c70dda75081fa"
+}

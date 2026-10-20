@@ -1,0 +1,11 @@
+{
+  "accepted": [],
+  "screen_gains": [
+    -0.00012871102517730826,
+    0.0002974557371534514
+  ],
+  "features": 305,
+  "residual_weight": 0.25,
+  "rule": "Beat the better of confirmed nonfuel baseline and two-part control on both June and September, mean gain >=0.001; improve at least 5 of 6 origins against two-part control, mean gain >=0.001, no loss >0.002.",
+  "extra_control": "Monthly 50/50 direct/hurdle shop model with same 305 features; the current publicly confirmed nonfuel recipe."
+}

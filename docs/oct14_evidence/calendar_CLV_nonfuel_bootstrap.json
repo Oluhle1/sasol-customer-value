@@ -1,0 +1,9 @@
+{
+  "replicates": 200,
+  "customer_clusters": 5238,
+  "gain_ci95": [
+    -0.0004407782332258497,
+    0.00035349366190600144
+  ],
+  "interpretation": "Customer variation conditional on reused dates; excludes future seasonal uncertainty and repeated-selection bias."
+}

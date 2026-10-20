@@ -1,0 +1,27 @@
+{
+  "phase": 3,
+  "hypothesis": "Predicting an exact unconditional fuel growth event and qualifying fuel purchases adds threshold information beyond baseline class probabilities.",
+  "difference_from_rejected_specialist": "No macro-group routing, summed three-group probabilities or arbitrary blend. Two rule-derived binary targets generate temporally out-of-fold signals; downstream correction includes all configured labels and full baseline class probabilities.",
+  "target_definitions": {
+    "purchase": "Unconditional probability of at least configured growth_min_purchases future qualifying Fuel baskets.",
+    "fuel_growth_event": "Unconditional joint probability: qualifying historical Fuel purchase, qualifying future purchase count, future signed fuel spending satisfies exact >=R20 increment and strict >25% growth relative to clipped prior spend. Does not imply winning against other category events."
+  },
+  "dependence": "Signals are never multiplied as independent events. Joint growth probability is set to zero when known historical Fuel eligibility is false, before and after calibration; this is an exact rule constraint, not an independence assumption.",
+  "upstream_features": "Accepted 305 past-only features, unchanged label generator.",
+  "upstream_capacity": "15 leaves, min child50, 40 fixed boosting rounds, learning_rate .04, two seeds7/23, one thread; no early-stop or calibration on outer outcomes.",
+  "downstream": "Standardized log baseline17 probabilities plus log known growth threshold and observed fuel eligibility; candidate adds two calibrated rule logits. Multinomial logistic C=.05, max_iter500; matched no-rule logistic control. Original decision multipliers preserved. Both control and candidate set final Fuel-growth probability to zero for known historical Fuel-ineligible customers, then renormalize; all other configured labels still compete.",
+  "calibration": "For each downstream training origin, Platt C1 uses only OOF outcomes ending by that origin; identity fallback when no earlier OOF outcomes exist. At evaluation it uses all eligible earlier OOF records. No same-row auxiliary outcomes calibrate its own downstream input.",
+  "OOF_origins": "December2024 through latest eligible monthly origin; for outer T all training outcomes end<=T. Earlier insufficient nested history uses preregistered40 rounds.",
+  "evaluation_dates": [
+    "2025-06-01",
+    "2025-09-01",
+    "2025-04-01",
+    "2025-05-01",
+    "2025-07-01",
+    "2025-08-01"
+  ],
+  "December_limitation": "No earlier OOF records with a complete outcome window are available for fitting correction before December2024; no dishonest December correction backtest. Calendar/baseline December remains available.",
+  "gate": "Both June/September improve weighted F1 over better of realized/reproduced baseline and matching logistic control, mean >=.001. Then at least5/6 positive gains versus same controls, mean>=.001 and worst>=-.002.",
+  "budget_seconds": 3600,
+  "quantiles": "Deferred: binary exact event target suffices for this minimal round; no conditional-quantile search."
+}

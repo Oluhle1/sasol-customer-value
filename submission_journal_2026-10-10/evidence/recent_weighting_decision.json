@@ -1,0 +1,12 @@
+{
+  "accepted": false,
+  "reason": "June failed the positive-gain screen; run stopped before completing September",
+  "completed_origins": [
+    "2025-06-01"
+  ],
+  "gains": [
+    -8.528054861944856e-05
+  ],
+  "weight_decay_months": 6.0,
+  "status": "early_rejected"
+}

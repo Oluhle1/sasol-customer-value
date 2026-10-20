@@ -1,0 +1,70 @@
+{
+  "baseline_public_score": 0.307534678,
+  "baseline_sha256": "a70340046ff7971c80bfee9213a641ccda37523472202166f818ee3be910ea44",
+  "output": "/mnt/c/Users/oluhl/sasol-customer-value/submissions/sasol_oct10_two_part_values.csv",
+  "output_sha256": "0e6aba5ff2e7252f14e972e5dadcc62af755d65117df94de0b1bf1908d224e65",
+  "rows": 5488,
+  "changed_targets": [
+    "CLV_nonfuel"
+  ],
+  "model": "two_part",
+  "opportunity_preserved": true,
+  "validation": [
+    {
+      "cutoff": "2025-06-01",
+      "target": "CLV_nonfuel",
+      "control_rmse": 0.7358497892510898,
+      "candidate_rmse": 0.7341000618559954,
+      "recorded_baseline_rmse": 0.737693006793616,
+      "gain_vs_control": 0.0017497273950943,
+      "gain_vs_recorded": 0.0035929449376206
+    },
+    {
+      "cutoff": "2025-09-01",
+      "target": "CLV_nonfuel",
+      "control_rmse": 0.7435313770805264,
+      "candidate_rmse": 0.7423595601227382,
+      "recorded_baseline_rmse": 0.7427168603796318,
+      "gain_vs_control": 0.0011718169577882,
+      "gain_vs_recorded": 0.0003573002568936
+    },
+    {
+      "cutoff": "2025-04-01",
+      "target": "CLV_nonfuel",
+      "control_rmse": 0.7707201170461168,
+      "candidate_rmse": 0.7680027775497146,
+      "recorded_baseline_rmse": null,
+      "gain_vs_control": 0.0027173394964021,
+      "gain_vs_recorded": null
+    },
+    {
+      "cutoff": "2025-05-01",
+      "target": "CLV_nonfuel",
+      "control_rmse": 0.7571352170690134,
+      "candidate_rmse": 0.7564386284672522,
+      "recorded_baseline_rmse": null,
+      "gain_vs_control": 0.0006965886017612,
+      "gain_vs_recorded": null
+    },
+    {
+      "cutoff": "2025-07-01",
+      "target": "CLV_nonfuel",
+      "control_rmse": 0.7376514187998204,
+      "candidate_rmse": 0.7369454424957699,
+      "recorded_baseline_rmse": null,
+      "gain_vs_control": 0.0007059763040505,
+      "gain_vs_recorded": null
+    },
+    {
+      "cutoff": "2025-08-01",
+      "target": "CLV_nonfuel",
+      "control_rmse": 0.7376440421337205,
+      "candidate_rmse": 0.7360550146291776,
+      "recorded_baseline_rmse": null,
+      "gain_vs_control": 0.0015890275045429,
+      "gain_vs_recorded": null
+    }
+  ],
+  "extra_control": "Monthly direct low-capacity regressors with same 305 features; not the historical best submission recipe.",
+  "public_score": null
+}

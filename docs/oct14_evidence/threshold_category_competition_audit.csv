@@ -1,0 +1,7 @@
+origin,cohort,n,error_rate
+2025-06-01,within_100_rand_of_threshold,1057,0.16367076631977295
+2025-06-01,fuel_growth_event_eligible,1315,0.5133079847908745
+2025-06-01,fuel_event_lost_category_competition,4,1.0
+2025-09-01,within_100_rand_of_threshold,1249,0.16092874299439552
+2025-09-01,fuel_growth_event_eligible,1436,0.5355153203342619
+2025-09-01,fuel_event_lost_category_competition,1,1.0

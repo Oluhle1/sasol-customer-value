@@ -1,0 +1,35 @@
+{
+  "public_score": 0.309164264,
+  "previous_best_public_score": 0.308109087,
+  "original_public_score": 0.304344557,
+  "public_gain": 0.001055177,
+  "gain_from_original": 0.004819707,
+  "user_reported_top10_score": 0.316766793,
+  "gap_to_reported_top10": 0.007602529,
+  "score_source": "user-reported Zindi public leaderboard result",
+  "submission": "/mnt/c/Users/oluhl/sasol-customer-value/submissions/sasol_oct10_small_fuel_values.csv",
+  "snapshot": "/mnt/c/Users/oluhl/sasol-customer-value/outputs/oct10/baseline_0309164264.csv",
+  "sha256": "11a4da31d86ab4738c2366b9c06f8439124991fc1e138bef685dbc38e61eb79a",
+  "model": "category-dynamics Opportunity; small monthly 40/35/25 direct/hurdle/residual fuel CLV; monthly two-part nonfuel CLV",
+  "opportunity_validation_f1": {
+    "2025-06-01": 0.5095271507692096,
+    "2025-09-01": 0.5165568275346171
+  },
+  "nonfuel_validation_rmse": {
+    "2025-06-01": 0.7341000618559954,
+    "2025-09-01": 0.7423595601227382,
+    "2025-04-01": 0.7680027775497146,
+    "2025-05-01": 0.7564386284672522,
+    "2025-07-01": 0.7369454424957699,
+    "2025-08-01": 0.7360550146291776
+  },
+  "private_score": null,
+  "fuel_validation_rmse": {
+    "2025-06-01": 0.5915117844522825,
+    "2025-09-01": 0.5967862625611445,
+    "2025-04-01": 0.6184810397238675,
+    "2025-05-01": 0.6091278957192247,
+    "2025-07-01": 0.5949676071403952,
+    "2025-08-01": 0.6033144800311433
+  }
+}

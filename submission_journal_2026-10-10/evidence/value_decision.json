@@ -1,0 +1,14 @@
+{
+  "accepted": [],
+  "gains": {
+    "CLV_fuel": [
+      -0.0017491739773616288,
+      -0.0009678407057202021
+    ],
+    "CLV_nonfuel": [
+      -0.0002349750215228097,
+      -0.0004339381841527157
+    ]
+  },
+  "rule": "Fixed 30% fuel / 50% nonfuel hurdle; both folds improve over the lower of control and confirmed baseline's recorded RMSE, and mean gain >=0.001."
+}

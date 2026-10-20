@@ -1,0 +1,10 @@
+{
+  "accepted": [],
+  "screen_gains": [
+    0.0003740593552491456,
+    -7.313374711515053e-05
+  ],
+  "features": 316,
+  "rule": "Beat the better of recorded fuel baseline and control on both June and September, mean gain >=0.001; improve at least 5 of 6 origins against control, mean gain >=0.001, no loss >0.002.",
+  "extra_control": "Same low-capacity 40/35/25 direct/hurdle/residual blend, with the original 305 features."
+}

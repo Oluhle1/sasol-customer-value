@@ -1,0 +1,17 @@
+{
+  "public_score": 0.307534678,
+  "previous_public_score": 0.305007187,
+  "original_public_score": 0.304344557,
+  "public_gain": 0.002527491,
+  "gain_from_original": 0.003190121,
+  "score_source": "user-reported Zindi public leaderboard result",
+  "submission": "/mnt/c/Users/oluhl/sasol-customer-value/submissions/sasol_oct10_category_dynamics.csv",
+  "snapshot": "/mnt/c/Users/oluhl/sasol-customer-value/outputs/oct10/baseline_0307534678.csv",
+  "sha256": "a70340046ff7971c80bfee9213a641ccda37523472202166f818ee3be910ea44",
+  "model": "monthly LightGBM with 108 category dynamics features; original CLV columns preserved",
+  "opportunity_validation_f1": {
+    "2025-06-01": 0.5095271507692096,
+    "2025-09-01": 0.5165568275346171
+  },
+  "private_score": null
+}

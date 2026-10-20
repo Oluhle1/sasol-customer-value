@@ -19,9 +19,10 @@ models/*
 outputs/*
 !outputs/.gitkeep
 
-# Competition submissions
+# Competition submissions and any customer-level prediction file
 submissions/*
 !submissions/.gitkeep
+**/*submission*.csv
 
 # Python
 __pycache__/

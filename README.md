@@ -32,7 +32,7 @@ The two private-scoring slots were left on the September frozen model. The Octob
 | `experiments/top10_round/` | Four-class ranker (`run_rank4.py`) |
 | `experiments/sprint16/` | Decode vector `vR` and the best public file |
 | `experiments/sprint17/`, `feature_rebuild/`, `moonshot/` | Later families. All rejected |
-| `data/`, `models/`, `outputs/`, `submissions/` | Local only. A fresh clone has none of them |
+| `data/`, `models/`, `outputs/`, `submissions/` | Local only. Customer IDs, transactions, labels, and prediction rows are not in this public repository |
 
 ## Environment
 

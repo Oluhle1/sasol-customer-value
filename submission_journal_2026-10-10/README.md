@@ -44,8 +44,10 @@ replaced, not necessarily the immediately preceding upload.
 
 ## Files supplied
 
-`submissions/` holds exact copies of the five uploaded CSVs and their original
-export audits. `original_baseline/` holds the starting CSV, the available
+The five uploaded prediction files and the starting `original_baseline/submission.csv`
+contain the customer IDs and are kept only on the local machine. They are not
+in this public repository. The export audits next to those names, the score
+ledger, and the file hashes remain here. `original_baseline/` still holds the
 original model source and its saved score report. `evidence/` holds recorded
 scores, decisions, comparisons and training metadata. `submission_ledger.json`
 links each reported public score to its file hash and actual baseline.
